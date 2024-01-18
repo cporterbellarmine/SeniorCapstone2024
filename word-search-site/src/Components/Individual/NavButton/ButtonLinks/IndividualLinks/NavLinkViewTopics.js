@@ -3,7 +3,7 @@ import NavButtonLinkObject from '../LinkObject/NavButtonLinkObject';
 
 function NavLinkViewTopics(){
     return(
-        <NavButtonLinkObject displayName="/view-topics" buttonDisplayText="View Topics"/>
+        <NavButtonLinkObject displayName="/view-topics" buttonDisplayText={<center><b>View Topics</b></center>}/>
     );
 }
 export default NavLinkViewTopics;

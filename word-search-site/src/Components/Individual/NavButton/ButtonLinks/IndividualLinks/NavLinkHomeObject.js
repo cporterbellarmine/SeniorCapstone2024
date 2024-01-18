@@ -3,7 +3,7 @@ import NavButtonLinkObject from '../LinkObject/NavButtonLinkObject';
 
 function NavLinkHomeObject(){
     return(
-        <NavButtonLinkObject displayName="/home" buttonDisplayText="Home"/>
+        <NavButtonLinkObject displayName="/home" buttonDisplayText={<center><b>Home</b></center>}/>
     );
 }
 export default NavLinkHomeObject;

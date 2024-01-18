@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import MainMenuObject from '../Components/Containers/MainMenu/MainMenuObject';
-import OverallPageHeader from '../Components/Containers/Header/OverallPageHeader';
+import OverallPageHeader from '../Components/Containers/Headers/MainPage/OverallPageHeader';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
@@ -10,11 +10,8 @@ function MainPage(){
     <Container>
         <Typography component='div' style={{backgroundColor: 'aqua'}}>
             <h4>Home Screen Container</h4>
-                <div>
-                    <OverallPageHeader />
-                    <MainMenuObject />
-                </div>
-            
+            <OverallPageHeader />
+            <MainMenuObject />
         </Typography>
     </Container>);
 }
