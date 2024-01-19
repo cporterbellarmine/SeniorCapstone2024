@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLinkMainMenu} from './navBarElements';
+import {NavLinkMainMenu} from '../../NavBar/navBarElements';
 
 function NavLinkMainMenuObject(props){
     const displayName = props.displayName;

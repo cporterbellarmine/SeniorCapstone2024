@@ -1,9 +1,9 @@
 import React from 'react';
 import NavButtonLinkObject from '../LinkObject/NavButtonLinkObject';
 
-function NavLinkHomeObject(){
+function NavButtonHomeObject(){
     return(
         <NavButtonLinkObject displayName="/home" buttonDisplayText={<center><b>Home</b></center>}/>
     );
 }
-export default NavLinkHomeObject;
+export default NavButtonHomeObject;

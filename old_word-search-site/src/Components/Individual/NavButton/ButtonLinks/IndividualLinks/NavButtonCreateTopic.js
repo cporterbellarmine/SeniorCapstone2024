@@ -2,9 +2,9 @@ import React from 'react';
 import NavButtonLinkObject from '../LinkObject/NavButtonLinkObject';
 
 
-function NavLinkCreateTopic(){
+function NavButtonCreateTopic(){
     return(
         <NavButtonLinkObject displayName="/create-topic" buttonDisplayText={<center><b>Create Topic</b></center>}/>
     );
 }
-export default NavLinkCreateTopic;
+export default NavButtonCreateTopic;

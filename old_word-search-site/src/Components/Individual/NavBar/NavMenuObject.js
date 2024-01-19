@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavMenu} from './navBarElements';
 import NavLinkObject from './NavLinkObject';
-import NavLinkMainMenuObject from './NavLinkMainMenuObject';
+import NavLinkMainMenuObject from '../NavButton/ButtonLinks/NavLinkMainMenuObject';
 
 function NavMenuObject(){
 
