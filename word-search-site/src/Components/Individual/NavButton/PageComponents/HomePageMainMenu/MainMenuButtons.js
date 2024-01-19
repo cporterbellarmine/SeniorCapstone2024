@@ -17,7 +17,6 @@ function MainMenuButtons(){
                     <NavButtonCreateTopic />
                 </div>
             </Typography>
-            
         </Container>
         
         
