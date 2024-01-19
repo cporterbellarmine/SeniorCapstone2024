@@ -1,5 +1,6 @@
 .MainMenuButtons-buttons {
     display: grid;
-    padding: 5% 0;
-    width: 50%;
-}  
+    //width: 50%;
+    padding: 1em;
+    background-color:bisque;
+} 

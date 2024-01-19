@@ -4,9 +4,11 @@ import MainMenuButtons from '../PageComponents/HomePageMainMenu/MainMenuButtons'
 
 function MainMenuButtonsRouter(){
     return(
-        <Router>
-            <MainMenuButtons/>
-        </Router>
+        <div>
+            <Router>
+                <MainMenuButtons/>
+            </Router>
+        </div>
     );
 }
 export default MainMenuButtonsRouter;

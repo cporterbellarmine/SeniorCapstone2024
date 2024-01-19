@@ -6,15 +6,11 @@ import MainMenuButtonsRouter from '../../Individual/NavButton/ButtonRouters/Main
 
 function MainMenuObject(){
     return(
-        <Container>
-            <Typography component='div' style={{backgroundColor: 'blue'}}>
-                <div>
-                    <h4>Main Menu Container</h4>
-                    <div className='MainMenuObject-title'>
-                        <h1>Main Menu</h1>
-                    </div>
-                    <MainMenuButtonsRouter/>
-                </div>
+        <Container className='MainMenuObject-container'>
+            <h4>Main Menu Container</h4>
+            <Typography component='div' style={{backgroundColor: 'blue', paddingBottom:'1em'}}>
+                <h1>Main Menu</h1>
+                <MainMenuButtonsRouter/>
             </Typography>
         </Container>
     );

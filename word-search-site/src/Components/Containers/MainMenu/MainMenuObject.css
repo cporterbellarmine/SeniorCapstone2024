@@ -1,3 +1,7 @@
 .MainMenuObject-title{
-    padding: 0 5%;
+    margin-left: 5%;
+}
+
+h4 {
+    margin: 0;
 }

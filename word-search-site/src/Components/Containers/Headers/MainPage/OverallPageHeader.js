@@ -8,7 +8,7 @@ import NavRouter from '../../../Individual/NavBar/NavRouter';
 function OverallPageHeader(){
     return (
         <Container>
-            <Typography component='div' style={{backgroundColor: 'deeppink'}}>
+            <Typography component='div' style={{backgroundColor: 'deeppink', width: '100%', height: '100%'}}>
                 <h4>Header Container</h4>
                 <div className='OverallPageHeader-title'>
                     <h1>Word Search Puzzle Generator</h1>
