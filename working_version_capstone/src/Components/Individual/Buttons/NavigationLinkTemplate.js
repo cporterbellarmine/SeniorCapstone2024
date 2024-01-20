@@ -1,9 +1,9 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { StyledLink } from '../../ComponentStyling';
 
 function NavigationLink(props){
     return(
-        <Link to={props.pathway}>{props.textDisplayed}</Link>
+        <StyledLink to={props.pathway}>{props.textDisplayed}</StyledLink>
     );
 }
 export default NavigationLink;

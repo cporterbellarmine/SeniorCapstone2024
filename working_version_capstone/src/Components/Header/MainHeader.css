@@ -1,0 +1,5 @@
+.MainHeader-headerDiv{
+    background-color: dimgrey;
+    display: flex;
+    justify-content: center;
+};
