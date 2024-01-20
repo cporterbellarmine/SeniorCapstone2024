@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
+import { Outlet } from 'react-router-dom';
 import ButtonLinkTemplate from '../Individual/Buttons/Templates/ButtonNavLinks/ButtonLinkTemplate';
+//import {  PuzzleGeneratorNavLink, ViewTopicsNavLink, CreateTopicNavLink } from '../Individual/Buttons/Templates/ButtonNavLinks/ButtonLinks';
 import { StyledButtonNav } from '../ComponentStyling';
 
 const ButtonNavOrg = () => {
