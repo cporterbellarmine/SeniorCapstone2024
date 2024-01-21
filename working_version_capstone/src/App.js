@@ -1,16 +1,19 @@
 import React from 'react';
-import MainHeader from './Components/Header/MainHeader';
 import { BrowserRouter } from 'react-router-dom';
-// import MenuContainer from './Components/HomePage/MenuContainer';
-import './App.css';
+import MainHeader from './Components/Header/MainHeader';
 import HomePage from './Pages/HomePage';
+import Row from 'react-bootstrap/Row';
+import './App.css';
+
 
 function App() {
   return (
     <div className='App-container'>
       <BrowserRouter>
-        <MainHeader />
-        <HomePage/>
+          <MainHeader />
+        <Row>
+          <HomePage/>
+        </Row>
       </BrowserRouter>
     </div>
   );

@@ -1,20 +1,30 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import ButtonLinkTemplate from '../Templates/ButtonLinkTemplate';
 import Nav from 'react-bootstrap/Nav';
-import ButtonLinkTemplate from '../Individual/Buttons/Templates/ButtonNavLinks/ButtonLinkTemplate';
-//import {  PuzzleGeneratorNavLink, ViewTopicsNavLink, CreateTopicNavLink } from '../Individual/Buttons/Templates/ButtonNavLinks/ButtonLinks';
-import { StyledButtonNav } from '../ComponentStyling';
 
 const ButtonNavOrg = () => {
     return(
-        <>
+        <Container>
             <Nav>
-                    <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                    <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                <Col>
+                    <Row>
+                        <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                    </Row>
+                    <Row>
+                        <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                    </Row>
+                    <Row>
+                        <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    </Row>
+                </Col>
+                    
             </Nav>
             <Outlet />
-        </>
+        </Container>
     );
 };
 export default ButtonNavOrg;
