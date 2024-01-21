@@ -8,10 +8,10 @@ const NavBarOrg = () => {
         <React.Fragment>
             <StyledMenuBarNav>
                 <React.Fragment>
-                    <NavigationLinkTemplate pathway="/" textDisplayed="Home"/>
-                        <NavigationLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                        <NavigationLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                        <NavigationLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    <NavigationLinkTemplate pathway="/" textDisplayed={<h3 style={{fontWeight: "normal"}}>Home</h3>}/>
+                        <NavigationLinkTemplate pathway="/puzzle-generator" textDisplayed={<h3 style={{fontWeight: "normal"}}>Puzzle Generator</h3>}/>
+                        <NavigationLinkTemplate pathway="/view-topics" textDisplayed={<h3 style={{fontWeight: "normal"}}>View Topics</h3>}/>
+                        <NavigationLinkTemplate pathway="/create-topic" textDisplayed={<h3 style={{fontWeight: "normal"}}>Create Topic</h3>}/>
                 </React.Fragment>
             </StyledMenuBarNav>
             <Outlet />

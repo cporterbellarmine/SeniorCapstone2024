@@ -2,4 +2,6 @@
     background-color: dimgrey;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 15vh;
 };

@@ -1,9 +1,8 @@
 
 
 .App-container{
-    background-color:antiquewhite;
     padding-left: 5%;
     padding-right: 5%;
-    height: 100vh;
+    /* //height: 100lvh; */
     align-items: center;
 };

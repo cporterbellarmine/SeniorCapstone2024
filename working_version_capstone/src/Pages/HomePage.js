@@ -1,12 +1,13 @@
 import React from 'react';
 import MenuContainer from '../Components/HomePage/MenuContainer';
+import './HomePage.css';
 
 function HomePage() {
     return(
-        <React.Fragment>
+        <div className='HomePage-size'>
             <h1>Home Page</h1>
             <MenuContainer />
-        </React.Fragment>
+        </div>
         
     );
 }
