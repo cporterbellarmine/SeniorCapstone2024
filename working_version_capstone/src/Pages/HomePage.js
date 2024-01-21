@@ -4,7 +4,7 @@ import './HomePage.css';
 
 function HomePage() {
     return(
-        <div className='HomePage-size'>
+        <div className='HomePage'>
             <h1>Home Page</h1>
             <MenuContainer />
         </div>

@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ButtonNavigation from './ButtonNavigation';
 
 const MenuContainer = () => {
     return(
-        <React.Fragment>
-                <ButtonNavigation />
-        </React.Fragment>
+        <>
+            <ButtonNavigation />
+        </>
     );
 }
 export default MenuContainer;

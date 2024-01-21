@@ -1,21 +1,22 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 import NavigationLinkTemplate from './NavigationLinkTemplate';
-import { StyledMenuBarNav } from '../ComponentStyling';
+import { StyledBSNavBar } from '../ComponentStyling';
 
-const NavBarOrg = () => {
+const NavBarLayout = () => {
     return(
-        <React.Fragment>
-            <StyledMenuBarNav>
-                <React.Fragment>
+        <div>
+            <StyledBSNavBar>
+                <>
                     <NavigationLinkTemplate pathway="/" textDisplayed={<h3 style={{fontWeight: "normal"}}>Home</h3>}/>
                         <NavigationLinkTemplate pathway="/puzzle-generator" textDisplayed={<h3 style={{fontWeight: "normal"}}>Puzzle Generator</h3>}/>
                         <NavigationLinkTemplate pathway="/view-topics" textDisplayed={<h3 style={{fontWeight: "normal"}}>View Topics</h3>}/>
                         <NavigationLinkTemplate pathway="/create-topic" textDisplayed={<h3 style={{fontWeight: "normal"}}>Create Topic</h3>}/>
-                </React.Fragment>
-            </StyledMenuBarNav>
+                </>
+            </StyledBSNavBar>
             <Outlet />
-        </React.Fragment>
+        </div>
     );
 }
-export default NavBarOrg;
+export default NavBarLayout;

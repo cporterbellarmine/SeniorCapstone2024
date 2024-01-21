@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyledMenuBarLink } from '../ComponentStyling';
+import { StyledNavLink } from '../ComponentStyling';
 
 function NavigationLinkTemplate(props){
     return(
-        <StyledMenuBarLink to={props.pathway}>{props.textDisplayed}</StyledMenuBarLink>
+        <StyledNavLink to={props.pathway}>{props.textDisplayed}</StyledNavLink>
     );
 }
 export default NavigationLinkTemplate;

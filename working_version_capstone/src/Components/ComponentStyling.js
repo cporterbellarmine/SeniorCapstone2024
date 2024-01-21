@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
 import styled from "styled-components";
 
 export const StyledMenuBarNav = styled.nav`
@@ -7,7 +8,12 @@ export const StyledMenuBarNav = styled.nav`
     background: crimson;
 `;
 
-export const StyledMenuBarLink = styled(Link)`
+export const StyledBSNavBar = styled(Nav)`
+    background-color: crimson;
+
+`;
+
+export const StyledNavLink = styled(NavLink)`
     padding: 1%;
     display: inline-grid;
     height: 4dvh;
@@ -26,17 +32,14 @@ export const StyledMenuBarLink = styled(Link)`
 
 export const StyledButtonNav = styled.nav`
     display: grid;
-    height: 100%;
-    grid-gap: 1dvh;
     padding: 4%;
-    margin: 5%;
-    width: 40%;
+    width: 35vi;
     background-color: darkorange;
 `;
 
 export const StyledButtonLink = styled(Link)`
     display: grid;
-    //height: vh;
+    margin: 5%;
     padding: 5%;
     outline: solid;
     place-content: center;
