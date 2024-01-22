@@ -17,13 +17,11 @@ function HomePage() {
                     <Container>
                         <MenuContainer />
                     </Container>
-                    
                 </Col>
                 <PhotoCol className='d-flex align-items-center justify-content-center'>
                     <Container>
                         <PuzzlePicture />
                     </Container>
-                    
                 </PhotoCol>
             </Row>
         </StyledContainer>

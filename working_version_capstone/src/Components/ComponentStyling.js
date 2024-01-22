@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
+import Stack from 'react-bootstrap/Stack';
 import styled from "styled-components";
 
 export const StyledMenuBarNav = styled.nav`
@@ -35,6 +36,7 @@ export const StyledButtonNav = styled.nav`
 export const StyledButtonLink = styled(NavLink)`
     display: grid;
     padding: 5%;
+    margin: 5%;
     outline: solid;
     place-content: center;
     background-color: crimson;
@@ -48,4 +50,8 @@ export const StyledButtonLink = styled(NavLink)`
 
 export const StyledMenuCol = styled(Col)`
     background-color: gainsboro;
-`
+`;
+
+export const StyledNavBarStack = styled(Stack)`
+    display: inline-flex;
+`;

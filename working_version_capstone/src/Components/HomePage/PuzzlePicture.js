@@ -1,5 +1,6 @@
 import React from 'react';
 import { PictureCol } from './PuzzlePictureStyling';
+import Row from 'react-bootstrap/Row';
 
 const PuzzlePicture = () => {
     return(
