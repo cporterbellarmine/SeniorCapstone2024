@@ -1,18 +1,20 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import ButtonNavigation from './ButtonNavigation';
+import Col from 'react-bootstrap/Col';
+import ButtonNavRouting from './ButtonNavRouting';
+import { StyledMenuCol } from '../ComponentStyling';
 
 const MenuContainer = () => {
     return(
-        <d>
+        <Col>
             <Row>
                 <h1>Menu</h1>
             </Row>
             <Row>
-                <ButtonNavigation />
+                <ButtonNavRouting />
             </Row>
-        </d>
+        </Col>
     );
 }
 export default MenuContainer;

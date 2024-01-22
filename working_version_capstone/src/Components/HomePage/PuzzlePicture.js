@@ -4,7 +4,7 @@ import { PhotoSpot } from '../ComponentStyling';
 const PuzzlePicture = () => {
     return(
         <PhotoSpot>
-            <h2>ExamplePhotoHere</h2>
+            <h3>ExamplePhotoHere</h3>
         </PhotoSpot>
     );
 };

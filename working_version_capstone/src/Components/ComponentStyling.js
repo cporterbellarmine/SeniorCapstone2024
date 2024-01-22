@@ -1,7 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
+
+//Used in Components\Header\MainHeader.js
+export const NoWrapContainer = styled(Container)`
+    flex-wrap: nowrap;
+`;
 
 //Used in Components\Header\NavBarLayout.js
 export const StyledBSNavBar = styled(Nav)`
@@ -11,7 +17,6 @@ export const StyledBSNavBar = styled(Nav)`
 //Used in Components\Header\NavigationLinkTemplate.js
 export const StyledNavLink = styled(NavLink)`
     display: inline-grid;
-    background-color: crimson;
     border-left: solid;
     border-right: solid;
     border-width: thin;
@@ -36,10 +41,13 @@ export const StyledButtonLink = styled(NavLink)`
         background-color: maroon;
         color: white;
     }
+
+    @media screen and (max-width: 400px){
+        border: dotted;
+    }
 `;
 
 //Used in Components\HomePage\PuzzlePicture.js
 export const PhotoSpot = styled(Col)`
     background: cadetblue;
 `;
-

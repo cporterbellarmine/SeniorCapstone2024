@@ -8,20 +8,22 @@ import { StyledContainer, StyledMenuCol, PhotoCol } from './HomePageComponentSty
 function HomePage() {
     return(
         <StyledContainer>
-            <Row className='pt-3 px-2'>
-                <h1>Home Page</h1>
-            </Row>
-            <Row className='my-5'>
-                <Col className='col-sm-1'/>
-                <StyledMenuCol className='col-sm-4'>
-                    <MenuContainer />
-                </StyledMenuCol>
-                <Col className='col-sm-2'/>
-                <PhotoCol className='col-sm-4 d-flex align-items-center justify-content-center'>
-                    <PuzzlePicture />
-                </PhotoCol>
-                <Col className='col-sm-1'/>
-            </Row>
+            <Col>
+                <Row className='pt-3 px-2'>
+                    <h1>Home Page</h1>
+                </Row>
+                <Row className='my-5'>
+                    <Col className='col-sm-1'/>
+                    <StyledMenuCol className='col-sm-4'>
+                        <MenuContainer />
+                    </StyledMenuCol>
+                    <Col className='col-sm-2'/>
+                    <PhotoCol className='col-sm-4 d-flex align-items-center justify-content-center'>
+                        <PuzzlePicture />
+                    </PhotoCol>
+                    <Col className='col-sm-1'/>
+                </Row>
+            </Col>
         </StyledContainer>
         // mx-4 mb-5'
     );

@@ -2,12 +2,13 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Stack from 'react-bootstrap/Stack';
+import Row from 'react-bootstrap/Row';
 import ButtonLinkTemplate from './ButtonLinkTemplate';
 
 
 const ButtonNavOrg = () => {
     return(
-        <>
+        <Row>
             <Nav>
                 <Stack gap={1}>
                     <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
@@ -16,7 +17,7 @@ const ButtonNavOrg = () => {
                 </Stack>
             </Nav>
             <Outlet />
-        </>
+        </Row>
     );
 };
 export default ButtonNavOrg;

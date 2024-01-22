@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route , Routes } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 import HomePage from '../../Pages/HomePage';
 import PuzzleGenerator from '../../Pages/PuzzleGeneratorPage';
 import ViewTopics from '../../Pages/ViewTopics';
@@ -9,9 +10,9 @@ import NavBarLayout from './NavBarLayout';
 
 function NavBarRouting(){
     return(
-        <>
+        <Container>
             <Routes>
-                <Route path='/' element={<NavBarLayout />}>
+                <Route path='/*' element={<NavBarLayout />}>
                     <Route index element={<HomePage />} />
                     <Route path='puzzle-generator' element={<PuzzleGenerator />} />
                     <Route path='view-topics' element={<ViewTopics />} />
@@ -19,7 +20,7 @@ function NavBarRouting(){
                     <Route path='*' element={<ErrorPage />} />
                 </Route>
             </Routes>
-        </>
+        </Container>
     );
 }
 export default NavBarRouting;
