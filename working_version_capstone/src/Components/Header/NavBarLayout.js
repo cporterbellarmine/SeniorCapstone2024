@@ -1,7 +1,5 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 import NavigationLinkTemplate from './NavigationLinkTemplate';
 import { StyledBSNavBar } from '../ComponentStyling';

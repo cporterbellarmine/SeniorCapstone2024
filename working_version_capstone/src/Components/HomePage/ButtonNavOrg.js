@@ -1,11 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Stack from 'react-bootstrap/Stack';
-import Container from 'react-bootstrap/Container';
-import ButtonLinkTemplate from '../Templates/ButtonLinkTemplate';
 import Nav from 'react-bootstrap/Nav';
+import Stack from 'react-bootstrap/Stack';
+import ButtonLinkTemplate from './ButtonLinkTemplate';
+
 
 const ButtonNavOrg = () => {
     return(

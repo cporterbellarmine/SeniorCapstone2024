@@ -1,20 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
-import Stack from 'react-bootstrap/Stack';
 import styled from "styled-components";
 
-export const StyledMenuBarNav = styled.nav`
-    justify-content: flex-start;
-    background: crimson;
-`;
-
+//Used in Components\Header\NavBarLayout.js
 export const StyledBSNavBar = styled(Nav)`
     background-color: crimson;
 `;
 
+//Used in Components\Header\NavigationLinkTemplate.js
 export const StyledNavLink = styled(NavLink)`
-    padding: 1%;
     display: inline-grid;
     background-color: crimson;
     border-left: solid;
@@ -29,14 +24,9 @@ export const StyledNavLink = styled(NavLink)`
     }
 `;
 
-export const StyledButtonNav = styled.nav`
-    padding: 4%;
-`;
-
+//Used in Components\HomePage\ButtonLinkTemplate.js
 export const StyledButtonLink = styled(NavLink)`
     display: grid;
-    padding: 5%;
-    margin: 5%;
     outline: solid;
     place-content: center;
     background-color: crimson;
@@ -48,10 +38,12 @@ export const StyledButtonLink = styled(NavLink)`
     }
 `;
 
+//Used in Components\HomePage\MenuContainer.js
 export const StyledMenuCol = styled(Col)`
     background-color: gainsboro;
 `;
 
-export const StyledNavBarStack = styled(Stack)`
-    display: inline-flex;
+//Used in Components\HomePage\PuzzlePicture.js
+export const PictureCol = styled(Col)`
+    background: cadetblue;
 `;

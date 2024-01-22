@@ -10,9 +10,9 @@ function App() {
   return (
     <div className='App-container'>
       <BrowserRouter>
-          <MainHeader />
         <Row>
-          <HomePage/>
+          <MainHeader />
+          {/* <HomePage/> */}
         </Row>
       </BrowserRouter>
     </div>

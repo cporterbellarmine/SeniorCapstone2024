@@ -8,7 +8,7 @@ function MainHeader() {
     return(
         <Col>
             <Row>
-                 <div className='MainHeader-headerDiv'>
+                 <div className='MainHeader-headerDiv p-4'>
                     <h1>Word Search Generator</h1>
                 </div>
             </Row>

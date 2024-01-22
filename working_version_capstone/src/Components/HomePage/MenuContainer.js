@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyledMenuCol } from '../ComponentStyling';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
 import ButtonNavigation from './ButtonNavigation';
+import { StyledMenuCol } from '../ComponentStyling';
 
 const MenuContainer = () => {
     return(

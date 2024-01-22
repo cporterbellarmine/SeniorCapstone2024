@@ -3,7 +3,7 @@ import { StyledNavLink } from '../ComponentStyling';
 
 function NavigationLinkTemplate(props){
     return(
-        <StyledNavLink to={props.pathway}>{props.textDisplayed}</StyledNavLink>
+        <StyledNavLink className='text-center text-nowrap p-3' to={props.pathway}>{props.textDisplayed}</StyledNavLink>
     );
 }
 export default NavigationLinkTemplate;
