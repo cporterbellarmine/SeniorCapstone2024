@@ -1,11 +1,11 @@
 import React from 'react';
-import { PictureCol } from '../ComponentStyling';
+import { PhotoSpot } from '../ComponentStyling';
 
 const PuzzlePicture = () => {
     return(
-        <PictureCol>
+        <PhotoSpot>
             <h2>ExamplePhotoHere</h2>
-        </PictureCol>
+        </PhotoSpot>
     );
 };
 export default PuzzlePicture;

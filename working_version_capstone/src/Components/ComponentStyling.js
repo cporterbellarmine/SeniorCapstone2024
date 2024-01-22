@@ -38,12 +38,8 @@ export const StyledButtonLink = styled(NavLink)`
     }
 `;
 
-//Used in Components\HomePage\MenuContainer.js
-export const StyledMenuCol = styled(Col)`
-    background-color: gainsboro;
-`;
-
 //Used in Components\HomePage\PuzzlePicture.js
-export const PictureCol = styled(Col)`
+export const PhotoSpot = styled(Col)`
     background: cadetblue;
 `;
+
