@@ -6,7 +6,9 @@ function PuzzlePicture() {
     return(
         <>
          <PhotoSpot>
-            <h3>PhotoHere</h3>
+            <div>
+                <h3>PhotoHere</h3>
+            </div>
          </PhotoSpot>
         </>
     );

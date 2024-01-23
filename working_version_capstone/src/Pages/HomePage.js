@@ -14,11 +14,11 @@ function HomePage() {
                 </Row>
                 <Row className='my-5'>
                     <Col className='col-1'/>
-                    <StyledMenuCol className='col-10 col-sm-7'>
+                    <StyledMenuCol className='col-10 col-sm-5'>
                         <MenuContainer />
                     </StyledMenuCol>
                     <Col className='col-0 col-sm-1'/>
-                    <PhotoCol className='col-0 col-sm-2 d-flex align-items-center justify-content-center'>
+                    <PhotoCol className='col-0 col-sm-4 d-flex align-items-center justify-content-center'>
                         <PuzzlePicture/>
                     </PhotoCol>
                     <Col className='col-1 col-sm-1'/>

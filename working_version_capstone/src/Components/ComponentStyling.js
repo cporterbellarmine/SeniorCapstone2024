@@ -42,12 +42,17 @@ export const StyledButtonLink = styled(NavLink)`
         color: white;
     }
 
-    @media screen and (max-width: 400px){
+    @media screen and (max-width: 576px){
         border: dotted;
     }
+    
 `;
 
 //Used in Components\HomePage\PuzzlePicture.js
 export const PhotoSpot = styled(Col)`
     background-color: cadetblue;
+    
+    @media screen and (max-width: 576px){
+        display: none;
+    }
 `;
