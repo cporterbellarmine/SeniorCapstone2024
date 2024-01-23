@@ -5,7 +5,9 @@ import { PhotoSpot } from '../ComponentStyling';
 function PuzzlePicture() {
     return(
         <>
-         <PhotoSpot />
+         <PhotoSpot>
+            <h3>PhotoHere</h3>
+         </PhotoSpot>
         </>
     );
 };
