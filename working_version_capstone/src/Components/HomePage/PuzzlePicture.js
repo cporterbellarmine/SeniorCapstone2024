@@ -1,11 +1,12 @@
 import React from 'react';
 import { PhotoSpot } from '../ComponentStyling';
+// import './PuzzlePicture.css'
 
-const PuzzlePicture = () => {
+function PuzzlePicture() {
     return(
-        <PhotoSpot>
-            <h3>ExamplePhotoHere</h3>
-        </PhotoSpot>
+        <>
+         <PhotoSpot />
+        </>
     );
 };
 export default PuzzlePicture;

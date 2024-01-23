@@ -49,5 +49,5 @@ export const StyledButtonLink = styled(NavLink)`
 
 //Used in Components\HomePage\PuzzlePicture.js
 export const PhotoSpot = styled(Col)`
-    background: cadetblue;
+    background-color: cadetblue;
 `;

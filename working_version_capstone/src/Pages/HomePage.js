@@ -13,15 +13,15 @@ function HomePage() {
                     <h1>Home Page</h1>
                 </Row>
                 <Row className='my-5'>
-                    <Col className='col-sm-1'/>
-                    <StyledMenuCol className='col-sm-4'>
+                    <Col className='col-1'/>
+                    <StyledMenuCol className='col-10'>
                         <MenuContainer />
                     </StyledMenuCol>
-                    <Col className='col-sm-2'/>
-                    <PhotoCol className='col-sm-4 d-flex align-items-center justify-content-center'>
-                        <PuzzlePicture />
+                    <Col className='col-0'/>
+                    <PhotoCol className='col-0 col-sm-4 d-flex align-items-center justify-content-center'>
+                        <PuzzlePicture/>
                     </PhotoCol>
-                    <Col className='col-sm-1'/>
+                    <Col className='col-1 col-sm-1'/>
                 </Row>
             </Col>
         </StyledContainer>

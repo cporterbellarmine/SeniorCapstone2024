@@ -14,5 +14,5 @@ export const StyledMenuCol = styled(Col)`
 `;
 
 export const PhotoCol = styled(Col)`
-    background: crimson;
+    background-color: crimson;
 `;
