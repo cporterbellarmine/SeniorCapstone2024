@@ -4,20 +4,20 @@ import Col from 'react-bootstrap/Col';
 import { NoWrapContainer } from '../ComponentStyling';
 import Container from 'react-bootstrap/Container';
 import NavBarRouting from './NavBarRouting';
-import './MainHeader.css'
+import './main-header.css'
 
 function MainHeader() {
     return(
-        <NoWrapContainer>
+        <Container>
             <Row>
-                <div className='MainHeader-headerDiv p-4'>
+                <div className='main-header-div p-4'>
                     <h1>Word Search Generator</h1>
                 </div>
             </Row>
-            <Row>
+            <Row className='d-flex'>
                 <NavBarRouting />
             </Row>
-        </NoWrapContainer>  
+        </Container>  
     );
 };
 export default MainHeader;

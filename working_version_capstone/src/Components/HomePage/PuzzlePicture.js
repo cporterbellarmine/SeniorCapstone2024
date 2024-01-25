@@ -1,12 +1,14 @@
 import React from 'react';
 import { PhotoSpot } from '../ComponentStyling';
+import PlaceHolderImage from '../../Images/wordsearchplaceholderphoto.png';
 
 function PuzzlePicture() {
     return(
         <>
-         <PhotoSpot>
-            <h3>PhotoHere</h3>
-         </PhotoSpot>
+         <PhotoSpot >
+            {/* <h3>PhotoHere</h3> */}
+            <img src={PlaceHolderImage} className='p-2 img-fluid' alt='Word Search'/>
+         </PhotoSpot > 
         </>
     );
 };

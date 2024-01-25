@@ -43,15 +43,15 @@ export const StyledButtonLink = styled(NavLink)`
         color: white;
     }
 
-    @media screen and (max-width: 576px){
+    @media screen and (max-width: 575px){
         border: dotted;
     }
     
 `;
 
-export const AlignedRowNav = styled(Nav)`
-    place-content: center;
-`;
+// export const AlignedRowNav = styled(Nav)`
+//     place-content: center;
+// `;
 
 //Used in Components\HomePage\PuzzlePicture.js
 export const PhotoSpot = styled(Col)`
