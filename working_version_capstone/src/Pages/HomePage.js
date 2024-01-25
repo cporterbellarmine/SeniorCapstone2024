@@ -26,7 +26,6 @@ function HomePage() {
                 </Row>
             </Col>
         </StyledContainer>
-        // mx-4 mb-5'
     );
 }
 export default HomePage;

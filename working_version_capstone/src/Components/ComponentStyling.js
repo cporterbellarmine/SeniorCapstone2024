@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
@@ -48,10 +47,6 @@ export const StyledButtonLink = styled(NavLink)`
     }
     
 `;
-
-// export const AlignedRowNav = styled(Nav)`
-//     place-content: center;
-// `;
 
 //Used in Components\HomePage\PuzzlePicture.js
 export const PhotoSpot = styled(Col)`
