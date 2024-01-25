@@ -12,7 +12,7 @@ function MainHeader() {
                     <h1>Word Search Generator</h1>
                 </div>
             </Row>
-            <Row className='d-flex'>
+            <Row>
                 <NavBarRouting />
             </Row>
         </Container>  

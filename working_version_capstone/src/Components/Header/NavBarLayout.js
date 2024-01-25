@@ -8,12 +8,16 @@ import { StyledBSNavBar } from '../ComponentStyling';
 const NavBarLayout = () => {
     return(
         <Row>
-            <StyledBSNavBar expand="sm">
-                <Stack direction='horizontal' style={{display: 'flex'}}>
+            <StyledBSNavBar>
+                <Stack direction='horizontal'>
                     <NavLinkTemplate pathway="/" textDisplayed="Home"/>
+                    <div className='vr'/>
                     <NavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                    <div className='vr'/>
                     <NavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                    <div className='vr'/>
                     <NavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    <div className='vr'/>
                 </Stack>
             </StyledBSNavBar>
             <Outlet />

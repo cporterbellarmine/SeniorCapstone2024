@@ -7,22 +7,22 @@ import { StyledContainer, StyledMenuCol, PhotoCol } from './HomePageComponentSty
 
 function HomePage() {
     return(
-        <StyledContainer >
+        <StyledContainer>
             <Col>
-                <Row className='pt-3 px-2'>
+                <Row className='py-4 px-2'>
                     <h1>Home Page</h1>
                 </Row>
                 <Row className='mb-5 mt-3'>
                     <Col className='col-1 order-first' />
-                    <StyledMenuCol className='col-10 order-5 col-md-5 order-md-1'>
+                    <StyledMenuCol className='p-3 col-10 order-5 col-md-5 order-md-1 col-xl-5'>
                         <MenuContainer />
                     </StyledMenuCol>
-                    <Col className='col-1 order-2 col-md-1 order-md-2' />
+                    <Col className='col-1 order-2 order-md-2 order-md-3 col-xl-2' />
                     <Col className='col-1 order-3 d-md-none' />
-                    <PhotoCol className='col-10 col-md-4 order-md-3 p-3 d-flex align-items-center'>
+                    <PhotoCol className='p-3 col-10 col-md-4 order-md-3 col-xl-3'>
                         <PuzzlePicture />
                     </PhotoCol>
-                    <Col className='col-1 order-last col-md-1 order-md-4' />
+                    <Col className='col-1 order-last order-md-4' />
                 </Row>
             </Col>
         </StyledContainer>

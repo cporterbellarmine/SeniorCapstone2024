@@ -1,9 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
 import ButtonNavLayout from './ButtonNavLayout';
-import HomePage from '../../Pages/HomePage';
 import PuzzleGenerator from '../../Pages/PuzzleGeneratorPage';
 import ViewTopics from '../../Pages/ViewTopics';
 import CreateTopic from '../../Pages/CreateTopic';

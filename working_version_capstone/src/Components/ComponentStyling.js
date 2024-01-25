@@ -17,9 +17,6 @@ export const StyledBSNavBar = styled(Nav)`
 //Used in Components\Header\NavigationLinkTemplate.js
 export const StyledNavLink = styled(NavLink)`
     display: inline-grid;
-    border-left: solid;
-    border-right: solid;
-    border-width: thin;
     align-content: center;
     color: black;
     text-decoration: none;
