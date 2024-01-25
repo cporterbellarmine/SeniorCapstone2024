@@ -4,9 +4,6 @@ import Col from 'react-bootstrap/Col';
 
 export const StyledContainer = styled(Container)`
     background-color: darkgrey;
-    display: flex;
-    flex-wrap: nowrap;
-    
 `;
 
 export const StyledMenuCol = styled(Col)`
