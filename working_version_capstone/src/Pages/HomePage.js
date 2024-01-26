@@ -8,23 +8,28 @@ import { StyledContainer, StyledMenuCol, PhotoCol } from './HomePageComponentSty
 function HomePage() {
     return(
         <StyledContainer>
-            <Col>
-                <Row className='py-2 px-2'>
-                    <h1>Home Page</h1>
-                </Row>
-                <Row className='mb-5 mt-3'>
-                    <Col className='col-2 order-first col-md-1' />
-                    <StyledMenuCol className='p-3 align-content-center col-8 order-5 col-md-4 order-md-1 col-lg-5 col-xl-5'>
-                        <MenuContainer />
-                    </StyledMenuCol>
-                    <Col className='col-2 order-2 col-md-1 order-md-2 col-lg-1 col-xl-1' />
-                    <Col className='col-2 order-3 col-md-1 d-md-none' />
-                    <PhotoCol className='p-3 d-flex col-8 col-md-5 order-md-5 col-lg-4 col-xl-4'>
-                        <PuzzlePicture />
-                    </PhotoCol>
-                    <Col className='col-2 order-last col-md-1' />
-                </Row>
-            </Col>
+            <Row className='m-3'>
+                
+                <Col className='col-6 col-md-7'>
+                    <Row className='p-2'>
+                        <h1>Home Page</h1>
+                    </Row>
+                    <Row className='p-1'>
+                        <Col className='col-1' />
+                        <StyledMenuCol className='col-10'>
+                            <MenuContainer />
+                        </StyledMenuCol>
+                        <Col className='col-1' />
+                    </Row>
+                </Col>
+                <Col className='col-6 col-md-5 p-3'>
+                    <Row className=''>
+                        <PhotoCol className='10 p-3'>
+                            <PuzzlePicture />
+                        </PhotoCol>
+                    </Row>
+                </Col>
+            </Row>
         </StyledContainer>
     );
 }
