@@ -3,12 +3,12 @@ import { Outlet } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';
 import Row from 'react-bootstrap/Row';
 import NavLinkTemplate from './NavLinkTemplate';
-import { StyledBSNavBar } from '../ComponentStyling';
+import { StyledTopNavBar } from '../ComponentStyling';
 
 const NavBarLayout = () => {
     return(
         <Row>
-            <StyledBSNavBar>
+            <StyledTopNavBar>
                 <Stack direction='horizontal'>
                     <NavLinkTemplate pathway="/" textDisplayed="Home"/>
                     <div className='vr'/>
@@ -19,7 +19,7 @@ const NavBarLayout = () => {
                     <NavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
                     <div className='vr'/>
                 </Stack>
-            </StyledBSNavBar>
+            </StyledTopNavBar>
             <Outlet />
         </Row>
     );

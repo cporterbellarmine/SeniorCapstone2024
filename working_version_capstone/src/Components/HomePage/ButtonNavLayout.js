@@ -8,16 +8,17 @@ import ButtonLinkTemplate from './ButtonLinkTemplate';
 
 const ButtonNavOrg = () => {
     return(
-        <Row>
-            <Nav>
-                <Stack gap={1}>
-                    <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                    <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
-                </Stack>
+        <>
+            <Nav style={{ display:'flex', justifyContent:'center'}}>
+                    <Stack gap={1}>
+                        <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                        <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                        <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    </Stack>
             </Nav>
             <Outlet />
-        </Row>
+        </>
+        
     );
 };
 export default ButtonNavOrg;

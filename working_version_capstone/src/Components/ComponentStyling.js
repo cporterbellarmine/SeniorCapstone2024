@@ -10,7 +10,7 @@ export const NoWrapContainer = styled(Container)`
 `;
 
 //Used in Components\Header\NavBarLayout.js
-export const StyledBSNavBar = styled(Nav)`
+export const StyledTopNavBar = styled(Nav)`
     background-color: crimson;
 `;
 
@@ -28,7 +28,7 @@ export const StyledNavLink = styled(NavLink)`
 
 //Used in Components\HomePage\ButtonLinkTemplate.js
 export const StyledButtonLink = styled(NavLink)`
-    display: grid;
+    display: inline-grid;
     outline: solid;
     place-content: center;
     background-color: crimson;

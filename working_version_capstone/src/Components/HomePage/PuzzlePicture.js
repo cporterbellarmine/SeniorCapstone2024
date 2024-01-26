@@ -7,7 +7,7 @@ function PuzzlePicture() {
         <>
          <PhotoSpot className='d-flex'>
             {/* <h3>PhotoHere</h3> */}
-            <img src={PlaceHolderImage} className='p-2 img-fluid d-flex' alt='Word Search'/>
+            <img src={PlaceHolderImage} className='p-2 img-fluid' alt='Word Search'/>
          </PhotoSpot > 
         </>
     );

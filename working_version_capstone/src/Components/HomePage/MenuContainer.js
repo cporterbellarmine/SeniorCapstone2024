@@ -6,13 +6,11 @@ import ButtonNavRouting from './ButtonNavRouting';
 const MenuContainer = () => {
     return(
         <Col>
-            <Row className='p-3 justify-content-center'>
-                <Row>
-                    <h1>Menu</h1>
-                </Row>
-                <Row>
-                    <ButtonNavRouting />
-                </Row>
+            <Row>
+                <h1>Menu</h1>
+            </Row>
+            <Row>
+                <ButtonNavRouting />
             </Row>
         </Col>
     );
