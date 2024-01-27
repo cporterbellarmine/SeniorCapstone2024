@@ -9,7 +9,7 @@ import ButtonLinkTemplate from './ButtonLinkTemplate';
 const ButtonNavOrg = () => {
     return(
         <>
-            <Nav style={{ display:'flex', justifyContent:'center'}}>
+            <Nav>
                     <Stack gap={1}>
                         <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
                         <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
