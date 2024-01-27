@@ -8,22 +8,24 @@ import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from
 function HomePage() {
     return(
         <StyledContainer>
-            <Row className='m-3 d-flex'>
-
+            <Row className='m-3'>
                 <XsTitleRow className='p-2 order-first'>
                     <h1>Home Page</h1>
                 </XsTitleRow>
-
-                <Col className='col-12 order-3 order-md-first col-md-7'>
-                    <MdTitleRow className='p-2'>
-                        <h1>Home Page</h1>
-                    </MdTitleRow>
-                    <Row className='p-1'>
-                        <Col className='order-first col-1' />
-                        <StyledMenuCol className='order-2 col-10 d-flex justify-content-center'>
-                            <MenuContainer />
-                        </StyledMenuCol>
-                        <Col className='order-3 col-1' />
+                <Col className='d-flex order-3 order-md-first col-md-7'>
+                    <Row className='flex-grow-1'>
+                        <MdTitleRow className='p-2'>
+                            <h1>Home Page</h1>
+                        </MdTitleRow>
+                        <Col>
+                            <Row className='p-1 align-items-center'>
+                                <Col className='order-first col-1' />
+                                <StyledMenuCol className='order-2 col-10'>
+                                    <MenuContainer />
+                                </StyledMenuCol>
+                                <Col className='order-3 col-1' />
+                            </Row>
+                        </Col>
                     </Row>
                 </Col>
                 <Col className='col-12 order-2 col-md-5 d-flex'>
