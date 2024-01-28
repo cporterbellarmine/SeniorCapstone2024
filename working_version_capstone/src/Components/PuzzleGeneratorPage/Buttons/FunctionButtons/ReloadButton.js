@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 const ReloadButton = () => {
     return(
-        <Button variant='primary' size='sm'>Reload Puzzle</Button>
+        <Button variant='primary' size='md'>Reload Puzzle</Button>
     );
 };
 export default ReloadButton;
