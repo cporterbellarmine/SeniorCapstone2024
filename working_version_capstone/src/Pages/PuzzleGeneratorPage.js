@@ -4,12 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { BackgroundContainer } from './PuzzleGeneratorComponents';
 import OptionsContainer from '../Components/PuzzleGeneratorPage/Containers/OptionsContainer';
-import PreviewContainer from '../Components/PuzzleGeneratorPage/PreviewContainer';
+import PreviewContainer from '../Components/PuzzleGeneratorPage/Containers/PreviewContainer';
 
 const PuzzleGenerator = () => {
     return(
         <BackgroundContainer>
-            <Row>
+            <Row className='p-4 d-flex'>
                 <h1>Puzzle Generator Page</h1>
                 <Col>
                     <OptionsContainer />

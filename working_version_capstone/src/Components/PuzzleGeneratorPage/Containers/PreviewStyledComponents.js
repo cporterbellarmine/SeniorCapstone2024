@@ -8,10 +8,10 @@ export const SubCol = styled(Col)`
     background-color: rosybrown;
 `;
 
-// export const ButtonRow = styled(Row)`
-//     background-color: skyblue;
-// `;
+export const ButtonRow = styled(Row)`
+    background-color: skyblue;
+`;
 
 export const StyledTitleRow = styled(Row)`
-    background-color: oldlace;
+    background-color: lightsteelblue;
 `;
