@@ -6,8 +6,8 @@ import Stack from 'react-bootstrap/Stack';
 import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
 import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Dropdowns/TopicDropdown';
-import { InstructionsRowStyled } from './PreviewStyledComponents';
-import { SubCol } from './PreviewStyledComponents';
+import { InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
+import { SubCol } from '../Containers/PreviewStyledComponents';
 
 const MdOptionsContainer = () => {
     return(

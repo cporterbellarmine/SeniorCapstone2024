@@ -7,11 +7,11 @@ import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
 import GenerateButton from '../Buttons/FunctionButtons/GenerateButton';
 import CreatePDFButton from '../Buttons/FunctionButtons/CreatePDFButton';
 import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';
-import PreviewDisplay from './PreviewDisplay';
+import PreviewDisplay from '../Containers/Components/PuzzlePreview/PreviewDisplay';
 import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Dropdowns/TopicDropdown';
-import { SubCol, ButtonRow, StyledTitleRow } from './PreviewStyledComponents';
-import { InstructionsRowStyled } from './PreviewStyledComponents';
+import { SubCol, ButtonRow, StyledTitleRow } from '../Containers/PreviewStyledComponents';
+import { InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
 
 const XsGeneratorPage = () => {
     return(

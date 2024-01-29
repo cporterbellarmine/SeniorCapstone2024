@@ -2,13 +2,12 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { BackgroundContainer } from './PuzzleGeneratorComponents';
-import MdOptionsContainer from '../Components/PuzzleGeneratorPage/PageDisplays/MdOptionsContainer';
-import MdPreviewContainer from '../Components/PuzzleGeneratorPage/PageDisplays/MdPreviewContainer';
+import MdOptionsContainer from './MdOptionsContainer';
+import MdPreviewContainer from './MdPreviewContainer';
 
-const PuzzleGenerator = () => {
+const MdGeneratorPage = () => {
     return(
-        <BackgroundContainer>
+        <Container>
             <Row className='p-4 d-flex'>
                 <h1>Puzzle Generator Page</h1>
                 <Col>
@@ -18,7 +17,7 @@ const PuzzleGenerator = () => {
                    <MdPreviewContainer />
                 </Col>
             </Row>
-        </BackgroundContainer>
+        </Container>
     );
-}
-export default PuzzleGenerator;
+};
+export default MdGeneratorPage
