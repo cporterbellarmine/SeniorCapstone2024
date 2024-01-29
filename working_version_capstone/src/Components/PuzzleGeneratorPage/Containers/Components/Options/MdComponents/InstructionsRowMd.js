@@ -1,7 +1,7 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { InstructionsRowMdStyled } from '../SizedStyles';
+import { InstructionsRowMdStyled } from '../SizedOptionsStyles';
 
 const InstructionsRowMd = () => {
     return(

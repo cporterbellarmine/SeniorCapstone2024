@@ -14,3 +14,13 @@ export const ButtonRow = styled(Row)`
 export const StyledTitleRow = styled(Row)`
     background-color: lightsteelblue;
 `;
+
+export const InstructionsRowStyled = styled(Row)`
+    background-color: sandybrown;
+`;
+
+export const PreviewContainerRow = styled(Row)`
+    border: solid;
+    border-width: thin;
+    background-color: white;
+`;
