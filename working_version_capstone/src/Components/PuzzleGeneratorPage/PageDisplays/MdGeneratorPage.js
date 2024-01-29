@@ -4,10 +4,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MdOptionsContainer from './MdOptionsContainer';
 import MdPreviewContainer from './MdPreviewContainer';
+import { HideMdContainer } from './ViewContainer';
 
 const MdGeneratorPage = () => {
     return(
-        <Container>
+        <HideMdContainer>
             <Row className='p-4 d-flex'>
                 <h1>Puzzle Generator Page</h1>
                 <Col>
@@ -17,7 +18,7 @@ const MdGeneratorPage = () => {
                    <MdPreviewContainer />
                 </Col>
             </Row>
-        </Container>
+        </HideMdContainer>
     );
 };
 export default MdGeneratorPage

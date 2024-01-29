@@ -10,12 +10,12 @@ import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';
 import PreviewDisplay from '../Containers/Components/PuzzlePreview/PreviewDisplay';
 import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Dropdowns/TopicDropdown';
-import { SubCol, ButtonRow, StyledTitleRow } from '../Containers/PreviewStyledComponents';
-import { InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
+import { SubCol, ButtonRow, StyledTitleRow, InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
+import { HideXsContainer } from './ViewContainer';
 
 const XsGeneratorPage = () => {
     return(
-        <Container>
+        <HideXsContainer>
             <Row>
                 <SubCol>
                     <Row>
@@ -71,7 +71,7 @@ const XsGeneratorPage = () => {
                     </ButtonRow>
                 </SubCol>
             </Row>
-        </Container>
+        </HideXsContainer>
     );
 };
 export default XsGeneratorPage;

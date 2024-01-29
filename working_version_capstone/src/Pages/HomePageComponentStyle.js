@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 export const XsTitleRow = styled(Row)`
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 769px){
         display: none;
     }
 `;
