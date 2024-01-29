@@ -6,8 +6,8 @@ import Stack from 'react-bootstrap/Stack';
 import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
 import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Dropdowns/TopicDropdown';
-import InstructionsTopRow from './Components/Options/InstructionsTopRow';
-import InstructionsBottomRow from './Components/Options/InstructionsBottomRow';
+import InstructionsRowXs from './Components/Options/XSComponents/InstructionsRowXs';
+import InstructionsRowMd from './Components/Options/MedComponents/InstructionsRowMd';
 import { SubCol } from './PreviewStyledComponents';
 
 const OptionsContainer = () => {
@@ -18,14 +18,14 @@ const OptionsContainer = () => {
                     <Row>
                         <PreviewButtonRouting />
                     </Row>
-                    <InstructionsTopRow />
+                    <InstructionsRowXs />
                     <Row className='order-3 py-4'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />
                         </Stack>
                     </Row>
-                    <InstructionsBottomRow />
+                    <InstructionsRowMd />
                 </SubCol>
             </Row>
             

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Row from 'react-bootstrap/Row';
 
-export const InstructionsRowTopStyled = styled(Row)`
+export const InstructionsRowXsStyled = styled(Row)`
     background-color: sandybrown;
 
     @media screen and (min-width: 768px){
@@ -10,7 +10,7 @@ export const InstructionsRowTopStyled = styled(Row)`
 
 `;
 
-export const InstructionsRowBottomStyled = styled(Row)`
+export const InstructionsRowMdStyled = styled(Row)`
     background-color: sandybrown;
     
     @media screen and (max-width: 768px){

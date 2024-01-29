@@ -1,11 +1,11 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { InstructionsRowBottomStyled } from './InstructionsRowsStyled';
+import { InstructionsRowMdStyled } from '../SizedStyles';
 
-const InstructionsBottomRow = () => {
+const InstructionsRowMd = () => {
     return(
-        <InstructionsRowBottomStyled className='p-3'>
+        <InstructionsRowMdStyled className='p-3'>
             <Col>
                 <Row>
                     <h2>Instructions</h2>
@@ -27,7 +27,7 @@ const InstructionsBottomRow = () => {
                     
                 </Row>
             </Col>
-        </InstructionsRowBottomStyled>
+        </InstructionsRowMdStyled>
     );
 };
-export default InstructionsBottomRow;
+export default InstructionsRowMd;

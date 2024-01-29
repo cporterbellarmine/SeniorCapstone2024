@@ -1,11 +1,11 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { InstructionsRowTopStyled } from './InstructionsRowsStyled';
+import { InstructionsRowXsStyled } from '../SizedStyles';
 
-const InstructionsTopRow = () => {
+const InstructionsRowXs = () => {
     return(
-        <InstructionsRowTopStyled className='p-3'>
+        <InstructionsRowXsStyled className='p-3'>
             <Col>
                 <Row>
                     <h2>Instructions</h2>
@@ -27,7 +27,7 @@ const InstructionsTopRow = () => {
                     
                 </Row>
             </Col>
-        </InstructionsRowTopStyled>
+        </InstructionsRowXsStyled>
     );
 };
-export default InstructionsTopRow;
+export default InstructionsRowXs;
