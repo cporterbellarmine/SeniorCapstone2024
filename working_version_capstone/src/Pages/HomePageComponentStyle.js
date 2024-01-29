@@ -10,7 +10,7 @@ export const XsTitleRow = styled(Row)`
 `;
 
 export const MdTitleRow = styled(Row)`
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 768px){
         display: none;
     }
 `;

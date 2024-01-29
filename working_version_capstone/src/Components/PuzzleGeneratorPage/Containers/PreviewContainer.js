@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
-import PreviewDisplay from './PreviewDisplay';
+import PreviewDisplay from './Components/PuzzlePreview/PreviewDisplay';
 import GenerateButton from '../Buttons/FunctionButtons/GenerateButton';
 import CreatePDFButton from '../Buttons/FunctionButtons/CreatePDFButton';
 import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';

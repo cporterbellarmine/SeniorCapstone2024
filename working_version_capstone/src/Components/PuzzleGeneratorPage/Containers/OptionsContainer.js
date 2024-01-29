@@ -6,8 +6,9 @@ import Stack from 'react-bootstrap/Stack';
 import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
 import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Dropdowns/TopicDropdown';
+import InstructionsTopRow from './Components/Options/InstructionsTopRow';
+import InstructionsBottomRow from './Components/Options/InstructionsBottomRow';
 import { SubCol } from './PreviewStyledComponents';
-import { InstructionsRow } from './OptionsContainerStyling';
 
 const OptionsContainer = () => {
     return(
@@ -17,35 +18,14 @@ const OptionsContainer = () => {
                     <Row>
                         <PreviewButtonRouting />
                     </Row>
-                    <Row className='py-4'>
+                    <InstructionsTopRow />
+                    <Row className='order-3 py-4'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />
                         </Stack>
                     </Row>
-                    <InstructionsRow className='p-3'>
-                        <Col>
-                            <Row>
-                                <h2>Instructions</h2>
-                            </Row>
-                            <Row>
-                                <div>
-                                    <ol>
-                                        <li>
-                                            <p>Step 1</p>
-                                        </li>
-                                        <li>
-                                            <p>Step 2</p>
-                                        </li>
-                                        <li>
-                                            <p>Step 3</p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                
-                            </Row>
-                        </Col>
-                    </InstructionsRow>
+                    <InstructionsBottomRow />
                 </SubCol>
             </Row>
             
