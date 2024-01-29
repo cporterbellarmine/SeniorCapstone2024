@@ -6,9 +6,10 @@ import Stack from 'react-bootstrap/Stack';
 import GenerateButton from '../Buttons/FunctionButtons/GenerateButton';
 import CreatePDFButton from '../Buttons/FunctionButtons/CreatePDFButton';
 import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';
+import PreviewDisplay from './PreviewDisplay';
 import { SubCol, ButtonRow, StyledTitleRow } from './PreviewStyledComponents';
 
-const PreviewContainer = () => {
+const MdPreviewContainer = () => {
     return(
         <Container>
             <Row className='d-flex'>
@@ -32,8 +33,7 @@ const PreviewContainer = () => {
                     </ButtonRow>
                 </SubCol>
             </Row>
-            
         </Container>
     );
 };
-export default PreviewContainer;
+export default MdPreviewContainer;

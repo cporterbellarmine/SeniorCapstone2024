@@ -1,8 +1,10 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { PreviewContainerRow } from './PreviewStyledComponents';
 
-const XsPreviewDisplay = () => {
+const PreviewDisplay = () => {
     return(
         <Container>
             <Col>
@@ -16,4 +18,4 @@ const XsPreviewDisplay = () => {
         </Container>
     );
 };
-export default XsPreviewDisplay;
+export default PreviewDisplay;
