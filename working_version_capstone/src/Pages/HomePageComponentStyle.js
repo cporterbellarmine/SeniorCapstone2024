@@ -15,7 +15,6 @@ export const MdTitleRow = styled(Row)`
     }
 `;
 
-
 export const StyledContainer = styled(Container)`
     background-color: darkgrey;
 `;

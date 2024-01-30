@@ -17,7 +17,7 @@ const MdOptionsContainer = () => {
                     <Row>
                         <PreviewButtonRouting />
                     </Row>
-                    <Row className='order-3 py-4'>
+                    <Row className='order-3 py-2'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />

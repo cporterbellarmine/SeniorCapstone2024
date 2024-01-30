@@ -10,7 +10,6 @@ const MdGeneratorPage = () => {
     return(
         <HideMdContainer>
             <Row className='p-4 d-flex'>
-                <h1>Puzzle Generator Page</h1>
                 <Col>
                     <MdOptionsContainer />
                 </Col>
