@@ -1,3 +1,5 @@
+// Used in /Components/PuzzleGenerator/PageDisplays/MdGeneratorPage
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -17,7 +19,7 @@ const MdOptionsContainer = () => {
                     <Row>
                         <PreviewButtonRouting />
                     </Row>
-                    <Row className='order-3 py-4'>
+                    <Row className='order-3 pt-2 pb-4'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />

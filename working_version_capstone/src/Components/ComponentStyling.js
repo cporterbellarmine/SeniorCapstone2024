@@ -4,17 +4,17 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
 
-//Used in Components\Header\MainHeader.js
+// Used in /Components/Header/MainHeader
 export const NoWrapContainer = styled(Container)`
     flex-wrap: nowrap;
 `;
 
-//Used in Components\Header\NavBarLayout.js
+// Used in /Components/Header/NavBarLayout
 export const StyledTopNavBar = styled(Nav)`
     background-color: crimson;
 `;
 
-//Used in Components\Header\NavigationLinkTemplate.js
+// Used in /Components/Header/NavLinkTemplate
 export const StyledNavLink = styled(NavLink)`
     display: inline-grid;
     align-content: center;
@@ -26,7 +26,7 @@ export const StyledNavLink = styled(NavLink)`
     }
 `;
 
-//Used in Components\HomePage\ButtonLinkTemplate.js
+// Used in /Components/HomePage/ButtonLinkTemplate
 export const StyledButtonLink = styled(NavLink)`
     display: inline-grid;
     outline: solid;
@@ -38,14 +38,12 @@ export const StyledButtonLink = styled(NavLink)`
         background-color: maroon;
         color: white;
     }
-
     @media screen and (max-width: 575px){
         border: dotted;
     }
-    
 `;
 
-//Used in Components\HomePage\PuzzlePicture.js
+// Used in /Components/HomePage/PuzzlePicture
 export const PhotoSpot = styled(Col)`
     background-color: cadetblue;
     

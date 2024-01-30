@@ -1,3 +1,5 @@
+// Used in /Components/Header/NavBarRouting
+
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Stack from 'react-bootstrap/Stack';

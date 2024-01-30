@@ -1,3 +1,5 @@
+// Used in /Components/Header/NavBarLayout
+
 import React from 'react';
 import { StyledNavLink } from '../ComponentStyling';
 

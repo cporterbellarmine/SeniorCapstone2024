@@ -1,3 +1,6 @@
+// Used in /Components/PuzzleGenerator/PageDisplays/MdOptionsContainer
+// Used in /Components/PuzzleGenerator/PageDisplays/XsGeneratorPage
+
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 

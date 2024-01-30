@@ -1,3 +1,5 @@
+// Used in /src/Pages/HomePage
+
 import React from 'react';
 import { PhotoSpot } from '../ComponentStyling';
 import PlaceHolderImage from '../Images/wordsearchplaceholderphoto.png';

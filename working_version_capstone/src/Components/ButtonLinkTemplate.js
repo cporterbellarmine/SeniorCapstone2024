@@ -1,3 +1,6 @@
+// Used in /Components/HomePage/ButtonNavLayout
+// Used in /Components/PuzzleGenerator/NavButtons/PreviewButtonLayout
+
 import React from 'react';
 import { StyledButtonLink } from './ComponentStyling';
 

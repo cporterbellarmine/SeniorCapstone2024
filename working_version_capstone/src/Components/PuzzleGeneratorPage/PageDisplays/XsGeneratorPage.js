@@ -1,5 +1,6 @@
+// Used in /src/Pages/PuzzleGeneratorPage
+
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
@@ -43,11 +44,10 @@ const XsGeneratorPage = () => {
                                         </li>
                                     </ol>
                                 </div>
-                                
                             </Row>
                         </Col>
                     </InstructionsRowStyled>
-                    <Row className='order-3 py-4'>
+                    <Row className='order-3'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />
