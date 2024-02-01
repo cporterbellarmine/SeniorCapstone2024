@@ -8,10 +8,10 @@ import MdPreviewTopicsContainer from '../Components/PreviewTopicsPage/PageDispla
 
 const ViewTopics = () => {
     return(
-        <Container>
-            <h1>View Topics Page</h1>
+        <>
             <MdPreviewTopicsContainer />
-        </Container>
+        </>
+            
     );
 }
 export default ViewTopics;

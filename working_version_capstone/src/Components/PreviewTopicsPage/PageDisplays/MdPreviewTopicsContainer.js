@@ -2,29 +2,37 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import NavButtonRouting from '../Components/Buttons/NavButtonRouting';
+import TopicsListChoose from '../Components/DatabaseDisplays/TopicsListChoose';
+import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable';
+import { MainContainerBackground, SubCol } from '../PreviewTopicsCompStyling';
 
 const MdPreviewTopicsContainer = () => {
     return(
-        <Container>
+        <MainContainerBackground className=''>
             <Row>
                 <Col>
-                    <Row>
+                    <Row className='p-3'>
                         <h1>Preview Topics</h1>
                     </Row>
-                    <Row>
-                        <Col>
-                            <h2>Topic Component here</h2>
-                        </Col>
-                        <Col>
-                            <h2>Word Preview Component here</h2>
-                        </Col>
+                    <Row className=''>
+                        <SubCol className='p-3 d-flex'>
+                            <Row className='p-3 flex-grow-1'>
+                                <TopicsListChoose />
+                            </Row>
+                        </SubCol>
+                        <SubCol className='p-3 d-flex'>
+                            <Row className='p-3 flex-grow-1'>
+                                <WordsPreviewTable />
+                            </Row>
+                        </SubCol>
                     </Row>
                     <Row>
-                        <h2>Button Stack Here</h2>
+                        <NavButtonRouting />
                     </Row>
                 </Col>
             </Row>
-        </Container>
+        </MainContainerBackground>
     );
 };
 export default MdPreviewTopicsContainer;
