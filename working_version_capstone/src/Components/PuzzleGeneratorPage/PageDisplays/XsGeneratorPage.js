@@ -47,7 +47,7 @@ const XsGeneratorPage = () => {
                             </Row>
                         </Col>
                     </InstructionsRowStyled>
-                    <Row className='order-3'>
+                    <Row className='order-3 p-3'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />
