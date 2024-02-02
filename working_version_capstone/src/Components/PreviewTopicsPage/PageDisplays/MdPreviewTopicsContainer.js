@@ -2,20 +2,20 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import NavButtonRouting from '../Components/Buttons/NavButtonRouting';
+import MdNavButtonRouting from '../Components/Buttons/MdNav/MdNavButtonRouting';
 import TopicsListChoose from '../Components/DatabaseDisplays/TopicsListChoose';
 import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable';
-import { MainContainerBackground, SubCol } from '../PreviewTopicsCompStyling';
+import { MdMainContainerBackground, SubCol } from '../PreviewTopicsCompStyling';
 
 const MdPreviewTopicsContainer = () => {
     return(
-        <MainContainerBackground className=''>
+        <MdMainContainerBackground>
             <Row>
                 <Col>
                     <Row className='p-3'>
                         <h1>Preview Topics</h1>
                     </Row>
-                    <Row className=''>
+                    <Row>
                         <SubCol className='p-3 d-flex'>
                             <Row className='p-3 flex-grow-1'>
                                 <TopicsListChoose />
@@ -28,11 +28,11 @@ const MdPreviewTopicsContainer = () => {
                         </SubCol>
                     </Row>
                     <Row>
-                        <NavButtonRouting />
+                        <MdNavButtonRouting />
                     </Row>
                 </Col>
             </Row>
-        </MainContainerBackground>
+        </MdMainContainerBackground>
     );
 };
 export default MdPreviewTopicsContainer;

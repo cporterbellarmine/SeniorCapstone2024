@@ -5,10 +5,12 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import MdPreviewTopicsContainer from '../Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer';
+import XsPreviewTopicsContainer from '../Components/PreviewTopicsPage/PageDisplays/XsPreviewTopicsContainer';
 
 const ViewTopics = () => {
     return(
         <>
+            <XsPreviewTopicsContainer />
             <MdPreviewTopicsContainer />
         </>
             
