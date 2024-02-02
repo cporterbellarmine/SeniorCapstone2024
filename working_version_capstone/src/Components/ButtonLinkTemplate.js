@@ -1,5 +1,5 @@
 // Used in /Components/HomePage/ButtonNavLayout
-// Used in /Components/PuzzleGenerator/NavButtons/PreviewButtonLayout
+// Used in /Components/PuzzleGeneratorPage/Components/Buttons/NavButtons/PreviewButtonLayout
 // Used in /Components/PreviewTopicsPage/Components/Buttons/MdNav/MdNavButtonsLayout
 // Used in /Components/PreviewTopicsPage/Components/Buttons/XsNav/XsNavButtonsLayout
 

@@ -1,5 +1,5 @@
-// Used in /Components/PuzzleGenerator/PageDisplays/MdPreviewContainer
-// Used in /Components/PuzzleGenerator/PageDisplays/XsGeneratorPage
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 
 import React from 'react';
 import Button from 'react-bootstrap/Button';

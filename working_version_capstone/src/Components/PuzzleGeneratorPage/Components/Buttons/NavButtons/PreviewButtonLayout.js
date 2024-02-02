@@ -1,8 +1,8 @@
-// Used in /Components/PuzzleGenerator/Buttons/NavButtons/PreviewButtonRouting
+// Used in /Components/PuzzleGeneratorPage/Components/Buttons/NavButtons/PreviewButtonRouting
 
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
-import ButtonLinkTemplate from '../../../ButtonLinkTemplate';
+import ButtonLinkTemplate from '../../../../ButtonLinkTemplate';
 
 
 

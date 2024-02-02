@@ -1,5 +1,5 @@
-// Used in /Components/PuzzleGenerator/PageDisplays/MdOptionsContainer
-// Used in /Components/PuzzleGenerator/PageDisplays/XsGeneratorPage
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/MdOptionsContainer
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 
 import React from 'react';
 import Form from 'react-bootstrap/Form';

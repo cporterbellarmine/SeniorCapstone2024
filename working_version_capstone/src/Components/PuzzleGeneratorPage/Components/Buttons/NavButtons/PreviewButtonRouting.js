@@ -1,12 +1,11 @@
-// Used in /Components/PuzzleGenerator/Buttons/NavButtons/
-// Used in /Components/PuzzleGenerator/Containers/Components/Options/PreviewNavButton
-// Used in /Components/PuzzleGenerator/PageDisplays/MdOptionsContainer
-// Used in /Components/PuzzleGenerator/PageDisplays/XsGeneratorPage
+// Used in /Components/PuzzleGeneratorPage/Containers/Components/Options/PreviewNavButton
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/MdOptionsContainer
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PreviewButtonLayout from './PreviewButtonLayout';
-import ViewTopics from '../../../../Pages/ViewTopics';
+import ViewTopics from '../../../../../Pages/ViewTopics';
 
 function PreviewButtonRouting(){
     return(

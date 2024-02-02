@@ -1,6 +1,6 @@
 // Used in /Components/Header/NavBarRouting
 // Used in /Components/HomePage/ButtonNavRouting
-// Used in /Components/PuzzleGeneratorPage/Buttons/NavButtons/PreviewButtonRouting
+// Used in /Components/PuzzleGeneratorPage/Components/Buttons/NavButtons/PreviewButtonRouting
 
 import React from 'react';
 import MdPreviewTopicsContainer from '../Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer';

@@ -5,11 +5,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
-import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
-import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
-import TopicDropdown from '../Dropdowns/TopicDropdown';
-import { InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
-import { SubCol } from '../Containers/PreviewStyledComponents';
+import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
+import DifficultyDropdown from '../Components/Dropdowns/DifficultyDropdown';
+import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
+import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
 const MdOptionsContainer = () => {
     return(
