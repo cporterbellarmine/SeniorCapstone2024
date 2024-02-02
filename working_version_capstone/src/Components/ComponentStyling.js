@@ -11,7 +11,7 @@ export const NoWrapContainer = styled(Container)`
 
 // Used in /Components/Header/NavBarLayout
 export const StyledTopNavBar = styled(Nav)`
-    background-color: crimson;
+    background-color: #c8c8c8;
 `;
 
 // Used in /Components/Header/NavLinkTemplate
@@ -21,8 +21,9 @@ export const StyledNavLink = styled(NavLink)`
     color: black;
     text-decoration: none;
     &:hover{
-        background-color: maroon;
+        background-color: #4d4d4d;
         color: white;
+        cursor: pointer;
     }
 `;
 
@@ -32,11 +33,13 @@ export const StyledButtonLink = styled(NavLink)`
     outline: solid;
     place-content: center;
     background-color: crimson;
+    font-family: "Times New Roman", serif;
     color: black;
     text-decoration: none;
     &:hover{
         background-color: maroon;
         color: white;
+        cursor: pointer;
     }
     @media screen and (max-width: 575px){
         border: dotted;
