@@ -1,7 +1,8 @@
+// Used in /Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer
+// Used in /Components/PreviewTopicsPage/PageDisplays/XsPreviewTopicsContainer
+
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Table from 'react-bootstrap/Table';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { WordsParentContainer } from '../../PreviewTopicsCompStyling';
 import './list_group.css';
