@@ -1,16 +1,17 @@
+// Used in /src/Pages/PuzzleGeneratorPage
+
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
-import PreviewButtonRouting from '../Buttons/NavButtons/PreviewButtonRouting';
-import GenerateButton from '../Buttons/FunctionButtons/GenerateButton';
-import CreatePDFButton from '../Buttons/FunctionButtons/CreatePDFButton';
-import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';
-import PreviewDisplay from '../Containers/Components/PuzzlePreview/PreviewDisplay';
-import DifficultyDropdown from '../Dropdowns/DifficultyDropdown';
-import TopicDropdown from '../Dropdowns/TopicDropdown';
-import { SubCol, ButtonRow, StyledTitleRow, InstructionsRowStyled } from '../Containers/PreviewStyledComponents';
+import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
+import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton';
+import CreatePDFButton from '../Components/Buttons/FunctionButtons/CreatePDFButton';
+import ReloadButton from '../Components/Buttons/FunctionButtons/ReloadButton';
+import PreviewDisplay from '../Components/DisplayContainers/PreviewDisplay';
+import DifficultyDropdown from '../Components/Dropdowns/DifficultyDropdown';
+import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
+import { SubCol, ButtonRow, StyledTitleRow, InstructionsRowStyled } from '../Components/DisplayContainers/PreviewStyledComponents';
 import { HideXsContainer } from './ViewContainer';
 
 const XsGeneratorPage = () => {
@@ -43,11 +44,10 @@ const XsGeneratorPage = () => {
                                         </li>
                                     </ol>
                                 </div>
-                                
                             </Row>
                         </Col>
                     </InstructionsRowStyled>
-                    <Row className='order-3 py-4'>
+                    <Row className='order-3 p-3'>
                         <Stack gap={2}>
                             <TopicDropdown />
                             <DifficultyDropdown />

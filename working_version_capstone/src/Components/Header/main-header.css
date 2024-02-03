@@ -1,6 +1,11 @@
+/* Used in /Components/Header/MainHeader */
+
 .main-header-div{
-    background-color: dimgrey;
+    background-color: #752936;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    -webkit-text-stroke-color: #4d4d4d;
+    -webkit-text-stroke-width: 1px;
 };

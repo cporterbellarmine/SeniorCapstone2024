@@ -1,3 +1,5 @@
+// Used in /src/Pages/HomePage
+
 import React from 'react';
 import { PhotoSpot } from '../ComponentStyling';
 import PlaceHolderImage from '../Images/wordsearchplaceholderphoto.png';
@@ -6,8 +8,7 @@ function PuzzlePicture() {
     return(
         <>
          <PhotoSpot className='d-flex'>
-            {/* <h3>PhotoHere</h3> */}
-            <img src={PlaceHolderImage} className='p-2 img-fluid' alt='Word Search'/>
+            <img src="https://placehold.co/600x800.png" className='p-2 img-fluid' alt='Word Search'/>
          </PhotoSpot > 
         </>
     );

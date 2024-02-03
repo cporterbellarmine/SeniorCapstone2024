@@ -1,13 +1,15 @@
+// Used in /Components/PuzzleGeneratorPage/PageDisplays/MdGeneratorPage
+
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
-import GenerateButton from '../Buttons/FunctionButtons/GenerateButton';
-import CreatePDFButton from '../Buttons/FunctionButtons/CreatePDFButton';
-import ReloadButton from '../Buttons/FunctionButtons/ReloadButton';
-import PreviewDisplay from '../Containers/Components/PuzzlePreview/PreviewDisplay';
-import { SubCol, ButtonRow, StyledTitleRow } from '../Containers/PreviewStyledComponents';
+import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton';
+import CreatePDFButton from '../Components/Buttons/FunctionButtons/CreatePDFButton';
+import ReloadButton from '../Components/Buttons/FunctionButtons/ReloadButton';
+import PreviewDisplay from '../Components/DisplayContainers/PreviewDisplay';
+import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContainers/PreviewStyledComponents';
 
 const MdPreviewContainer = () => {
     return(

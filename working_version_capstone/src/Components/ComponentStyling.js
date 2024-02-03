@@ -4,48 +4,49 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import styled from "styled-components";
 
-//Used in Components\Header\MainHeader.js
+// Used in /Components/Header/MainHeader
 export const NoWrapContainer = styled(Container)`
     flex-wrap: nowrap;
 `;
 
-//Used in Components\Header\NavBarLayout.js
+// Used in /Components/Header/NavBarLayout
 export const StyledTopNavBar = styled(Nav)`
-    background-color: crimson;
+    background-color: #c8c8c8;
 `;
 
-//Used in Components\Header\NavigationLinkTemplate.js
+// Used in /Components/Header/NavLinkTemplate
 export const StyledNavLink = styled(NavLink)`
     display: inline-grid;
     align-content: center;
     color: black;
     text-decoration: none;
     &:hover{
-        background-color: maroon;
+        background-color: #4d4d4d;
         color: white;
+        cursor: pointer;
     }
 `;
 
-//Used in Components\HomePage\ButtonLinkTemplate.js
+// Used in /Components/HomePage/ButtonLinkTemplate
 export const StyledButtonLink = styled(NavLink)`
     display: inline-grid;
     outline: solid;
     place-content: center;
     background-color: crimson;
+    font-family: "Times New Roman", serif;
     color: black;
     text-decoration: none;
     &:hover{
         background-color: maroon;
         color: white;
+        cursor: pointer;
     }
-
     @media screen and (max-width: 575px){
         border: dotted;
     }
-    
 `;
 
-//Used in Components\HomePage\PuzzlePicture.js
+// Used in /Components/HomePage/PuzzlePicture
 export const PhotoSpot = styled(Col)`
     background-color: cadetblue;
     

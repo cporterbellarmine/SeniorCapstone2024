@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Container from 'react-bootstrap/Container';
 
+//Used in /Components/PuzzleGeneratorPage/PageDisplay/XsGeneratorPage
 export const HideXsContainer = styled(Container)`
     background-color: darkgrey;
 
@@ -9,6 +10,7 @@ export const HideXsContainer = styled(Container)`
     };
 `;
 
+//Used in /Components/PuzzleGeneratorPage/PageDisplay/XsGeneratorPage
 export const HideMdContainer = styled(Container)`
     background-color: darkgrey;
 
