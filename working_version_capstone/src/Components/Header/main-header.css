@@ -1,11 +1,15 @@
 /* Used in /Components/Header/MainHeader */
 
 .main-header-div{
-    background-color: #752936;
+    background-color: #19647e;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    -webkit-text-stroke-color: #4d4d4d;
-    -webkit-text-stroke-width: 1px;
+    font-family: sans-serif;
+    color: #d9d9d9;
 };
+
+.main-header-title{
+    font-family: sans-serif;
+    color: #d9d9d9;
+}
