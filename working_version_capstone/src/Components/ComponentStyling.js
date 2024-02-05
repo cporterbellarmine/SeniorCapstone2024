@@ -20,11 +20,20 @@ export const StyledNavLink = styled(NavLink)`
     align-content: center;
     color: black;
     text-decoration: none;
+    outline
     &:hover{
         background-color: #4d4d4d;
         color: white;
         cursor: pointer;
     }
+`;
+
+// Used in /Components/Header/NavBarLayout
+export const StyledLogo = styled(NavLink)`
+    display: inline-grid;
+    align-content: center;
+    color: black;
+    text-decoration: none;
 `;
 
 // Used in /Components/HomePage/ButtonLinkTemplate

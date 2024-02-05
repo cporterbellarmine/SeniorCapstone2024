@@ -8,7 +8,7 @@ function PuzzlePicture() {
     return(
         <>
          <PhotoSpot className='d-flex'>
-            <img src="https://placehold.co/600x800.png" className='p-2 img-fluid' alt='Word Search'/>
+            <img src="https://placehold.co/500x300.png" className='p-2 img-fluid' alt='Word Search'/>
          </PhotoSpot > 
         </>
     );
