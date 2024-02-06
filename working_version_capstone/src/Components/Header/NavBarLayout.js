@@ -14,7 +14,7 @@ const NavBarLayout = () => {
         <Row>
             <StyledTopNavBar className='d-flex'>
                 <Stack className='justify-content-center' direction='horizontal'>
-                    <StyledLogo className='' to="/"><img className='w-50' src={WordSmaller}/></StyledLogo>
+                    <StyledLogo to="/"><img className='w-50' src={WordSmaller}/></StyledLogo>
                     <NavLinkTemplate pathway="/" textDisplayed="Home"/>
                     <NavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
                     <NavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
