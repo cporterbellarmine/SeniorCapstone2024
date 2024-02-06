@@ -11,16 +11,15 @@ export const NoWrapContainer = styled(Container)`
 
 // Used in /Components/Header/NavBarLayout
 export const StyledTopNavBar = styled(Nav)`
-    background-color: #c8c8c8;
+    background-color: #000000;
 `;
 
 // Used in /Components/Header/NavLinkTemplate
 export const StyledNavLink = styled(NavLink)`
     display: inline-grid;
     align-content: center;
-    color: black;
+    color: white;
     text-decoration: none;
-    outline
     &:hover{
         background-color: #4d4d4d;
         color: white;

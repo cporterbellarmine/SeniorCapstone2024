@@ -19,7 +19,7 @@ export const MdTitleRow = styled(Row)`
 
 // Used in /src/Pages/HomePage
 export const StyledContainer = styled(Container)`
-    background-color: darkgrey;
+    background-color: #D9d9d9;
 `;
 
 // Used in /src/Pages/HomePage

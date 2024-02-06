@@ -14,15 +14,11 @@ const NavBarLayout = () => {
         <Row>
             <StyledTopNavBar className='d-flex'>
                 <Stack className='justify-content-center' direction='horizontal'>
-                    <StyledLogo className='p-2' to="/"><img className='w-50' src={WordSmaller}/></StyledLogo>
+                    <StyledLogo className='' to="/"><img className='w-50' src={WordSmaller}/></StyledLogo>
                     <NavLinkTemplate pathway="/" textDisplayed="Home"/>
-                    <div className='vr'/>
                     <NavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <div className='vr'/>
                     <NavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                    <div className='vr'/>
                     <NavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
-                    <div className='vr'/>
                 </Stack>
             </StyledTopNavBar>
             <Outlet />

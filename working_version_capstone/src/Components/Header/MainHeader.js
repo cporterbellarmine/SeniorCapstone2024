@@ -11,11 +11,11 @@ function MainHeader() {
     return(
         <Container fluid className='m-0'>
             <Col>
-                <Row>
+                {/* <Row>
                     <div className='main-header-div p-4'>
                         <h1>Word Search Generator</h1>
                     </div>
-                </Row>
+                </Row> */}
                 <Row>
                     <NavBarRouting />
                 </Row>
