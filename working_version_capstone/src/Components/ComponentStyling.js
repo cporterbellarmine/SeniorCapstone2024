@@ -24,7 +24,19 @@ export const StyledNavLink = styled(NavLink)`
         background-color: #4d4d4d;
         color: white;
         cursor: pointer;
+        text-decoration: underline;
     }
+    // &:active{
+    //     background-color: #de4f3f;
+    //     color: black;
+    //     text-decoration: underline;
+    // }
+`;
+
+export const ActiveNav = styled.a`
+    background-color: #4d4d4d;
+    color: white;
+    text-decoration: underline;
 `;
 
 // Used in /Components/Header/NavBarLayout
