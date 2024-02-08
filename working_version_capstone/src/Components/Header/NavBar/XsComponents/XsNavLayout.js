@@ -5,8 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import XsNavLinkTemplate from './XsNavLinkTemplate';
-import { XsDropdownNavMenu } from './XsNavStyling';
+import XsDropdownNavLinkItem from './XsDropdownNavLinkItem';
+import { XsDropdownNavMenu, XsStyledToggle } from './XsNavStyling';
 import { StyledTopNavBar, StyledLogo, ActiveNav } from '../../../ComponentStyling';
 import WordSmaller from '../../../Images/WordSmaller.png';
 import '../../active-page.css';
@@ -20,25 +20,17 @@ const XsNavLayout = () => {
                 </Col>
                 <Col className='col-2'>
                     <Dropdown>
-                            <Dropdown.Toggle id='dropdown-basic'>
+                            <XsStyledToggle>
                                 Menu
-                            </Dropdown.Toggle>
+                            </XsStyledToggle>
                             <XsDropdownNavMenu>
-                                <Dropdown.Item>
-                                    <XsNavLinkTemplate pathway="/" end textDisplayed="Home" />
-                                </Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item>
-                                    <XsNavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                                </Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item>
-                                    <XsNavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                                </Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item>
-                                    <XsNavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
-                                </Dropdown.Item>
+                                <XsDropdownNavLinkItem pathway="/" end textDisplayed="Home" />
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/view-topics" textDisplayed="View Topics"/>
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/>
                             </XsDropdownNavMenu>
                         </Dropdown>
                 </Col>
