@@ -1,11 +1,9 @@
-// Used in /Components/Header/NavBarLayout
-
 import React from 'react';
-import { StyledNavLink } from '../ComponentStyling';
+import { XsStyledNavLink } from './XsNavStyling';
 
-function NavigationLinkTemplate(props){
+function XsNavLinkTemplate(props){
     return(
-        <StyledNavLink className='text-center p-2' to={props.pathway} style={({isActive}) => {
+        <XsStyledNavLink className='text-center p-2' to={props.pathway} style={({isActive}) => {
             return isActive ? {
                     backgroundColor: '#a4036f',
                     color: 'white',
@@ -15,7 +13,7 @@ function NavigationLinkTemplate(props){
                     color: 'white'
                 };
             }
-        }>{props.textDisplayed}</StyledNavLink>
+        }>{props.textDisplayed}</XsStyledNavLink>
     );
 }
-export default NavigationLinkTemplate;
+export default XsNavLinkTemplate;

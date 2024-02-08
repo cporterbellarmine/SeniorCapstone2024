@@ -26,17 +26,17 @@ export const StyledNavLink = styled(NavLink)`
         cursor: pointer;
         text-decoration: underline;
     }
-    // &:active{
-    //     background-color: #de4f3f;
-    //     color: black;
-    //     text-decoration: underline;
-    // }
 `;
 
-export const ActiveNav = styled.a`
-    background-color: #4d4d4d;
+export const XsStyledNavLink = styled(NavLink)`
     color: white;
-    text-decoration: underline;
+    text-decoration: none;
+    &:hover{
+        background-color: #4d4d4d;
+        color: white;
+        cursor: pointer;
+        text-decoration: underline;
+    }
 `;
 
 // Used in /Components/Header/NavBarLayout
@@ -60,9 +60,6 @@ export const StyledButtonLink = styled(NavLink)`
         background-color: maroon;
         color: white;
         cursor: pointer;
-    }
-    @media screen and (max-width: 575px){
-        border: dotted;
     }
 `;
 

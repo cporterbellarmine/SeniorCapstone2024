@@ -12,7 +12,7 @@ import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from
 function HomePage() {
     return(
         <StyledContainer>
-            <Row className='' style={{backgroundColor: 'black'}}>
+            <Row className=''>
                 <img src={LogoLargerBrandDarker} className='p-2 img-fluid w-100' alt='Puzzle Generator Home Page Title'/>
             </Row>
             <Row className='m-3'>

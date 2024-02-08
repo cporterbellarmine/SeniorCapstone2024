@@ -3,11 +3,11 @@
 import React from 'react';
 import { Route , Routes } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import HomePage from '../../../Pages/HomePage';
-import PuzzleGenerator from '../../../Pages/PuzzleGeneratorPage';
-import ViewTopics from '../../../Pages/ViewTopics';
-import CreateTopic from '../../../Pages/CreateTopic';
-import ErrorPage from '../../../Pages/ErrorPage';
+import HomePage from '../../../../Pages/HomePage';
+import PuzzleGenerator from '../../../../Pages/PuzzleGeneratorPage';
+import ViewTopics from '../../../../Pages/ViewTopics';
+import CreateTopic from '../../../../Pages/CreateTopic';
+import ErrorPage from '../../../../Pages/ErrorPage';
 import XsNavLayout from './XsNavLayout';
 
 function XsNavBarRouting(){
