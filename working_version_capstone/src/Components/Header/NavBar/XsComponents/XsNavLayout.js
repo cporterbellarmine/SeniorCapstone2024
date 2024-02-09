@@ -20,7 +20,7 @@ const XsNavLayout = () => {
                 </Col>
                 <Col className='col-2'>
                     <Dropdown>
-                            <XsStyledToggle>
+                            <XsStyledToggle varient='none'>
                                 Menu
                             </XsStyledToggle>
                             <XsDropdownNavMenu>
