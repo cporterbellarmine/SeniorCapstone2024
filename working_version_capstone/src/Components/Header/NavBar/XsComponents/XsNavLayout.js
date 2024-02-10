@@ -6,11 +6,10 @@ import Stack from 'react-bootstrap/Stack';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import XsDropdownNavLinkItem from './XsDropdownNavLinkItem';
-import DropdownXsVariant from './DropdownXsVariant';
-import { XsDropdown, ToggleButton, XsDropdownNavMenu, XsStyledToggle } from './XsNavStyling';
+import { XsDropdownNavMenu } from './XsNavStyling';
 import { StyledTopNavBar, StyledLogo, ActiveNav } from '../../../ComponentStyling';
 import WordSmaller from '../../../Images/WordSmaller.png';
-import '../../active-page.css';
+import './xs-dropdown-id.css';
 
 const XsNavLayout = () => {
     return(
@@ -21,10 +20,10 @@ const XsNavLayout = () => {
                         <StyledLogo to="/"><img className='w-75' src={WordSmaller}/></StyledLogo>
                     </Col>
                     <Col className='col-2'>
-                        <XsDropdown>
-                                <XsStyledToggle id='active-button'>
+                        <Dropdown>
+                                <Dropdown.Toggle id='active-button'>
                                     Menu
-                                </XsStyledToggle>
+                                </Dropdown.Toggle>
                                 <XsDropdownNavMenu>
                                     <XsDropdownNavLinkItem pathway="/" end textDisplayed="Home" />
                                     <Dropdown.Divider className='m-0'/>
@@ -34,7 +33,7 @@ const XsNavLayout = () => {
                                     <Dropdown.Divider className='m-0'/>
                                     <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/>
                                 </XsDropdownNavMenu>
-                            </XsDropdown>
+                            </Dropdown>
                     </Col>
                 </StyledTopNavBar>
                 <Outlet />

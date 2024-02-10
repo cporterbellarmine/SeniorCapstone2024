@@ -1,6 +1,0 @@
-#active-button{
-    &:active{
-        background-color: 'yellow';
-    };
-    
-}

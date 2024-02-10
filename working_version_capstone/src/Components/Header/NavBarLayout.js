@@ -8,7 +8,6 @@ import Row from 'react-bootstrap/Row';
 import NavLinkTemplate from './NavLinkTemplate';
 import { StyledTopNavBar, StyledLogo, ActiveNav } from '../ComponentStyling';
 import WordSmaller from '../Images/WordSmaller.png';
-import './active-page.css';
 
 const NavBarLayout = () => {
     return(

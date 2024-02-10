@@ -1,7 +1,0 @@
-$newcolor:#000000;
- 
-@import "node_modules/bootstrap/scss/bootstrap";
-
-.btn-primary {
-  @include button-variant($mynewcolor);
-}
