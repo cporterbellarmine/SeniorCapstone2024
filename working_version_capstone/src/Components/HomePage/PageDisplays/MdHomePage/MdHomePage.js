@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import MenuContainer from '../Components/HomePage/MenuContainer';
 import PuzzlePicture from '../Components/HomePage/PuzzlePicture';
 import LogoSmaller from '../Components'
-import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from './HomePageComponentStyle';
+import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from '../HomePageComponentStyle';
 
 function HomePage() {
     return(

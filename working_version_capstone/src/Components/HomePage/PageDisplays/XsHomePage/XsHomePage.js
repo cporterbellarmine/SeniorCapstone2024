@@ -4,10 +4,12 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
-import MenuContainer from '../MenuContainer';
-import PuzzlePicture from '../PuzzlePicture';
-import LogoLargerBrandDarker from '../../Images/LogoLargerBrandDarker.png';
-import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from './HomePageComponentStyle';
+import MenuContainer from '../../MenuContainer';
+import PuzzlePicture from '../../PuzzlePicture';
+import LogoLargerBrandDarker from '../../../Images/LogoLargerBrandDarker.png';
+import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from '../HomePageComponentStyle';
+import { HomePageAccordionHeader } from './XsStyledComponents';
+import './xs-css-id.css';
 
 function HomePage() {
     return(
@@ -29,11 +31,6 @@ function HomePage() {
 
                         </p>
                     </Row>
-                    <Row className='p-1 align-items-center'>
-                        <PhotoCol className='p-3'>
-                            <PuzzlePicture />
-                        </PhotoCol>
-                    </Row>
                     <Row>
                         <Accordion defaultActiveKey='0'>
                             <Accordion.Item eventKey='0'>
@@ -46,7 +43,7 @@ function HomePage() {
                                             Puzzle Generator Description and Features
                                         </Col>
                                         <Col>
-                                            <img src="https://placehold.co/100x100.png" className='p-2 img-fluid' alt='Puzzle Generator Page Preview'/>
+                                            <img src="https://placehold.co/100x100.png" className='p-2 img-fluid sample-border' alt='Puzzle Generator Page Preview'/>
                                         </Col>
                                     </Row>
                                 </Accordion.Body>
@@ -94,38 +91,6 @@ function HomePage() {
                         </Col>
                     </Row>
                 </Col>
-                {/* <Col className='col-12 order-2 col-md-5 d-flex'>
-                    <Row className='align-items-center'>
-                        <Col className='order-first col-1 d-md-none' />
-                        <PhotoCol className='p-3 order-2 col-10 order-md-first col-md-12'>
-                            <PuzzlePicture />
-                        </PhotoCol>
-                        <Col className='order-3 col-1 d-md-none' />
-                    </Row>
-                </Col> */}
-                
-                {/* <Col className='d-flex order-3 order-md-first col-md-7'>
-                    <Row className='flex-grow-1'>
-                        <Col>
-                            <Row className='p-1 align-items-center'>
-                                <Col className='order-first col-1' />
-                                <StyledMenuCol className='order-2 col-10'>
-                                    <MenuContainer />
-                                </StyledMenuCol>
-                                <Col className='order-3 col-1' />
-                            </Row>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col className='col-12 order-2 col-md-5 d-flex'>
-                    <Row className='align-items-center'>
-                        <Col className='order-first col-1 d-md-none' />
-                        <PhotoCol className='p-3 order-2 col-10 order-md-first col-md-12'>
-                            <PuzzlePicture />
-                        </PhotoCol>
-                        <Col className='order-3 col-1 d-md-none' />
-                    </Row>
-                </Col> */}
             </Row>
         </StyledContainer>
     );

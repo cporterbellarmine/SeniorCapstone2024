@@ -9,44 +9,6 @@ export const NoWrapContainer = styled(Container)`
     flex-wrap: nowrap;
 `;
 
-// Used in /Components/Header/NavBarLayout
-export const StyledTopNavBar = styled(Nav)`
-    background-color: #000000;
-`;
-
-// Used in /Components/Header/NavLinkTemplate
-export const StyledNavLink = styled(NavLink)`
-    display: inline-grid;
-    align-content: center;
-    color: white;
-    text-decoration: none;
-    &:hover{
-        background-color: #4d4d4d;
-        color: white;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-`;
-
-export const XsStyledNavLink = styled(NavLink)`
-    color: white;
-    text-decoration: none;
-    &:hover{
-        background-color: #4d4d4d;
-        color: white;
-        cursor: pointer;
-        text-decoration: underline;
-    }
-`;
-
-// Used in /Components/Header/NavBarLayout
-export const StyledLogo = styled(NavLink)`
-    display: inline-grid;
-    align-content: center;
-    color: black;
-    text-decoration: none;
-`;
-
 // Used in /Components/HomePage/ButtonLinkTemplate
 export const StyledButtonLink = styled(NavLink)`
     display: inline-grid;

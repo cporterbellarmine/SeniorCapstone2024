@@ -7,7 +7,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import XsDropdownNavLinkItem from './XsDropdownNavLinkItem';
 import { XsDropdownNavMenu } from './XsNavStyling';
-import { StyledTopNavBar, StyledLogo, ActiveNav } from '../../../ComponentStyling';
+import { StyledLogo } from '../StyledLogo';
+import { StyledTopNavBar } from '../NavBarStyle';
 import WordSmaller from '../../../Images/WordSmaller.png';
 import './xs-dropdown-id.css';
 
@@ -16,7 +17,7 @@ const XsNavLayout = () => {
         <>
             <Row className='d-flex'>
                 <StyledTopNavBar className='d-flex justify-content-between align-items-center p-2'>
-                    <Col className='col-1 offset-1 d-flex'>
+                    <Col className='col-1 d-flex'>
                         <StyledLogo to="/"><img className='w-75' src={WordSmaller}/></StyledLogo>
                     </Col>
                     <Col className='col-2'>

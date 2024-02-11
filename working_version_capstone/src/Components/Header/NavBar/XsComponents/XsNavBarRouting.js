@@ -9,10 +9,11 @@ import ViewTopics from '../../../../Pages/ViewTopics';
 import CreateTopic from '../../../../Pages/CreateTopic';
 import ErrorPage from '../../../../Pages/ErrorPage';
 import XsNavLayout from './XsNavLayout';
+import { HideXsNavBarContainer } from './XsNavStyling';
 
 function XsNavBarRouting(){
     return(
-        <Container>
+        <HideXsNavBarContainer>
             <Routes>
                 <Route path='/*' element={<XsNavLayout />}>
                     <Route index element={<HomePage />} />
@@ -22,7 +23,7 @@ function XsNavBarRouting(){
                     <Route path='*' element={<ErrorPage />} />
                 </Route>
             </Routes>
-        </Container>
+        </HideXsNavBarContainer>
     );
 }
 export default XsNavBarRouting;

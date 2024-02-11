@@ -1,26 +1,26 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
 import Stack from 'react-bootstrap/Stack';
 import Row from 'react-bootstrap/Row';
-import NavLinkTemplate from '../../NavLinkTemplate';
-import { StyledTopNavBar, StyledLogo, ActiveNav } from '../../../ComponentStyling';
-import WordSmaller from '../Images/WordSmaller.png';
+import MdNavLinkTemplate from './MdNavLinkTemplate';
+import { StyledLogo } from '../StyledLogo';
+import { StyledTopNavBar } from '../NavBarStyle';
+import WordSmaller from '../../../Images/WordSmaller.png';
 
-const NavBarLayout = () => {
+const MdNavLayout = () => {
     return(
         <Row>
-            <StyledTopNavBar className='d-flex border-bottom'>
+            <StyledTopNavBar className='d-flex border-bottom p-2'>
                 <Stack className='justify-content-center' direction='horizontal'>
                     <StyledLogo to="/"><img className='w-50' src={WordSmaller}/></StyledLogo>
-                    <NavLinkTemplate pathway="/" end textDisplayed="Home" />
-                    <NavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <NavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                    <NavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    <MdNavLinkTemplate pathway="/" end textDisplayed="Home" />
+                    <MdNavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                    <MdNavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                    <MdNavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
                 </Stack>
             </StyledTopNavBar>
             <Outlet />
         </Row>
     );
 }
-export default NavBarLayout;
+export default MdNavLayout;

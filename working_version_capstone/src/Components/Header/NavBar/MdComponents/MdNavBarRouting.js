@@ -6,13 +6,14 @@ import PuzzleGenerator from '../../../../Pages/PuzzleGeneratorPage';
 import ViewTopics from '../../../../Pages/ViewTopics';
 import CreateTopic from '../../../../Pages/CreateTopic';
 import ErrorPage from '../../../../Pages/ErrorPage';
-import NavBarLayout from '../../NavBarLayout';
+import MdNavLayout from './MdNavLayout';
+import { HideMdNavBarContainer } from './MdNavStlying';
 
 function NavBarRouting(){
     return(
-        <Container>
+        <HideMdNavBarContainer>
             <Routes>
-                <Route path='/*' element={<NavBarLayout />}>
+                <Route path='/*' element={<MdNavLayout />}>
                     <Route index element={<HomePage />} />
                     <Route path='puzzle-generator' element={<PuzzleGenerator />} />
                     <Route path='view-topics' element={<ViewTopics />} />
@@ -20,7 +21,7 @@ function NavBarRouting(){
                     <Route path='*' element={<ErrorPage />} />
                 </Route>
             </Routes>
-        </Container>
+        </HideMdNavBarContainer>
     );
 }
 export default NavBarRouting;
