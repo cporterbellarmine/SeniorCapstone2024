@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import MenuContainer from '../../MenuContainer';
-import PuzzlePicture from '../../PuzzlePicture';
 import LogoLargerBrandDarker from '../../../Images/LogoLargerBrandDarker.png';
 import { StyledContainer, StyledMenuCol, PhotoCol, XsTitleRow, MdTitleRow } from '../HomePageComponentStyle';
 import { HomePageAccordionHeader } from './XsStyledComponents';
@@ -34,7 +33,7 @@ function HomePage() {
                     <Row>
                         <Accordion defaultActiveKey='0'>
                             <Accordion.Item eventKey='0'>
-                                <Accordion.Header>
+                                <Accordion.Header className='accordion-header-styling'>
                                     Puzzle Generator
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -49,7 +48,7 @@ function HomePage() {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey='1'>
-                                <Accordion.Header>
+                                <Accordion.Header className='accordion-header-styling'>
                                     View Topics
                                 </Accordion.Header>
                                 <Accordion.Body>
