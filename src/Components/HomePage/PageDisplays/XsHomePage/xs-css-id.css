@@ -1,7 +1,23 @@
-.sample-border{
+.photo-border{
     background-color: #a4036f;
 }
 
 .accordion-header-styling{
-     --bs-accordion-btn-bg: #a4036f;
+     border-top: solid 2px #000000;
+     border-left: solid 2px #000000;
+     border-right: solid 2px #000000;
+
+}
+
+.accordion-last-header-styling{
+    border-bottom: solid 2px #000000;
+}
+
+.accordion{
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-btn-bg: #a4036f;
+    --bs-accordion-active-bg: #8c035e;
+    --bs-accordion-active-color: #ffffff;
+    --bs-accordion-border-color: none;
+    --bs-accordion-bg: #fed7f1;
 }

@@ -31,9 +31,9 @@ function HomePage() {
                         </p>
                     </Row>
                     <Row>
-                        <Accordion defaultActiveKey='0'>
+                        <Accordion flush defaultActiveKey='0' className='accordion'>
                             <Accordion.Item eventKey='0'>
-                                <Accordion.Header className='accordion-header-styling'>
+                                <Accordion.Header className='accordion-header-styling accordion-styling' >
                                     Puzzle Generator
                                 </Accordion.Header>
                                 <Accordion.Body>
@@ -42,7 +42,7 @@ function HomePage() {
                                             Puzzle Generator Description and Features
                                         </Col>
                                         <Col>
-                                            <img src="https://placehold.co/100x100.png" className='p-2 img-fluid sample-border' alt='Puzzle Generator Page Preview'/>
+                                            <img src="https://placehold.co/100x100.png" className='p-2 img-fluid photo-border' alt='Puzzle Generator Page Preview'/>
                                         </Col>
                                     </Row>
                                 </Accordion.Body>
@@ -63,7 +63,7 @@ function HomePage() {
                                 </Accordion.Body>
                             </Accordion.Item>
                             <Accordion.Item eventKey='2'>
-                                <Accordion.Header>
+                                <Accordion.Header className='accordion-header-styling accordion-last-header-styling'>
                                     Create Topic
                                 </Accordion.Header>
                                 <Accordion.Body>
