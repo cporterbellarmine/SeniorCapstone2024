@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import { Outlet } from 'react-router-dom';
 import ButtonLinkTemplate from '../../../../ButtonLinkTemplate';
 
 
@@ -12,6 +13,7 @@ function PreviewButtonLayout(){
             <Nav>
                 <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Existing Topics"/>
             </Nav>
+            <Outlet />
         </>
     );
 };
