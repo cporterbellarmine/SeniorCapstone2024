@@ -6,7 +6,9 @@
      border-top: solid 1px #640243;
      border-left: solid 1px #640243;
      border-right: solid 1px #640243;
-
+     &:hover{
+        --bs-accordion-btn-bg: #dc0494;
+    }
 }
 
 .accordion-last-header-styling{
