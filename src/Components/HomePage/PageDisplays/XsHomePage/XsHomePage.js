@@ -6,6 +6,8 @@ import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import MenuContainer from '../../MenuContainer';
 import CreateTopicButtonRouting from '../NavButtons/CreateTopic/CreateTopicButtonRouting';
+import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorButtonRouting';
+import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
 import LogoLargerBrandDarker from '../../../Images/LogoLargerBrandDarker.png';
 import { StyledContainer, StyledMenuCol } from '../HomePageComponentStyle';
 import './xs-css-id.css';
@@ -39,13 +41,22 @@ function HomePage() {
                                 <Accordion.Body className='d-flex'>
                                     <Row className='justify-content-between'>
                                         <Col className='col-7'>
-                                            <h5>Puzzle Generator Description and Features</h5>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec semper mauris, eget tempor augue. Maecenas libero lacus, 
-                                            sollicitudin sed auctor ac, cursus a magna. 
-                                            Cras maximus mi nec nulla euismod, nec sodales dolor pretium. In hac habitasse platea dictumst. Nulla feugiat efficitur lacinia. 
-                                            Praesent euismod libero eget urna cursus feugiat eu vitae urna. Etiam lorem arcu, ullamcorper in viverra at, fermentum nec nisl. 
-                                            Nam facilisis purus quis augue volutpat, non imperdiet nisl rhoncus. Nulla dictum, justo at euismod vehicula, ligula erat interdum tortor, 
-                                            a mollis mauris nulla ac erat. Suspendisse sit amet semper sapien.
+                                            <Row>
+                                                <h5>Puzzle Generator Description and Features</h5>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec semper mauris, eget tempor augue. Maecenas libero lacus, 
+                                                sollicitudin sed auctor ac, cursus a magna. 
+                                                Cras maximus mi nec nulla euismod, nec sodales dolor pretium. In hac habitasse platea dictumst. Nulla feugiat efficitur lacinia. 
+                                                Praesent euismod libero eget urna cursus feugiat eu vitae urna. Etiam lorem arcu, ullamcorper in viverra at, fermentum nec nisl. 
+                                                Nam facilisis purus quis augue volutpat, non imperdiet nisl rhoncus. Nulla dictum, justo at euismod vehicula, ligula erat interdum tortor, 
+                                                a mollis mauris nulla ac erat. Suspendisse sit amet semper sapien.
+                                            </Row>
+                                            <Row className='justify-content-center'>
+                                                <Col className='col-8'>
+                                                    <PuzzleGeneratorButtonRouting />
+                                                </Col>
+                                                
+                                            </Row>
+                                            
                                         </Col>
                                         <Col className='col-2'>
                                             <img src="https://placehold.co/100x100.png" className='p-2 img-fluid photo-border' alt='Puzzle Generator Page Preview'/>
@@ -60,13 +71,21 @@ function HomePage() {
                                 <Accordion.Body>
                                     <Row className='justify-content-between'>
                                         <Col className='col-7'>
-                                            <h5>View Topics Description and Features</h5>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec semper mauris, eget tempor augue. Maecenas libero lacus, 
-                                            sollicitudin sed auctor ac, cursus a magna. 
-                                            Cras maximus mi nec nulla euismod, nec sodales dolor pretium. In hac habitasse platea dictumst. Nulla feugiat efficitur lacinia. 
-                                            Praesent euismod libero eget urna cursus feugiat eu vitae urna. Etiam lorem arcu, ullamcorper in viverra at, fermentum nec nisl. 
-                                            Nam facilisis purus quis augue volutpat, non imperdiet nisl rhoncus. Nulla dictum, justo at euismod vehicula, ligula erat interdum tortor, 
-                                            a mollis mauris nulla ac erat. Suspendisse sit amet semper sapien.
+                                            <Row>
+                                                <h5>View Topics Description and Features</h5>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec semper mauris, eget tempor augue. Maecenas libero lacus, 
+                                                sollicitudin sed auctor ac, cursus a magna. 
+                                                Cras maximus mi nec nulla euismod, nec sodales dolor pretium. In hac habitasse platea dictumst. Nulla feugiat efficitur lacinia. 
+                                                Praesent euismod libero eget urna cursus feugiat eu vitae urna. Etiam lorem arcu, ullamcorper in viverra at, fermentum nec nisl. 
+                                                Nam facilisis purus quis augue volutpat, non imperdiet nisl rhoncus. Nulla dictum, justo at euismod vehicula, ligula erat interdum tortor, 
+                                                a mollis mauris nulla ac erat. Suspendisse sit amet semper sapien.
+                                            </Row>
+                                            <Row className='justify-content-center'>
+                                                <Col className='col-8'>
+                                                    <ViewTopicsButtonRouting />
+                                                </Col>
+                                            </Row>
+                                            
                                         </Col>
                                         <Col className='col-2'>
                                             <img src="https://placehold.co/100x100.png" className='p-2 img-fluid' alt='View Topics Page Preview'/>
@@ -92,11 +111,9 @@ function HomePage() {
                                             </Row>
                                             <Row className='justify-content-center'>
                                                 <Col className='col-8'>
-                                                    <CreateTopicButtonRouting className='justify-content-center'/>
+                                                    <CreateTopicButtonRouting />
                                                 </Col>
-                                                
                                             </Row>
-                                            
                                         </Col>
                                         <Col className='col-3 align-content-between'>
                                             <img src="https://placehold.co/100x100.png" className='p-2 img-fluid' alt='View Topics Page Preview'/>
