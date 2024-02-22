@@ -13,7 +13,7 @@ app.listen(port, () => {
 
 const mongoose = require('mongoose');
 
-const dbConnectionString = process.env.MONGODB_URI || 'mongodb+srv://cporter:W2KRAFsjhiOyfZ2q@wordsearchgenerator.zozpxo3.mongodb.net/';
+const dbConnectionString = process.env.MONGODB_URI;
 
 mongoose.connect(dbConnectionString, {
     useNewUrlParser: true,
@@ -27,3 +27,9 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error:', err);
 });
+
+const topicRouter = require('./routes/topicRoutes');
+app.use(userRouter);
+
+const wordRouter = require('./routes/wordRoutes');
+app.use(wordRouter);
