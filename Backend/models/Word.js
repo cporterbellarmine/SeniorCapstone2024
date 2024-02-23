@@ -12,8 +12,7 @@ const wordSchema = new mongoose.Schema({
     number_of_characters: {
         type: Number,
         required: true
-    },
-    dropDups: true
+    }
 });
 
 const Word = mongoose.model('Word', wordSchema);

@@ -1,5 +1,5 @@
 const express = require('express');
-const Word = require('../../models/Word');
+const Word = require('../models/Word');
 const app = express();
 
 const router = new express.Router();

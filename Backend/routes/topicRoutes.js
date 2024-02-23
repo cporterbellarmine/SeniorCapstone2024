@@ -1,10 +1,10 @@
 const express = require('express');
-const Topic = require('../../models/Topic');
+const Topic = require('../models/Topic');
 const app = express();
 
 const router = new express.Router();
 
-app.post('/Topics', async (req, res) => {
+app.post('/topics', async (req, res) => {
     try{
         const newTopic = new Topic(req.body);
         await newTopic.save();
@@ -14,7 +14,7 @@ app.post('/Topics', async (req, res) => {
     }
 });
 
-app.patch('Topics/:id', async (req, res) => {
+app.patch('/topics/:id', async (req, res) => {
     try{
         const topic = await Topic.findByIdAndUpdate(req.params.id, req.body, {new: true, runValidators: true});
         if(!topic){
@@ -26,16 +26,17 @@ app.patch('Topics/:id', async (req, res) => {
     }
 });
 
-app.get('/Topics', async(req, res) => {
+router.get('/topics', async(req, res) => {
+    console.log("you are here");
     try{
-        const topics = await Topic.find({});
+        const topics = await Topic.find();
         res.send(topics);
     } catch (error) {
         res.status(500).send(error);
     }
 });
 
-app.delete('Topics/:id', async(req, res) => {
+app.delete('/topics/:id', async(req, res) => {
     try{
         const topic = await Topic.findByIdAndDelete(req.params.id);
         if(!topic){
