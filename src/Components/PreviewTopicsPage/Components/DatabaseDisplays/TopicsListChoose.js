@@ -30,16 +30,20 @@ function TopicsListChoose(){
             <Row>
                 <h2>Choose a Topic:</h2>
             </Row>
-            <Row>
+            {/* <Row>
                 <ul>
                     {topics.map(topic => (
                         <li key={topic._id}>{topic.topic}</li>
                     ))}
                 </ul>
-            </Row>
+            </Row> */}
             <Row>
                 <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
-                    <ListGroup.Item action>Topic 1</ListGroup.Item>
+                    {topics.map(topic => (
+                        <ListGroup.Item action key={topic._id}>{topic.topic}</ListGroup.Item>
+                    ))}
+                        
+                    {/* <ListGroup.Item action>Topic 1</ListGroup.Item>
                     <ListGroup.Item action>Topic 2</ListGroup.Item>
                     <ListGroup.Item action>Topic 3</ListGroup.Item>
                     <ListGroup.Item action>Topic 1</ListGroup.Item>
@@ -47,7 +51,7 @@ function TopicsListChoose(){
                     <ListGroup.Item action>Topic 3</ListGroup.Item>
                     <ListGroup.Item action>Topic 1</ListGroup.Item>
                     <ListGroup.Item action>Topic 2</ListGroup.Item>
-                    <ListGroup.Item action>Topic 3</ListGroup.Item>
+                    <ListGroup.Item action>Topic 3</ListGroup.Item> */}
                 </ListGroup>
             </Row>  
         </TopicsParentContainer>
