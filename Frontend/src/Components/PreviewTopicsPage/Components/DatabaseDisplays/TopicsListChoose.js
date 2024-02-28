@@ -16,6 +16,7 @@ function TopicsListChoose(){
             const fetchTopics = async () => {
                 try{
                     const response = await axios.get('https://senior-capstone2024-backend.vercel.app/topics');
+                    console.log(response, response.data);
                     setTopics(response.data);
                 } catch (error){
                     console.error('Error fetching topics:', error);
