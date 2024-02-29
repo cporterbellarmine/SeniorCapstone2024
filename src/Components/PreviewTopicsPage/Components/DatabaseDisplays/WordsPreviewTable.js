@@ -32,15 +32,9 @@ function WordsPreviewTable({ topic }){
             </Row>
             <Row>
                 <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
-                    <ListGroup.Item action>Word 1</ListGroup.Item>
-                    <ListGroup.Item action>Word 2</ListGroup.Item>
-                    <ListGroup.Item action>Word 3</ListGroup.Item>
-                    <ListGroup.Item action>Word 1</ListGroup.Item>
-                    <ListGroup.Item action>Word 2</ListGroup.Item>
-                    <ListGroup.Item action>Word 3</ListGroup.Item>
-                    <ListGroup.Item action>Word 1</ListGroup.Item>
-                    <ListGroup.Item action>Word 2</ListGroup.Item>
-                    <ListGroup.Item action>Word 3</ListGroup.Item>
+                    {words.map(word => (
+                        <ListGroup.Item key={word._id}>{word.word}</ListGroup.Item>
+                    ))}
                 </ListGroup>
             </Row>
         </WordsParentContainer>
