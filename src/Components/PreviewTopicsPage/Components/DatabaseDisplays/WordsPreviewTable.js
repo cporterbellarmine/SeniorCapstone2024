@@ -1,7 +1,7 @@
 // Used in /Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer
 // Used in /Components/PreviewTopicsPage/PageDisplays/XsPreviewTopicsContainer
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
