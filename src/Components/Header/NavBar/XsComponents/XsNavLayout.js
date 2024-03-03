@@ -22,19 +22,19 @@ const XsNavLayout = () => {
                     </Col>
                     <Col className='col-2'>
                         <Dropdown>
-                                <Dropdown.Toggle id='active-button'>
-                                    Menu
-                                </Dropdown.Toggle>
-                                <XsDropdownNavMenu>
-                                    <XsDropdownNavLinkItem pathway="/" end textDisplayed="Home" />
-                                    <Dropdown.Divider className='m-0'/>
-                                    <XsDropdownNavLinkItem pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                                    <Dropdown.Divider className='m-0'/>
-                                    <XsDropdownNavLinkItem pathway="/view-topics" textDisplayed="View Topics"/>
-                                    <Dropdown.Divider className='m-0'/>
-                                    <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/>
-                                </XsDropdownNavMenu>
-                            </Dropdown>
+                            <Dropdown.Toggle id='active-button'>
+                                Menu
+                            </Dropdown.Toggle>
+                            <XsDropdownNavMenu>
+                                <XsDropdownNavLinkItem pathway="/" end textDisplayed="Home" />
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/view-topics" textDisplayed="View Topics"/>
+                                <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/>
+                            </XsDropdownNavMenu>
+                        </Dropdown>
                     </Col>
                 </StyledTopNavBar>
                 <Outlet />

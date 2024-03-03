@@ -9,7 +9,7 @@ import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable'
 import { MdMainContainerBackground, SubCol } from '../PreviewTopicsCompStyling';
 
 const MdPreviewTopicsContainer = () => {
-    const [topic, updateTopic] = useState([]);
+    const [topic, setTopic] = useState('');
 
     return(
         <MdMainContainerBackground>
@@ -21,7 +21,7 @@ const MdPreviewTopicsContainer = () => {
                     <Row>
                         <SubCol className='p-3 d-flex'>
                             <Row className='p-3 flex-grow-1'>
-                                <TopicsListChoose topic={topic} updateTopic={updateTopic}/>
+                                <TopicsListChoose callback={setTopic}/>
                             </Row>
                         </SubCol>
                         <SubCol className='p-3 d-flex'>

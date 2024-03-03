@@ -1,6 +1,6 @@
 // Used in /Components/PuzzleGenerator/PageDisplays/MdGeneratorPage
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +11,9 @@ import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
 const MdOptionsContainer = () => {
+
+    const [topic, setTopic] = useState('');
+
     return(
         <Container>
             <Row>
@@ -20,8 +23,8 @@ const MdOptionsContainer = () => {
                     </Row>
                     <Row className='order-3 pt-2 pb-4'>
                         <Stack gap={2}>
-                            <TopicDropdown />
-                            <DifficultyDropdown />
+                            <TopicDropdown callback={setTopic} />
+                            <DifficultyDropdown topic={topic} />
                         </Stack>
                     </Row>
                     <InstructionsRowStyled>

@@ -15,15 +15,14 @@ function WordsPreviewTable({ topic }){
     useEffect(() => {
         const fetchWords = async () => {
             try{
-                const response = await axios.get('https://senior-capstone2024-backend.vercel.app/words?topic='+{topic});
-                console.log(response, response.data);
+                const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/words?topic=${topic}`);
                 setWords(response.data);
             } catch (error){
                 console.error('Error fetching words:', error);
             }
         };
         fetchWords();
-    }, []);
+    }, [topic]);
 
     return(
         <WordsParentContainer>

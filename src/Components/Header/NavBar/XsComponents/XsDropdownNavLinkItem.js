@@ -13,10 +13,9 @@ function XsDropdownNavLinkItem(props){
                 };
             }}
         >
-            <XsStyledDropdownItem className='text-center'>
+            <XsStyledDropdownItem as='div' className='text-center'>
                 {props.textDisplayed}
             </XsStyledDropdownItem>
-        
         </XsStyledNavLink>
     );
 }
