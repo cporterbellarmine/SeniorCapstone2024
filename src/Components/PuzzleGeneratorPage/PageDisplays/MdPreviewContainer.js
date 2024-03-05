@@ -11,6 +11,10 @@ import ReloadButton from '../Components/Buttons/FunctionButtons/ReloadButton';
 import PreviewDisplay from '../Components/DisplayContainers/PreviewDisplay';
 import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContainers/PreviewStyledComponents';
 
+//Topic & difficulty are held in \PuzzleGeneratorPage\PageDisplays\MdGeneratorPage and passed down to
+//\PuzzleGeneratorPage\Components\Buttons\FunctionButtons\GenerateButton.
+//Generating the puzzle does not influence the values.
+
 const MdPreviewContainer = ({ topic, difficulty }) => {
 
     const[puzzle, setPuzzle] = useState([]);

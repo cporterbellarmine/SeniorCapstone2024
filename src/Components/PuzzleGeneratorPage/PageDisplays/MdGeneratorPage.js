@@ -9,8 +9,8 @@ import { HideMdContainer } from './ViewContainer';
 
 const MdGeneratorPage = () => {
 
-    const[topic, setTopic] = useState('');
-    const[difficulty, setDifficulty] = useState('');
+    const[topic, setTopic] = useState(''); //Used to store the chosen topic in the OptionsContainer.
+    const[difficulty, setDifficulty] = useState(''); //Used to store the chosen topic in the OptionsContainer.
 
     return(
         <HideMdContainer>
