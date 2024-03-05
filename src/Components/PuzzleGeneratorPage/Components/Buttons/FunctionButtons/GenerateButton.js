@@ -7,14 +7,15 @@ import Button from 'react-bootstrap/Button';
 
 const GenerateButton = ({ topic, callBack, difficulty }) => {
 
-    const[wordData, setWordData] = useState([]);
-    const[usableWords, setUsableWords] = useState([]);
-    const[usableWordsArrayLength, setUsableWordsArrayLength] = useState(0);
-    const[puzzleWords, setPuzzleWords] = useState([]);
-    const[puzzle, setPuzzle] = useState([]);
+    // Set State Hooks
+    const[wordData, setWordData] = useState([]); //Used to gather data from database.
+    const[usableWords, setUsableWords] = useState([]); //Used to store words that comply with the chosen difficulty
+    const[usableWordsArrayLength, setUsableWordsArrayLength] = useState(0); //Used to store the number of words that comply with the chosen difficulty
+    const[puzzleWords, setPuzzleWords] = useState([]); //Used to store the random words that will be used in the puzzle.
+    const[puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
 
-    const wordsArray = [];
-    const numberOfWordsForEasy = 10;
+    const wordsArray = []; //Stored as a stand-in-array for usableWords.
+    const numberOfWordsForEasy = 10; //
     const numberOfWordsforIntermediate = 20;
     const numberOfWordsForDifficult = 30;
     const numberOfWordsforExpert = 40;
