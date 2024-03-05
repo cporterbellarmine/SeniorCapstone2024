@@ -150,7 +150,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         chooseWords();
     }, [usableWordsArrayLength])
 
-    console.log(puzzleWords());
+    console.log(puzzleWords);
 
     return(
         <Button variant='primary' size='lg'>Generate Puzzle</Button>
