@@ -5,7 +5,7 @@ import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 
-function TopicDropdown({ callback }){
+function TopicDropdown({ callback, selectedCallback }){
     const[topics, setTopics] = useState([]);
 
     useEffect(() => {
@@ -21,12 +21,12 @@ function TopicDropdown({ callback }){
         fetchTopics();
     }, []);
 
-    const valueCount = 0;
-
 
     return(
         <Form.Select onClick={(e) => {
-            callback(e.target.value)}}>
+            callback(e.target.value);
+            selectedCallback('defaultChoose');
+            }}>
             <option value='default'>Click to choose a topic</option>
             {topics.map(topic =>
                 <option key={topic._id} value={topic.topic}>

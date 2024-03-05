@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { PreviewContainerRow } from './PreviewStyledComponents';
 
-const PreviewDisplay = () => {
+const PreviewDisplay = ({ puzzle }) => {
     return(
         <Container>
             <Col>
