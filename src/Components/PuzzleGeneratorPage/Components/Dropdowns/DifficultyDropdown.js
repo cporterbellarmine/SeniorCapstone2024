@@ -15,39 +15,42 @@ import Form from 'react-bootstrap/Form';
 function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallback }){
     
     const[topicData, setTopicData] = useState([]); //Used to set the chosen topic value.
-    const[difficultyValues, setDifficultyValues] = useState([]);
+    const[difficultyValues, setDifficultyValues] = useState([]); //Stores the boolean array whether the requirements for a specific difficulty is met
 
-    const difficulties = ["Easy", "Intermediate", "Difficult", "Expert"];
+    const difficulties = ["Easy", "Intermediate", "Difficult", "Expert"]; //Available Difficulties
 
 
     useEffect(() => {
-        const fetchDifficultyData = async () => {
-            try{
-                const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/topics?topic=${topic}`); //Query string
-                setTopicData(response.data[0]); //.data is where the actual values are stored, and [0] accesses the entry.
-            } catch (error){
-                console.error('Error fetching topic:', error);
+        const runTopic = () => {
+            topic?.(() => {
+            const fetchDifficultyData = async () => {
+                try{
+                    const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/topics?topic=${topic}`); //Query string
+                    setTopicData(response.data[0]); //.data is where the actual values are stored, and [0] accesses the entry.
+                } catch (error){
+                    console.error('Error fetching topic:', error);
+                };
             };
-        };
-        fetchDifficultyData();
+            fetchDifficultyData();
+        })};
+        runTopic();
     }, [topic]);
 
     //When the topic data is changed and has a value, creates an array with the associated
     //difficulty eligibility booleans into an array with the correct values in order:
     //[easy, intermediate, difficult, expert]
     useEffect(() => {
-        if(topicData){
+        const runDataArrayPopulation = () => {
+            topicData?.(() => {
             const difficultyArray = [];
-            const easyResponse = topicData.easy;
-            difficultyArray.push(easyResponse);
-            const intermediateResponse = topicData.intermediate;
-            difficultyArray.push(intermediateResponse);
-            const difficultResponse = topicData.difficult;
-            difficultyArray.push(difficultResponse);
-            const expertResponse = topicData.expert;
-            difficultyArray.push(expertResponse);
-            setDifficultyValues(difficultyArray);  
-        };     
+            difficulties.map(difficulty => {
+            let level = difficulty.toLowerCase();
+            difficultyArray.push(topicData.level);
+            });
+        });
+                setDifficultyValues(difficultyArray);
+            }, [topicData]);
+        runDataArrayPopulation();
     }, [topicData]);
 
     return(
