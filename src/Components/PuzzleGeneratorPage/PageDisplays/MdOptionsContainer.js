@@ -10,9 +10,9 @@ import DifficultyDropdown from '../Components/Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
-const MdOptionsContainer = ({ callback, topic, difficultyCallback }) => {
+const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
 
-    const[selected, setSelected] = useState('defaultChoose');
+    const[selected, setSelected] = useState('default');
 
     return(
         <Container>
@@ -23,7 +23,7 @@ const MdOptionsContainer = ({ callback, topic, difficultyCallback }) => {
                     </Row>
                     <Row className='order-3 pt-2 pb-4'>
                         <Stack gap={2}>
-                            <TopicDropdown callback={callback} difficultyCallback={difficultyCallback} selectedCallback={setSelected}/>
+                            <TopicDropdown topicCallback={topicCallback} difficultyCallback={difficultyCallback} selectedCallback={setSelected}/>
                             <DifficultyDropdown topic={topic} difficultyCallback={difficultyCallback} selectedCallback={setSelected} selected={selected}/>
                         </Stack>
                     </Row>

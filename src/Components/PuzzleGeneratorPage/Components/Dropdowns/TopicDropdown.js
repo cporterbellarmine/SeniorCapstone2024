@@ -11,7 +11,7 @@ import Form from 'react-bootstrap/Form';
 
 //SelectedCallback is passed to \PuzzleGeneratorPage\Components\Dropdowns\DifficultyDropdown
 //and resets the difficulty value and dropdown.
-function TopicDropdown({ callback, selectedCallback }){
+function TopicDropdown({ topicCallback, selectedCallback }){
     const[topics, setTopics] = useState([]);
 
     //This is not re-rendered because the topic value isn't set until the end.
@@ -32,8 +32,8 @@ function TopicDropdown({ callback, selectedCallback }){
         //Iterates through the available topics and creates a dropdown select.
         //When clicked, the topic value is changed and the difficulty level is reset.
         <Form.Select onClick={(e) => {
-            callback(e.target.value);
-            selectedCallback('defaultChoose');
+            topicCallback(e.target.value)
+            selectedCallback('defaultChoose')
             }}>
             <option value='default'>Click to choose a topic</option>
             {topics.map(topic =>

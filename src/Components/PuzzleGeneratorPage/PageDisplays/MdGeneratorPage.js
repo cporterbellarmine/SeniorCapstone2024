@@ -16,7 +16,7 @@ const MdGeneratorPage = () => {
         <HideMdContainer>
             <Row className='p-4 d-flex'>
                 <Col>
-                    <MdOptionsContainer callback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty}/>
+                    <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty}/>
                 </Col>
                 <Col>
                    <MdPreviewContainer topic={topic} difficulty={difficulty}/>

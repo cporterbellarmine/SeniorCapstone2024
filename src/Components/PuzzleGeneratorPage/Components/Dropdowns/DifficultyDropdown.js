@@ -21,51 +21,56 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
 
 
     useEffect(() => {
-        const runTopic = () => {
-            topic?.(() => {
-            const fetchDifficultyData = async () => {
-                try{
-                    const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/topics?topic=${topic}`); //Query string
-                    setTopicData(response.data[0]); //.data is where the actual values are stored, and [0] accesses the entry.
-                } catch (error){
-                    console.error('Error fetching topic:', error);
-                };
+        if(!topic){
+        return;
+        };
+        const fetchDifficultyData = async () => {
+            try{
+                const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/topics?topic=${topic}`); //Query string
+                setTopicData(response.data[0]); //.data is where the actual values are stored, and [0] accesses the entry.
+            } catch (error){
+                console.error('Error fetching topic:', error);
             };
-            fetchDifficultyData();
-        })};
-        runTopic();
+        };
+        fetchDifficultyData();
     }, [topic]);
 
     //When the topic data is changed and has a value, creates an array with the associated
     //difficulty eligibility booleans into an array with the correct values in order:
     //[easy, intermediate, difficult, expert]
     useEffect(() => {
-        const runDataArrayPopulation = () => {
-            topicData?.(() => {
-            const difficultyArray = [];
-            difficulties.map(difficulty => {
+        if(!topicData){
+            return;
+        };
+        const difficultyArray = [];
+        difficulties.map(difficulty => {
             let level = difficulty.toLowerCase();
             difficultyArray.push(topicData.level);
-            });
         });
-                setDifficultyValues(difficultyArray);
-            }, [topicData]);
-        runDataArrayPopulation();
+        setDifficultyValues(difficultyArray);
     }, [topicData]);
 
-    return(
-        <Form.Select value={selected} onClick={(e) => difficultyCallback(e.target.value)} onChange={(e) => selectedCallback(e.target.value)}>
-            <option value='defaultChoose'>Click to choose a difficulty</option>
-            
-            {/* Maps through the difficulty value arrays and upon a true value, generates a clickable value. If false, it generates a non-clickable value. */}
-            {difficultyValues.map((value, index) => {
-                if(value){
-                    return(<option key={difficulties[index]} value={difficulties[index]}>{difficulties[index]}</option>);
-                }else{
-                    return(<option disabled key={difficulties[index]} value={difficulties[index]}>{difficulties[index]}</option>);
-                };
-            })}
-        </Form.Select>
-    );
+    if(difficultyValues){
+        return(
+            <Form.Select value={selected} onClick={(e) => difficultyCallback(e.target.value)} onChange={(e) => selectedCallback(e.target.value)}>
+                <option value='defaultChoose'>Click to choose a difficulty</option>
+                
+                {/* Maps through the difficulty value arrays and upon a true value, generates a clickable value. If false, it generates a non-clickable value. */}
+                {difficultyValues.map((value, index) => {
+                    if(value){
+                        return(<option key={difficulties[index]} value={difficulties[index]}>{difficulties[index]}</option>);
+                    }else{
+                        return(<option disabled key={difficulties[index]} value={difficulties[index]}>{difficulties[index]}</option>);
+                    };
+                })}
+            </Form.Select>
+        );
+    }else{
+        return(
+            <Form.Select disabled>
+                <option value='default'>Please choose a difficulty above.</option>
+            </Form.Select>
+        );
+    }
 }
 export default DifficultyDropdown;
