@@ -20,7 +20,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
     const difficulties = ["Easy", "Intermediate", "Difficult", "Expert"]; //Available Difficulties
 
     console.log({ topic });
-    console.log(topicData);
 
     useEffect(() => {
         if (!topic || topic==='default') {
