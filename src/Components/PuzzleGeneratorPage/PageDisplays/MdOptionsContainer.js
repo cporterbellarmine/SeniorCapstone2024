@@ -12,7 +12,9 @@ import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/P
 
 const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
 
-    const[selected, setSelected] = useState('default');
+    console.log({topic});
+
+    const[selected, setSelected] = useState('');
 
     return(
         <Container>

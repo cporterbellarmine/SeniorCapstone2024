@@ -56,9 +56,9 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     }, [topic]);
 
     //For each word collected, add it to a new array
-    {wordData.map(data => {
+    wordData.map(data => {
         wordsArray.push(data.word);
-    })};
+    });
 
     //When difficulty is changed, iterates through the values in wordsArray and tracks the number of characters in each word.
     //Checks if the number of characters in the array is within the acceptable charactersRange array for this particular difficulty.
@@ -148,7 +148,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
             setPuzzleWords(chosenWords);
         };
         chooseWords();
-    }, [usableWordsArrayLength])
+    }, [usableWords])
 
     console.log(puzzleWords);
 
