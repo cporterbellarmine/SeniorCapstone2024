@@ -19,8 +19,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
 
     const difficulties = ["Easy", "Intermediate", "Difficult", "Expert"]; //Available Difficulties
 
-    console.log({ topic });
-
     useEffect(() => {
         if (!topic || topic==='default') {
             console.log('No topic chosen.');
@@ -30,7 +28,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
         const fetchDifficultyData = async () => {
             try {
                 const response = await axios.get(`https://senior-capstone2024-backend.vercel.app/topics?topic=${topic}`); //Query string
-                console.log(response.data[0]);
                 setTopicData(response.data[0]); //.data is where the actual values are stored, and [0] accesses the entry.
             } catch (error) {
                 console.error('Error fetching topic:', error);
@@ -43,7 +40,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
     //difficulty eligibility booleans into an array with the correct values in order:
     //[easy, intermediate, difficult, expert]
     useEffect(() => {
-        console.log(topicData);
         if (topicData.length===0) {
             console.log('No topic data');
             return;
@@ -60,8 +56,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
         setDifficultyValues(difficultyArray);
     }, [topicData]);
 
-    console.log(difficultyValues);
-
     if(difficultyValues.length === 0){
         return (
             <Form.Select disabled>
@@ -70,8 +64,6 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
         );
 
     }
-    
-
     return (
         <Form.Select value={selected} onClick={(e) => difficultyCallback(e.target.value)} onChange={(e) => selectedCallback(e.target.value)}>
             <option value='defaultChoose'>Click to choose a difficulty</option>

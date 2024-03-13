@@ -31,6 +31,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const[puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
 
     const wordsArray = []; //Stored as a stand-in-array for usableWords.
+    const lettersArray = new Set([]);
     const numberOfWordsForEasy = 10; //Number of words to choose for easy difficulty
     const numberOfWordsforIntermediate = 20; //Number of words to choose for intermediate difficulty
     const numberOfWordsForDifficult = 30; //Number of words to choose for difficult difficulty
@@ -40,6 +41,10 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const charactersRangeEasy = [3, 4, 5]; //number of letters in a word included in easy difficulty
     const charactersRangeIntermediate = [3, 4, 5, 6, 7, 8, 9, 10]; //number of letters in a word included in easy difficulty
     const charactersRangeDifficultandExpert = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; //number of letters in a word included in easy difficulty
+    
+    const sizeOfEasy = 8;
+    const sizeOfIntermediate = 15;
+    const sizeOfDiffExp = 23;
     
     //When the topic is updated, gather the words associated with the topic in the database
     useEffect(() => {
@@ -116,16 +121,22 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
             const chosenWords = [];
 
             //Sets the number of words to choose.
-            if(difficulty === 'Easy'){
-                numberOfWordsLeftToChoose = numberOfWordsForEasy;
-            }else if(difficulty === 'Intermediate'){
-                numberOfWordsLeftToChoose = numberOfWordsforIntermediate;
-            }else if(difficulty === 'Difficult'){
-                numberOfWordsLeftToChoose = numberOfWordsForDifficult;
-            }else if(difficulty === 'Expert'){
-                numberOfWordsLeftToChoose = numberOfWordsforExpert;
-            }else{
-                console.log('No difficulty chosen.');
+
+            switch(difficulty){
+                case 'Easy':
+                    numberOfWordsLeftToChoose = numberOfWordsForEasy;
+                    break;
+                case 'Intermediate':
+                    numberOfWordsLeftToChoose = numberOfWordsforIntermediate;
+                    break;
+                case 'Difficult':
+                    numberOfWordsLeftToChoose = numberOfWordsForDifficult;
+                    break;
+                case 'Expert':
+                    numberOfWordsLeftToChoose = numberOfWordsforExpert;
+                    break;
+                default:
+                    console.log('No difficulty chosen. Cannot choose words.');
             };
 
             //Every time the number of number of of eligible words changes, 
@@ -151,6 +162,37 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     }, [usableWords])
 
     console.log(puzzleWords);
+
+    useEffect(() => {
+        puzzleWords.map(word => {
+            for(let i = 0; i < word.length; i++) {
+                lettersArray.add(word[i]);
+            };
+        });
+        console.log(lettersArray);
+    }, [puzzleWords]);
+
+    useEffect(() => {
+
+        let puzzleSize;
+        const puzzleStorage = [];
+        const wordStorage = [];
+
+        switch(difficulty){
+            case 'Easy':
+                puzzleSize = sizeOfEasy;
+                break;
+            case 'Intermediate':
+                puzzleSize = sizeOfIntermediate;
+                break;
+            case 'Difficult' || 'Expert':
+                puzzleSize = sizeOfDiffExp;
+                break;
+            default:
+                console.log('No difficulty chosen. Cannot generate puzzle size.');
+        };
+
+    }, [puzzleWords, difficulty])
 
     return(
         <Button variant='primary' size='lg'>Generate Puzzle</Button>
