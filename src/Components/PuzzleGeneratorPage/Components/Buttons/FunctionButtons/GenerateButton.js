@@ -181,12 +181,39 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         switch(difficulty){
             case 'Easy':
                 puzzleSize = sizeOfEasy;
+                for(let i = 0; i < puzzleSize; i++){
+                    const arr = [];
+                    for(let j = 0; j < puzzleSize; j++){
+                        arr.push(0);
+                    };
+                    puzzleStorage.push(arr);
+                    wordStorage.push(arr);
+                };
+                console.log(puzzleStorage);
                 break;
             case 'Intermediate':
                 puzzleSize = sizeOfIntermediate;
+                for(let i = 0; i < puzzleSize; i++){
+                    const arr = [];
+                    for(let j = 0; j < puzzleSize; j++){
+                        arr.push(0);
+                    };
+                    puzzleStorage.push(arr);
+                    wordStorage.push(arr);
+                };
+                console.log(puzzleStorage);
                 break;
             case 'Difficult' || 'Expert':
                 puzzleSize = sizeOfDiffExp;
+                for(let i = 0; i < puzzleSize; i++){
+                    const arr = [];
+                    for(let j = 0; j < puzzleSize; j++){
+                        arr.push(0);
+                    };
+                    puzzleStorage.push(arr);
+                    wordStorage.push(arr);
+                };
+                console.log(puzzleStorage);
                 break;
             default:
                 console.log('No difficulty chosen. Cannot generate puzzle size.');
