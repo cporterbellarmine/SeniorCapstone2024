@@ -28,6 +28,8 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const[usableWords, setUsableWords] = useState([]); //Used to store words that comply with the chosen difficulty
     const[usableWordsArrayLength, setUsableWordsArrayLength] = useState(0); //Used to store the number of words that comply with the chosen difficulty
     const[puzzleWords, setPuzzleWords] = useState([]); //Used to store the random words that will be used in the puzzle.
+    const[blankPuzzle, setBlankPuzzle] = useState([]);
+    const[blankLayout, setBlankLayout] = useState([]);
     const[puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
 
     const wordsArray = []; //Stored as a stand-in-array for usableWords.
@@ -45,6 +47,8 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const sizeOfEasy = 8;
     const sizeOfIntermediate = 15;
     const sizeOfDiffExp = 23;
+
+    const directions = ['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'];
     
     //When the topic is updated, gather the words associated with the topic in the database
     useEffect(() => {
@@ -219,7 +223,21 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
                 console.log('No difficulty chosen. Cannot generate puzzle size.');
         };
 
+        console.log(puzzleWords);
+        setBlankPuzzle(puzzleStorage);
+        setBlankLayout(wordStorage);
     }, [puzzleWords, difficulty])
+
+    function chooseDirection(){
+
+        
+    }
+
+    useEffect(() => {
+
+
+
+    })
 
     return(
         <Button variant='primary' size='lg'>Generate Puzzle</Button>
