@@ -28,12 +28,11 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const[usableWords, setUsableWords] = useState([]); //Used to store words that comply with the chosen difficulty
     const[usableWordsArrayLength, setUsableWordsArrayLength] = useState(0); //Used to store the number of words that comply with the chosen difficulty
     const[puzzleWords, setPuzzleWords] = useState([]); //Used to store the random words that will be used in the puzzle.
-    const[blankPuzzle, setBlankPuzzle] = useState([]);
-    const[blankLayout, setBlankLayout] = useState([]);
     const[puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
 
     const wordsArray = []; //Stored as a stand-in-array for usableWords.
     const lettersArray = new Set([]);
+    const coordinateDirections = [];
     const numberOfWordsForEasy = 10; //Number of words to choose for easy difficulty
     const numberOfWordsforIntermediate = 20; //Number of words to choose for intermediate difficulty
     const numberOfWordsForDifficult = 30; //Number of words to choose for difficult difficulty
@@ -176,68 +175,118 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         console.log(lettersArray);
     }, [puzzleWords]);
 
-    useEffect(() => {
-
-        let puzzleSize;
+    function createPuzzleTemplate(size){
         const puzzleStorage = [];
-        const wordStorage = [];
+        const possibleCoordinates = [];
+
+        for(let i = 0; i < size; i++){
+            const arr = [];
+            for(let j = 0; j < size; j++){
+                arr.push(0);
+                const index = [i,j];
+                possibleCoordinates.push(index);
+            };
+            puzzleStorage.push(arr);
+        };
+        return[puzzleStorage, possibleCoordinates];
+    };
+
+
+
+    function generateEmptyPuzzle(currentDifficulty){
+        let puzzle;
+        let coords;
 
         switch(difficulty){
             case 'Easy':
-                puzzleSize = sizeOfEasy;
-                for(let i = 0; i < puzzleSize; i++){
-                    const arr = [];
-                    for(let j = 0; j < puzzleSize; j++){
-                        arr.push(0);
-                    };
-                    puzzleStorage.push(arr);
-                    wordStorage.push(arr);
-                };
-                console.log(puzzleStorage);
+                [puzzle, coords] = createPuzzleTemplate(sizeOfEasy);
                 break;
             case 'Intermediate':
-                puzzleSize = sizeOfIntermediate;
-                for(let i = 0; i < puzzleSize; i++){
-                    const arr = [];
-                    for(let j = 0; j < puzzleSize; j++){
-                        arr.push(0);
-                    };
-                    puzzleStorage.push(arr);
-                    wordStorage.push(arr);
-                };
-                console.log(puzzleStorage);
+                [puzzle, coords] = createPuzzleTemplate(sizeOfIntermediate);
                 break;
             case 'Difficult' || 'Expert':
-                puzzleSize = sizeOfDiffExp;
-                for(let i = 0; i < puzzleSize; i++){
-                    const arr = [];
-                    for(let j = 0; j < puzzleSize; j++){
-                        arr.push(0);
-                    };
-                    puzzleStorage.push(arr);
-                    wordStorage.push(arr);
-                };
-                console.log(puzzleStorage);
+                [puzzle, coords] = createPuzzleTemplate(sizeOfDiffExp);
                 break;
             default:
                 console.log('No difficulty chosen. Cannot generate puzzle size.');
         };
 
-        console.log(puzzleWords);
-        setBlankPuzzle(puzzleStorage);
-        setBlankLayout(wordStorage);
-    }, [puzzleWords, difficulty])
+        console.log(puzzle);
+        console.log(coords);
+        return[puzzle, coords];
+    };
 
-    function chooseDirection(){
+    function chooseDirection(eligibleDirections){
+        const direction = randomIntGenerator(eligibleDirections.length);
+        return(direction);
+    };
 
-        
-    }
+    function chooseStartingPoint(coords){
+        const randomIndex = randomIntGenerator(coords.length);
+        return(randomIndex);
+    };
+
+    //Beginning: Create puzzle & coords. Choose starting location. Choose direction.
+    //Check to make sure constraints fit. If they do, add word. If they don't, regenerate direction.
+    //If word is placed in that location, get indicies for letters and add the directions to the index
+    //specified for the index the direction is placed.
+
+    //After: Choose starting location & direction. Check to make sure constraints fit.
+    //Check to make sure for each letter for the word, ensure the letter isn't placed with
+    //a direction going the same way or opposite way.
+    //Re-generate direction, then location if needed.
+
+    function checkConstraints(word, direction, startingPoint, coordinateArray, directionsArray){
+        const wordLength = word.length;
+        const startingCoordinates = coordinateArray[startingPoint];
+        const firstCoordinate = startingCoordinates[0];
+        const secondCoordinate = startingCoordinates[1];
+
+
+        const constraintsArray = [];
+
+        switch(direction){
+            case 'north':
+                const opposite = 'south';
+                let newCoordinateLocation;
+
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate, secondCoordinate-i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                }
+
+                //check available array, if false is contained, then regenerate direction
+            case 'northeast':
+
+            case 'east':
+
+            case 'southeast':
+
+            case 'south':
+
+            case 'southwest':
+
+            case 'west':
+
+            case 'northwest':
+
+        }
+
+
+
+    };
 
     useEffect(() => {
 
-
-
-    })
+    }, [puzzleWords, difficulty])
 
     return(
         <Button variant='primary' size='lg'>Generate Puzzle</Button>
