@@ -236,19 +236,18 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     //a direction going the same way or opposite way.
     //Re-generate direction, then location if needed.
 
-    function checkConstraints(word, direction, startingPoint, coordinateArray, directionsArray){
-        const wordLength = word.length;
+    function checkConstraints(wordLength, direction, startingPoint, coordinateArray, directionsArray){
         const startingCoordinates = coordinateArray[startingPoint];
         const firstCoordinate = startingCoordinates[0];
         const secondCoordinate = startingCoordinates[1];
-
+        let opposite;
+        const available = false;
 
         const constraintsArray = [];
 
         switch(direction){
             case 'north':
-                const opposite = 'south';
-                let newCoordinateLocation;
+                opposite = 'south';
 
                 for(const i = 0; i < wordLength; i++){
                     const available = false;
@@ -261,28 +260,134 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
                         }
                     }
                     constraintsArray.push(available);
-                }
+                };
 
                 //check available array, if false is contained, then regenerate direction
             case 'northeast':
+                opposite = 'southwest';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate+i, secondCoordinate-i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'east':
+                opposite = 'west';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate+i, secondCoordinate];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'southeast':
+                opposite = 'northwest';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'south':
+                opposite = 'north';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate, secondCoordinate+i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'southwest':
+                opposite = 'northeast';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'west':
+                opposite = 'east';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate-i, secondCoordinate];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
             case 'northwest':
+                opposite = 'southeast';
 
+                for(const i = 0; i < wordLength; i++){
+                    const available = false;
+                    const newCoordinate = [firstCoordinate, secondCoordinate-i];
+                    const newCoordinateIndex = coordinateArray.indexOf(newCoordinate);
+                    if(newCoordinateIndex != -1){
+                        const coordinateDirections = directionsArray[newCoordinateIndex];
+                        if(!coordinateDirections.includes('north' || opposite)){
+                            available = true;
+                        }
+                    }
+                    constraintsArray.push(available);
+                };
         }
 
+        if(!constraintsArray.includes(false)){
+            available = true;
+        }
 
+        return(available);
 
     };
+
+    function generateStartandDirection(wordLength, coordinatesArray, directionArray){
+        const workingIndex = false;
+        
+        while()
+
+
+
+    }
+
+
 
     useEffect(() => {
 
