@@ -13,7 +13,6 @@ function TopicsListChoose({ callback }){
 
     const[topics, setTopics] = useState([]);
     const[selectedTopic, setSelectedTopic] = useState('');
-    const[active, setActive] = useState(false);
 
     useEffect(() => {
         const fetchTopics = async () => {
@@ -41,7 +40,6 @@ function TopicsListChoose({ callback }){
                 </ListGroup>
             </Row>  
         </TopicsParentContainer>
-        
     );
 };
 export default TopicsListChoose;

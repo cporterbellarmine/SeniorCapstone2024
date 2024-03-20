@@ -18,7 +18,7 @@ export const XsMainContainerBackground = styled(Container)`
 
 // Used in /Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer
 export const SubCol = styled(Col)`
-    background-color: #88d0e7;
+    background-color: #ffffff;
 `;
 
 // Used in  /Components/PreviewTopics/Components/DatabaseDisplays/TopicsListChoose
@@ -29,4 +29,13 @@ export const TopicsParentContainer = styled(Container)`
 // Used in /Components/PreviewTopics/Components/DatabaseDisplays/WordsPreviewTable
 export const WordsParentContainer = styled(Container)`
     background-color: mediumaquamarine;
+`;
+
+export const DividerDiv = styled.div`
+    border-top: solid 1px #7a1f15;
+`;
+
+export const ButtonCol = styled(Col)`
+    background-color: #ffffff;
+    border-bottom: solid 1px #7a1f15;
 `;

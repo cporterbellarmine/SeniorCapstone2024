@@ -7,7 +7,8 @@ import MdNavButtonRouting from '../Components/Buttons/MdNav/MdNavButtonRouting';
 import TopicsListChoose from '../Components/DatabaseDisplays/TopicsListChoose';
 import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable';
 import TopicsBackgroundHalf from '../../Images/TopicsBackgroundHalf.png';
-import { MdMainContainerBackground, SubCol } from '../PreviewTopicsCompStyling';
+import { MdMainContainerBackground, SubCol, ButtonCol, DividerDiv } from '../PreviewTopicsCompStyling';
+import './display.css';
 
 const MdPreviewTopicsContainer = () => {
     const [topic, setTopic] = useState('');
@@ -20,25 +21,35 @@ const MdPreviewTopicsContainer = () => {
                         <img src={TopicsBackgroundHalf} className='p-0 m-0' alt='Preview Topics Cover Photo'/>
                     </Row>
                     <Row>
-                        <SubCol className='p-3 d-flex'>
+                        <DividerDiv className='border-bottom'>
+                        </DividerDiv>
+                    </Row>
+                    <Row>
+                        <SubCol className='p-3'>
                             <Row>
                                 <h3>Choose a Topic</h3>
                             </Row>
-                            <Row className='p-3 flex-grow-1'>
+                            <Row className='px-3'>
                                 <TopicsListChoose callback={setTopic} />
                             </Row>
                         </SubCol>
-                        <SubCol className='p-3 d-flex'>
+                        <SubCol className='p-3'>
                             <Row>
-                                <h3>Words Associated With Chosen Topic</h3>
+                                <h3>Associated Words</h3>
                             </Row>
-                            <Row className='p-3 flex-grow-1'>
+                            <Row className='px-3 flex-grow-1'>
                                 <WordsPreviewTable topic={topic}/>
                             </Row>
                         </SubCol>
                     </Row>
                     <Row>
-                        <MdNavButtonRouting />
+                        <ButtonCol>
+                            <MdNavButtonRouting />
+                        </ButtonCol>
+                        
+                    </Row>
+                    <Row>
+                        <></>
                     </Row>
                 </Col>
             </Row>
