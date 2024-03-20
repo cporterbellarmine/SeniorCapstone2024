@@ -381,7 +381,9 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     function generateStartandDirection(wordLength, coordinatesArray, directionArray){
         const workingIndex = false;
         
-        while()
+        // while(){
+            
+        // }
 
 
 
@@ -390,7 +392,6 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
 
 
     useEffect(() => {
-
     }, [puzzleWords, difficulty])
 
     return(

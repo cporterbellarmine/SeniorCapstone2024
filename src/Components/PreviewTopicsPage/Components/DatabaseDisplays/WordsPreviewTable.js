@@ -24,20 +24,23 @@ function WordsPreviewTable({ topic }){
         fetchWords();
     }, [topic]);
 
-    return(
-        <WordsParentContainer>
-            <Row>
-                <h2>Word Preview</h2>
-            </Row>
-            <Row>
-                <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
-                    {words.map(word => (
-                        <ListGroup.Item key={word._id}>{word.word}</ListGroup.Item>
-                    ))}
-                </ListGroup>
-            </Row>
-        </WordsParentContainer>
-        
-    );
+    if(words.length != 0){
+        return(
+            <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
+                {words.map(word => (
+                    <ListGroup.Item key={word._id}>{word.word}</ListGroup.Item>
+                ))}
+            </ListGroup>
+            
+        )
+    }else{
+        return(
+            <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
+                <ListGroup.Item key='default'>Please choose a topic to the left.</ListGroup.Item>
+            </ListGroup>
+            
+        )
+    }
+    ;
 };
 export default WordsPreviewTable;

@@ -4,16 +4,16 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Stack from 'react-bootstrap/Stack';
-import ButtonLinkTemplate from '../../../../ButtonLinkTemplate';
+import PreviewTopicsButtonLinkTemplate from '../../../Styling/PreviewTopicsButtonLinkTemplate';
 
 function MdNavButtonsLayout(){
     return(
         <>
             <Nav>
                 <Stack direction="horizontal" gap={5} className='mx-auto'>
-                    <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create a Topic"/>
-                    <ButtonLinkTemplate pathway="/edit-topic" textDisplayed="Edit Topics"/>
+                    <PreviewTopicsButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
+                    <PreviewTopicsButtonLinkTemplate pathway="/create-topic" textDisplayed="Create a Topic"/>
+                    <PreviewTopicsButtonLinkTemplate pathway="/edit-topic" textDisplayed="Edit Topics"/>
                 </Stack>
             </Nav>
             <Outlet />

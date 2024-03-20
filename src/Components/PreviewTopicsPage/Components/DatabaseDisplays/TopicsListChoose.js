@@ -28,12 +28,9 @@ function TopicsListChoose({ callback }){
     return(
         <TopicsParentContainer>
             <Row>
-                <h2>Choose a Topic:</h2>
-            </Row>
-            <Row>
-                <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
+                <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height list_group_active'>
                     {topics.map(topic => (
-                        <ListGroup.Item key={topic._id} action onClick={() => {
+                        <ListGroup.Item key={topic._id} className='list_group_active' action onClick={() => {
                             callback(topic.topic)
                             }
                         } >{topic.topic}</ListGroup.Item>

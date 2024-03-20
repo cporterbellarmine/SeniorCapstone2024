@@ -4,8 +4,6 @@ import Col from 'react-bootstrap/Col';
 
 // Used in /Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer
 export const MdMainContainerBackground = styled(Container)`
-    background-color: darkcyan;
-
     @media screen and (max-width: 767px){
         display: none;
     };
@@ -13,8 +11,6 @@ export const MdMainContainerBackground = styled(Container)`
 
 // Used in /Components/PreviewTopicsPage/PageDisplays/XsPreviewTopicsContainer
 export const XsMainContainerBackground = styled(Container)`
-    background-color: darkcyan;
-
     @media screen and (min-width: 768px){
         display: none;
     };
@@ -22,7 +18,7 @@ export const XsMainContainerBackground = styled(Container)`
 
 // Used in /Components/PreviewTopicsPage/PageDisplays/MdPreviewTopicsContainer
 export const SubCol = styled(Col)`
-    background-color: rosybrown;
+    background-color: #88d0e7;
 `;
 
 // Used in  /Components/PreviewTopics/Components/DatabaseDisplays/TopicsListChoose
