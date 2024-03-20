@@ -8,9 +8,12 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { TopicsParentContainer } from '../../PreviewTopicsCompStyling';
 import './list_group.css';
 
+
 function TopicsListChoose({ callback }){
 
     const[topics, setTopics] = useState([]);
+    const[selectedTopic, setSelectedTopic] = useState('');
+    const[active, setActive] = useState(false);
 
     useEffect(() => {
         const fetchTopics = async () => {
@@ -24,14 +27,14 @@ function TopicsListChoose({ callback }){
         fetchTopics();
     }, []);
 
-
     return(
         <TopicsParentContainer>
             <Row>
-                <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height list_group_active'>
+                <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height list_group-active-background'>
                     {topics.map(topic => (
-                        <ListGroup.Item key={topic._id} className='list_group_active' action onClick={() => {
-                            callback(topic.topic)
+                        <ListGroup.Item key={topic._id} className={topic.topic === selectedTopic ? 'list_group_active.active active' : 'list_group_active'} action onClick={() => {
+                            callback(topic.topic);
+                            setSelectedTopic(topic.topic);
                             }
                         } >{topic.topic}</ListGroup.Item>
                     ))}

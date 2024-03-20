@@ -3,8 +3,9 @@
 
 .list_group-height{
     max-height: 210px;
+    --bs-list-group-active-bg: #66C2E1;
 };
 
-.list_group_active{
-    --bs-list-group-action-color: #66C2E1;
+.list_group-active-background{
+    --bs-list-group-active-bg: #66C2E1;
 }

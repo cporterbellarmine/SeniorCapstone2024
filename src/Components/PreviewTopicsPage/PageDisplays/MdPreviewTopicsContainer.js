@@ -25,7 +25,7 @@ const MdPreviewTopicsContainer = () => {
                                 <h3>Choose a Topic</h3>
                             </Row>
                             <Row className='p-3 flex-grow-1'>
-                                <TopicsListChoose callback={setTopic}/>
+                                <TopicsListChoose callback={setTopic} />
                             </Row>
                         </SubCol>
                         <SubCol className='p-3 d-flex'>
