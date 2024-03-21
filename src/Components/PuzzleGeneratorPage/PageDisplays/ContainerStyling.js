@@ -13,3 +13,7 @@ export const WhiteTitle = styled.h1`
 export const InteractiveRow = styled(Row)`
     background-color: #ebebeb;
 `;
+
+export const InstructionsCol = styled(Col)`
+    background-color: #fec3ea;
+`;

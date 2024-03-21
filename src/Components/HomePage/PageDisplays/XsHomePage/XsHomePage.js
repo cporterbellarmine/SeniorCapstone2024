@@ -8,20 +8,23 @@ import MenuContainer from '../../MenuContainer';
 import CreateTopicButtonRouting from '../NavButtons/CreateTopic/CreateTopicButtonRouting';
 import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorButtonRouting';
 import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
-import LogoLargerBrandDarker from '../../../Images/LogoLargerBrandDarker.png';
+import FreeSearchLogo from '../../../Images/FreeSearchLogo.png';
 import { StyledContainer, StyledMenuCol } from '../HomePageComponentStyle';
 import './xs-css-id.css';
 
 function HomePage() {
     return(
         <StyledContainer>
-            <Row className=''>
-                <img src={LogoLargerBrandDarker} className='p-2 img-fluid w-100' alt='Puzzle Generator Home Page Title'/>
+            <Row className='text-center'>
+                <div>
+                    <img src={FreeSearchLogo} className='p-2 img-fluid w-75' alt='Puzzle Generator Home Page Title'/>
+                </div>
+                
             </Row>
             <Row className='m-3'>
                 <Col>
                     <Row>
-                        <h2 className='display-3'>Welcome to Word Search Craft!</h2>
+                        <h2 className='display-3'>Welcome to FreeSearch!</h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec interdum lacus. Quisque ut ipsum molestie, bibendum nisi eget, maximus sem. Aliquam eget posuere lacus. 
                             Suspendisse porttitor consectetur magna, eu pulvinar justo accumsan vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 

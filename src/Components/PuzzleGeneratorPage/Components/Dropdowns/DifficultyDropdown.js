@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
+import './select_styling.css';
 
 //Topic is used to pull the difficulties available for that topic.
 
