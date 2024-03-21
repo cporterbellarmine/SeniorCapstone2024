@@ -2,11 +2,11 @@
 // Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import { PuzzleGeneratorPageButton } from './FunctionButtonStyling';
 
 const CreatePDFButton = () => {
     return(
-        <Button variant='primary' size='md'>Create PDF</Button>
+        <PuzzleGeneratorPageButton size='md'>Create PDF</PuzzleGeneratorPageButton>
     );
 };
 export default CreatePDFButton;

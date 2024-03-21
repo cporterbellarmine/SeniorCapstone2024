@@ -12,7 +12,7 @@ const PreviewDisplay = ({ puzzle }) => {
         <Container>
             <Col>
                 <Row>
-                    <h2>Preview</h2>
+                    <h2>Generated Puzzle</h2>
                 </Row>
                 <PreviewContainerRow className='m-2'>
                     <h3>Puzzle Preview Container</h3>

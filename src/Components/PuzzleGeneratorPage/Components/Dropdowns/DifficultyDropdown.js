@@ -59,7 +59,7 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
     if(difficultyValues.length === 0){
         return (
             <Form.Select disabled>
-                <option value='default'>Please choose a difficulty above.</option>
+                <option value='default'>Please choose a topic above.</option>
             </Form.Select>
         );
 

@@ -2,11 +2,11 @@
 // Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import { PuzzleGeneratorPageButton } from './FunctionButtonStyling';
 
 const ReloadButton = () => {
     return(
-        <Button variant='primary' size='md'>Reload Puzzle</Button>
+        <PuzzleGeneratorPageButton size='md'>Reload Puzzle</PuzzleGeneratorPageButton>
     );
 };
 export default ReloadButton;

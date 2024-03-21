@@ -35,7 +35,7 @@ function TopicDropdown({ topicCallback, selectedCallback }){
             topicCallback(e.target.value);
             selectedCallback('defaultChoose');
             }}>
-            <option value='default'>Click to choose a topic</option>
+            <option value='default'>Click to choose a topic.</option>
             {topics.map(topic =>
                 <option key={topic.topic} value={topic.topic}>
                     {topic.topic}

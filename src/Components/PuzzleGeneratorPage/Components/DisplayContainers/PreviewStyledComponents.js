@@ -12,7 +12,7 @@ export const SubCol = styled(Col)`
 // Used in /Components/PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
 // Used in /Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage
 export const ButtonRow = styled(Row)`
-    background-color: skyblue;
+    border-top: solid 1px #000000;
 `;
 
 // Used in /Components/PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
@@ -32,4 +32,9 @@ export const PreviewContainerRow = styled(Row)`
     border: solid;
     border-width: thin;
     background-color: white;
+`;
+
+export const NoPreviewBorderCol = styled(Col)`
+    border: solid 1px #000000;
+    background-color: #ffffff;
 `;

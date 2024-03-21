@@ -5,7 +5,10 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import MdOptionsContainer from './MdOptionsContainer';
 import MdPreviewContainer from './MdPreviewContainer';
+import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
+import GeneratorBackgroundHalf from '../../Images/GeneratorBackgroundHalf.png';
 import { HideMdContainer } from './ViewContainer';
+import { PhotoRow, WhiteTitle, InteractiveRow } from './ContainerStyling';
 
 const MdGeneratorPage = () => {
 
@@ -14,13 +17,34 @@ const MdGeneratorPage = () => {
 
     return(
         <HideMdContainer>
-            <Row className='p-4 d-flex'>
+            <Row>
                 <Col>
-                    <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty}/>
+                    <PhotoRow>
+                        <img src={GeneratorBackgroundHalf} className='p-0 m-0' alt='Generator Page Cover Photo'/>
+                    </PhotoRow>
+                    <Row>
+                        <Col className='col-3 align-content-center'>
+                            <PreviewButtonRouting />
+                        </Col>
+                        <Col className='col-6 text-center align-content-center'>
+                            <WhiteTitle>Puzzle Generator</WhiteTitle>
+                        </Col>
+                        <Col className='col-3'>
+                            <>
+                            </>
+                        </Col>
+                        
+                    </Row>
+                    <InteractiveRow className='p-4 d-flex'>
+                        <Col>
+                            <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty}/>
+                        </Col>
+                        <Col>
+                            <MdPreviewContainer topic={topic} difficulty={difficulty}/>
+                        </Col>
+                    </InteractiveRow>
                 </Col>
-                <Col>
-                   <MdPreviewContainer topic={topic} difficulty={difficulty}/>
-                </Col>
+                
             </Row>
         </HideMdContainer>
     );

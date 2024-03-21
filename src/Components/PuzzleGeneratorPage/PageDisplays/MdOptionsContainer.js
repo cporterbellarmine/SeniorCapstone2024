@@ -19,17 +19,14 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
     return(
         <Container>
             <Row>
-                <SubCol>
-                    <Row>
-                        <PreviewButtonRouting />
-                    </Row>
+                <Col>
                     <Row className='order-3 pt-2 pb-4'>
                         <Stack gap={2}>
                             <TopicDropdown topicCallback={topicCallback} difficultyCallback={difficultyCallback} selectedCallback={setSelected}/>
                             <DifficultyDropdown topic={topic} difficultyCallback={difficultyCallback} selectedCallback={setSelected} selected={selected}/>
                         </Stack>
                     </Row>
-                    <InstructionsRowStyled>
+                    <Row>
                         <Col>
                             <Row>
                                 <h2>Instructions</h2>
@@ -51,8 +48,8 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
                                 
                             </Row>
                         </Col>
-                    </InstructionsRowStyled>
-                </SubCol>
+                    </Row>
+                </Col>
             </Row>
         </Container>
     );

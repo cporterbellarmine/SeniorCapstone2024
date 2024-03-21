@@ -9,6 +9,7 @@ import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton
 import CreatePDFButton from '../Components/Buttons/FunctionButtons/CreatePDFButton';
 import ReloadButton from '../Components/Buttons/FunctionButtons/ReloadButton';
 import PreviewDisplay from '../Components/DisplayContainers/PreviewDisplay';
+import ChooseOptions from '../Components/DisplayContainers/ChooseOptions';
 import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContainers/PreviewStyledComponents';
 
 //Topic & difficulty are held in \PuzzleGeneratorPage\PageDisplays\MdGeneratorPage and passed down to
@@ -19,13 +20,35 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
 
     const[puzzle, setPuzzle] = useState([]);
 
+    if(!topic || !difficulty){
+        return(
+            <Container>
+                <Row className='d-flex'>
+                    <Col>
+                        <Row className='p-2'>
+                            <ChooseOptions />
+                        </Row>
+                        <ButtonRow className='p-3 align-items-center'>
+                            <Col>
+                                <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
+                            </Col>
+                            <Col>
+                                <Stack gap={1}>
+                                    <ReloadButton />
+                                    <CreatePDFButton />
+                                </Stack>
+                            </Col>
+                        </ButtonRow>
+                    </Col>
+                </Row>
+            </Container>
+        )
+    }
+
     return(
         <Container>
             <Row className='d-flex'>
-                <SubCol>
-                    <StyledTitleRow className='p-3'>
-                        <h1>Puzzle Generator</h1>
-                    </StyledTitleRow>
+                <Col>
                     <Row className='p-2'>
                         <PreviewDisplay puzzle={puzzle}/>
                     </Row>
@@ -40,7 +63,7 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
                             </Stack>
                         </Col>
                     </ButtonRow>
-                </SubCol>
+                </Col>
             </Row>
         </Container>
     );

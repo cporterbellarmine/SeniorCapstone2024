@@ -12,7 +12,7 @@ export const HideXsContainer = styled(Container)`
 
 //Used in /Components/PuzzleGeneratorPage/PageDisplay/XsGeneratorPage
 export const HideMdContainer = styled(Container)`
-    background-color: #d9d9d9;;
+    background-color: #000000;
 
     @media screen and (max-width: 767px){
         display: none;
