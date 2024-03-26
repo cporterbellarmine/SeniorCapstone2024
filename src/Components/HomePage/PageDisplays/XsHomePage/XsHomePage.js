@@ -19,7 +19,6 @@ function HomePage() {
                 <div>
                     <img src={FreeSearchLogo} className='p-2 img-fluid w-75' alt='Puzzle Generator Home Page Title'/>
                 </div>
-                
             </Row>
             <Row className='m-3'>
                 <Col>

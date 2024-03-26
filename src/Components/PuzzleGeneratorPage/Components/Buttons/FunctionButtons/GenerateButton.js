@@ -496,19 +496,58 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         return(works);
     };
 
-    function generateStartandDirection(wordLength, coordinatesArray, directionArray, coordDirections){
-        if(!wordLength || !coordinatesArray || !directionArray || !coordDirections ){
+    function generatePotentialIndex(word, chosenDifficulty, chosenIndex, chosenDirection, coordinatesArray, directionArray, coordDirections){
+        if(!word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
             return;
         }
-        let workingIndex = false;
-        console.log(difficulty);
 
-        let chosenStart = [];
-        let chosenDirection = '';
+        let chosenStart;
+        let chosenDir;
 
-        let workingCoordArray = coordinatesArray;
-        let workingDirectionArray = directionArray;
-        let workingCoordDirections = coordDirections;
+        if(!chosenIndex){
+            chosenStart = chooseStartingPoint(coordinatesArray);
+        }else{
+            chosenStart = chosenIndex;
+        }
+
+        if(!chosenDirection){
+            chosenDir = chooseStartingPoint(directionArray);
+        }else{
+            chosenDir = chosenDirection;
+        }
+        
+        const wordLength = word.length;
+
+        console.log('chosenStart = ' + chosenStart);
+        console.log('chosenDirection = ' + chosenDir);
+        console.log('wordLength = ' + wordLength);
+
+        const potentialIndexWorks = checkConstraints(wordLength, chosenDir, chosenStart, coordinatesArray, directionArray, coordDirections);
+
+        return [chosenStart, chosenDirection, potentialIndexWorks];
+    }
+
+    function removeIndex(array, value){
+        const newArray = array.filter(indexValue => indexValue !== value);
+        return(newArray);
+    };
+
+    function generateWorkingCoordinates(word, chosenDifficulty, coordinatesArray, directionArray, coordDirections, indexWorks){
+        if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
+            return;
+        };
+
+        console.log(word);
+        console.log(chosenDifficulty);
+
+        let validIndex = [];
+
+        if(!indexWorks){
+            generatePotentialIndex(word, chosenDifficulty, coordinatesArray, directionArray, coordDirections);
+        }
+
+
+        
 
         console.log('working index ln 528' + workingIndex);
 
