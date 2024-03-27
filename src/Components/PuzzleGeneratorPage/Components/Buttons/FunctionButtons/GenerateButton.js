@@ -524,7 +524,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
 
         const potentialIndexWorks = checkConstraints(wordLength, chosenDir, chosenStart, coordinatesArray, directionArray, coordDirections);
 
-        return [chosenStart, chosenDirection, potentialIndexWorks];
+        return [chosenStart, chosenDir, potentialIndexWorks];
     }
 
     function removeIndex(array, value){
@@ -540,10 +540,16 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         console.log(word);
         console.log(chosenDifficulty);
 
+        let availableCoordArray = coordinatesArray;
+        let availableDirectionArray = directionArray;
+
         let validIndex = [];
 
         if(!indexWorks){
-            generatePotentialIndex(word, chosenDifficulty, coordinatesArray, directionArray, coordDirections);
+            if(availableDirectionArray.length !== 0){
+                availableDirectionArray = availableDirectionArray.filter(direction => direction !== chosenDirection);
+            }
+            generatePotentialIndex(word, chosenDifficulty)
         }
 
 
