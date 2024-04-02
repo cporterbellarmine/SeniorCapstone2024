@@ -532,6 +532,11 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         return(newArray);
     };
 
+    function resetDirections(){
+        const fullDirections = directions;
+        return(fullDirections)
+    }
+
     function generateWorkingCoordinates(word, chosenDifficulty, coordinatesArray, directionArray, coordDirections, indexWorks){
         if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
             return;
@@ -549,46 +554,46 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
             if(availableDirectionArray.length !== 0){
                 availableDirectionArray = availableDirectionArray.filter(direction => direction !== chosenDirection);
             }
-            generatePotentialIndex(word, chosenDifficulty)
+            //generatePotentialIndex(word, chosenDifficulty,)
         }
 
 
         
 
-        console.log('working index ln 528' + workingIndex);
+        // console.log('working index ln 528' + workingIndex);
 
-        // while(!workingIndex){
-            chosenStart = chooseStartingPoint(workingCoordArray);
-            console.log('chosenStart is: ' + chosenStart);
-            chosenDirection = chooseDirection(workingDirectionArray);
-            console.log('chosenDirection is: ' + chosenDirection);
+        // // while(!workingIndex){
+        //     chosenStart = chooseStartingPoint(workingCoordArray);
+        //     console.log('chosenStart is: ' + chosenStart);
+        //     chosenDirection = chooseDirection(workingDirectionArray);
+        //     console.log('chosenDirection is: ' + chosenDirection);
 
-            const potentialIndex  = checkConstraints(wordLength, chosenDirection, chosenStart, workingCoordArray, workingDirectionArray, workingCoordDirections);
-            console.log('potentialIndex is: ' + potentialIndex);
+        //     const potentialIndex  = checkConstraints(wordLength, chosenDirection, chosenStart, workingCoordArray, workingDirectionArray, workingCoordDirections);
+        //     console.log('potentialIndex is: ' + potentialIndex);
 
-            if(potentialIndex){
-                console.log('index found. returning!');
-                workingIndex = true;
-                return [chosenStart, chosenDirection];
-            }else{
-                if(workingDirectionArray.length !== 0){
-                    //removes current direction
-                    console.log(`{chosenDirection} does not work! Removing from direction array.`);
-                    workingDirectionArray = workingDirectionArray.filter(direction => direction !== chosenDirection);
-                    console.log(workingDirectionArray);
-                }else if(workingDirectionArray.length === 0){
-                    workingCoordArray = workingCoordArray.filter(coord => coord !== chosenStart);
-                    workingDirectionArray = directionArray;
-                    console.log(`Working direction changed. {chosenStart} removed. {workingDirectionArray}`);
-                }
-            }
+        //     if(potentialIndex){
+        //         console.log('index found. returning!');
+        //         workingIndex = true;
+        //         return [chosenStart, chosenDirection];
+        //     }else{
+        //         if(workingDirectionArray.length !== 0){
+        //             //removes current direction
+        //             console.log(`{chosenDirection} does not work! Removing from direction array.`);
+        //             workingDirectionArray = workingDirectionArray.filter(direction => direction !== chosenDirection);
+        //             console.log(workingDirectionArray);
+        //         }else if(workingDirectionArray.length === 0){
+        //             workingCoordArray = workingCoordArray.filter(coord => coord !== chosenStart);
+        //             workingDirectionArray = directionArray;
+        //             console.log(`Working direction changed. {chosenStart} removed. {workingDirectionArray}`);
+        //         }
+        //     }
             
-        // }
+        // // }
     };
 
-    if(topic && difficulty){
-        console.log(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
-    }
+    // if(topic && difficulty){
+    //     console.log(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
+    // }
     
 
     // const loopWorks = () => {
