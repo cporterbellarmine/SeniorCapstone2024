@@ -8,7 +8,7 @@ import Stack from 'react-bootstrap/Stack';
 import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
 import DifficultyDropdown from '../Components/Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
-import { InstructionsCol } from './ContainerStyling';
+import { InstructionsColMd } from './ContainerStyling';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
 const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
@@ -28,7 +28,7 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
                         </Stack>
                     </Row>
                     <Row>
-                        <InstructionsCol>
+                        <InstructionsColMd>
                             <Row>
                                 <h2>Instructions</h2>
                             </Row>
@@ -48,7 +48,7 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
                                 </div>
                                 
                             </Row>
-                        </InstructionsCol>
+                        </InstructionsColMd>
                     </Row>
                 </Col>
             </Row>

@@ -23,10 +23,10 @@ const MdGeneratorPage = () => {
                         <img src={GeneratorBackgroundHalf} className='p-0 m-0' alt='Generator Page Cover Photo'/>
                     </PhotoRow>
                     <Row>
-                        <Col className='col-3 align-content-center'>
+                        <Col className='col-4 align-content-center'>
                             <PreviewButtonRouting />
                         </Col>
-                        <Col className='col-6 text-center align-content-center'>
+                        <Col className='col-5 text-center align-content-center'>
                             <WhiteTitle>Puzzle Generator</WhiteTitle>
                         </Col>
                         <Col className='col-3'>

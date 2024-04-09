@@ -504,7 +504,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         let chosenStart;
         let chosenDir;
 
-        if(!chosenIndex){
+        if(!chosenIndex || chosenIndex.length === 0){
             chosenStart = chooseStartingPoint(coordinatesArray);
         }else{
             chosenStart = chosenIndex;
@@ -537,7 +537,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
         return(fullDirections)
     }
 
-    function generateWorkingCoordinates(word, chosenDifficulty, coordinatesArray, directionArray, coordDirections, indexWorks){
+    function generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks){
         if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
             return;
         };
@@ -552,13 +552,34 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
 
         if(!indexWorks){
             if(availableDirectionArray.length !== 0){
-                availableDirectionArray = availableDirectionArray.filter(direction => direction !== chosenDirection);
+                console.log(`Chosen direction does not work. Removing ${pickedDirection}`);
+                availableDirectionArray = availableDirectionArray.filter(direction => direction !== pickedDirection);
             }
-            //generatePotentialIndex(word, chosenDifficulty,)
+            else if(availableDirectionArray.length === 0 && availableCoordArray!== 0){
+                console.log(`Chosen starting point does not work. Removing ${chosenCoord}`);
+                availableDirectionArray = resetDirections();
+                pickedDirection = null;
+                availableCoordArray = availableCoordArray.filter(coord => coord !== chosenCoord);
+                chosenCoord = null;
+            }
+            else{
+                console.log('Error');
+            }
+
+
+            [chosenCoord, pickedDirection, indexWorks] = generatePotentialIndex(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections);
+            [chosenCoord, chosenDifficulty, pickedDirection] = generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks);
+
+        }else if(indexWorks){
+
+            console.log(`Success! Chosen index is ${chosenCoord} and chosen direction is ${pickedDirection}`);
+
+        }else{
+            console.log('error');
         }
 
+        return[chosenCoord, chosenDifficulty, pickedDirection];
 
-        
 
         // console.log('working index ln 528' + workingIndex);
 
@@ -590,6 +611,8 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
             
         // // }
     };
+
+    generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, emptyCoordDirections, null);
 
     // if(topic && difficulty){
     //     console.log(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
