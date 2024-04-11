@@ -8,7 +8,7 @@ export const XsStyledNavLink = styled(NavLink)`
     text-decoration: none;
     color: #000000;
     &:hover{
-        background-color: #4d4d4d;
+        background-color: #c2c2c2;
         cursor: pointer;
         text-decoration: underline;
     }
@@ -20,8 +20,6 @@ export const XsDropdownNavMenu = styled(Dropdown.Menu)`
 
 export const XsStyledDropdownItem = styled(Dropdown.Item)`
     &:hover{
-        background-color: #c2c2c2;
-        color: #000000;
         cursor: pointer;
         text-decoration: underline;
     }

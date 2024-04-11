@@ -4,7 +4,7 @@ import { XsStyledNavLink, XsStyledDropdownItem } from './XsNavStyling';
 
 function XsDropdownNavLinkItem(props){
     return(
-        <XsStyledNavLink className='text-center d-flex' to={props.pathway} style={({isActive}) => {
+        <XsStyledNavLink className='text-center d-flex p-2' to={props.pathway} style={({isActive}) => {
             return isActive ? {
                     backgroundColor: '#e77f73',
                     textDecoration: 'underline'

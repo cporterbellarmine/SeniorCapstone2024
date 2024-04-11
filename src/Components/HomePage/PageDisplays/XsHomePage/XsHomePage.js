@@ -23,15 +23,39 @@ function HomePage() {
             <Row className='m-3'>
                 <Col>
                     <Row>
-                        <h2 className='display-3'>Welcome to FreeSearch!</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec interdum lacus. Quisque ut ipsum molestie, bibendum nisi eget, maximus sem. Aliquam eget posuere lacus. 
-                            Suspendisse porttitor consectetur magna, eu pulvinar justo accumsan vitae. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                            Nam sit amet blandit augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec eget mauris at dolor condimentum cursus sit amet ultrices leo. 
-                            Sed quis orci placerat, auctor sem ultrices, placerat massa. Morbi vestibulum leo elit, sodales laoreet orci dapibus nec. Nulla eu eros quis lectus venenatis congue. 
-                            Quisque finibus, purus dapibus tincidunt iaculis, quam lacus vestibulum eros, eget efficitur felis justo et enim. Integer non nibh placerat, pulvinar velit aliquet, faucibus erat.
-                            Sed facilisis nisl quis pellentesque cursus. Curabitur gravida sapien efficitur ornare ultrices.
+                        <h2 className='display-3'><u>Welcome to FreeSearch!</u></h2>
+        
+                        <b>Creation of FreeSearch</b>
+                         <p>
+                            FreeSearch was created in Spring 2024 by Christina Porter, a graduating Senior from Bellarmine University as a final capstone project.
+                            Word searches are a powerful and underutilized tool that can be used to enhance vocabulary and
+                            assess impact in cognitive function with persistent usage. FreeSearch is a free word-search generator that uses provided topics and associated words
+                            to generate a unique puzzle every render.
+                        </p>
+                        <br />
 
+                            <b>Prior Experience to FreeSearch</b>
+                        <p>
+                            FreeSearch is a result of Christina's 10 week period to design, learn, create, and implement a full-stack application. 
+                            Before FreeSearch, Christina had no experience with JavaScript, React, or MongoDB. 
+                        </p>
+                        <br />
+
+                        <b>References</b>
+                        <p>
+                            Several references were used in the creation of this project
+                            including official documentation, forums such as StackExchange, and tutorial sites such as W3Schools. A complete list can be found in the references page.
+                            Personal shout-out to Victor, Brinda, Tyrone, Persephone, and Shanna for their input on user scenarios and artwork.
+                        </p>
+                        <br />
+
+                        
+                            <b>Future Implementation</b>
+                        <p>
+                            Upon further development, FreeSearch can be expanded to include functionality to edit, add, and remove topics and associated words. Eventually,
+                            Artificial Intelligence would become an asset to allow automatically generated word searches based off vocabulary central around the main topic
+                            of an article or other provided resource. Should FreeSearch opt to include interactive puzzle-solving solutions, results could be collected and
+                            analyzed to monitor cognitive capabilities over time.
                         </p>
                     </Row>
                     <Row>
