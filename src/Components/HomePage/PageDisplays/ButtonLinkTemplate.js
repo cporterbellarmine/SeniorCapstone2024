@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledButtonLink } from './ButtonStyling';
+import { StyledButtonLink } from './NavButtons/ButtonStyling';
 
 function ButtonLinkTemplate(props){
     return(

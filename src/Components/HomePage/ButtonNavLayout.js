@@ -7,7 +7,7 @@ import Stack from 'react-bootstrap/Stack';
 import ButtonLinkTemplate from '../ButtonLinkTemplate';
 
 
-const ButtonNavOrg = () => {
+const ButtonNavLayout = () => {
     return(
         <>
             <Nav>
@@ -22,4 +22,4 @@ const ButtonNavOrg = () => {
         
     );
 };
-export default ButtonNavOrg;
+export default ButtonNavLayout;

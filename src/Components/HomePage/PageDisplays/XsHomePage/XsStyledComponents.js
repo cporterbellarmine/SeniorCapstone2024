@@ -8,31 +8,35 @@ export const HomePageAccordionHeader = styled(Accordion.Header)`
     --bs-accordion-btn-bg: #000000;
 `;
 
-export const CreationColTitle = styled(Col)`
+export const MenuHeader = styled(Row)`
+    background-color: #de4f3f;
+`;
+
+export const FutureColTitle = styled(Col)`
     background-color: #a4036f;
     color: #ffffff;
 `;
 
-export const CreationColGradient = styled(Col)`
+export const FutureColGradient = styled(Col)`
     background-image: linear-gradient(to right, #a4036f, #d9d9d9);
 `;
 
-export const ExperienceColTitle = styled(Col)`
+export const CreationColTitle = styled(Col)`
     background-color: #de4f3f;
     color: #ffffff;
 `;
 
-export const ExperienceColGradient = styled(Col)`
-    background-image: linear-gradient(to left, #de4f3f, #d9d9d9);
+export const CreationColGradient = styled(Col)`
+    background-image: linear-gradient(to right, #de4f3f, #d9d9d9);
 `;
 
-export const FutureColTitle = styled(Col)`
+export const ExperienceColTitle = styled(Col)`
     background-color: #19647e;
     color: #ffffff;
 `;
 
-export const FutureColGradient = styled(Col)`
-    background-image: linear-gradient(to right, #19647e, #d9d9d9);
+export const ExperienceColGradient = styled(Col)`
+    background-image: linear-gradient(to left, #19647e, #d9d9d9);
 `;
 
 export const TitleText = styled.h2`

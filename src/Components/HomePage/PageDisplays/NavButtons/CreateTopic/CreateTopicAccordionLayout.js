@@ -3,15 +3,15 @@ import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
 import ButtonLinkTemplate from '../../ButtonLinkTemplate';
 
-function ViewTopicsButtonLayout(props){
+function CreateTopicAccordionLayout(props){
     return(
         <>
             <Nav className='p-0'>
-                <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                <ButtonLinkTemplate pathway="/create-topic" textDisplayed="Create Topic Page"/>
             </Nav>
             <Outlet />
         </>
     );
 };
 
-export default ViewTopicsButtonLayout;
+export default CreateTopicAccordionLayout;

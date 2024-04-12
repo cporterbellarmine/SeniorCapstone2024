@@ -3,15 +3,15 @@ import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
 import ButtonLinkTemplate from '../../ButtonLinkTemplate';
 
-function ViewTopicsButtonLayout(props){
+function PuzzleGeneratorAccordionLayout(props){
     return(
         <>
             <Nav className='p-0'>
-                <ButtonLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
+                <ButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator Page"/>
             </Nav>
             <Outlet />
         </>
     );
 };
 
-export default ViewTopicsButtonLayout;
+export default PuzzleGeneratorAccordionLayout;
