@@ -14,9 +14,6 @@ import './mdhomepage.css';
 const MdMainMenu = () => {
     return (
         <div>
-            <Row>
-                <h3>Navigation</h3>
-            </Row>
             <Row className='pg-gradient-image'>
                 <Col className='col-4  align-content-center'>
                     <Row>
