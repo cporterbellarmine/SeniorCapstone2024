@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Accordion from 'react-bootstrap/Accordion';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { colors } from '@mui/material';
+import Container from 'react-bootstrap/Container';
 
 export const HomePageAccordionHeader = styled(Accordion.Header)`
     --bs-accordion-btn-bg: #000000;
@@ -42,4 +42,10 @@ export const ExperienceColGradient = styled(Col)`
 export const TitleText = styled.h2`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000000;
+`;
+
+export const XsHomeContainer = styled(Container)`
+    @media screen and (min-width: 769px){
+        display: none;
+    }
 `;

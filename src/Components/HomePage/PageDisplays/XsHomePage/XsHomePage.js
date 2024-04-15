@@ -9,23 +9,23 @@ import CreateTopicButtonRouting from '../NavButtons/CreateTopic/CreateTopicButto
 import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorButtonRouting';
 import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
 import CreateTopicAccordionRouting from '../NavButtons/CreateTopic/CreateTopicAccordionRouting';
-import PuzzleGeneratorAccordionRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorAccordionRouting';
-import ViewTopicsAccordionRouting from '../NavButtons/ViewTopics/ViewTopicsAccordionRouting';
-import MainMenuRouting from '../NavButtons/MainMenu/MainMenuRouting';
+import XsPuzzleGeneratorAccordionRouting from '../NavButtons/PuzzleGenerator/XsPuzzleGeneratorAccordionRouting';
+import XsViewTopicsAccordionRouting from '../NavButtons/ViewTopics/XsViewTopicsAccordionRouting';
+import MainMenuRouting from '../NavButtons/MainMenu/XsMainMenuRouting';
 import FreeSearchLogo from '../../../Images/FreeSearchLogo.png';
 import Headshot from '../../../Images/headshot.png';
 import Database from '../../../Images/DatabaseSmaller.png';
 import TechGrid from '../../../Images/TechGrid.png';
 import PreviewTopicsPage from '../../../Images/ViewTopicsPageHalfish.png';
 import { StyledContainer, StyledMenuCol } from '../HomePageComponentStyle';
-import { CreationColTitle, ExperienceColTitle, FutureColTitle, CreationColGradient, ExperienceColGradient, FutureColGradient, TitleText, MenuHeader } from './XsStyledComponents';
+import { XsHomeContainer, CreationColTitle, ExperienceColTitle, FutureColTitle, CreationColGradient, ExperienceColGradient, FutureColGradient, TitleText, MenuHeader } from './XsStyledComponents';
 import './xs-css-id.css';
 
 /* Menu under title > Accordion > About */
 
-function HomePage() {
+function XsHomePage() {
     return(
-        <StyledContainer>
+        <XsHomeContainer>
             <Row className='text-center'>
                 <div>
                     <img src={FreeSearchLogo} className='p-2 img-fluid w-75' alt='Puzzle Generator Home Page Title'/>
@@ -36,7 +36,7 @@ function HomePage() {
             </Row>
             <Row className=''>
                 <Col className='p-0'>
-                    <Accordion flush defaultActiveKey='0' className='accordion'>
+                    <Accordion flush className='accordion'>
                         <Accordion.Item eventKey='0'>
                             <Accordion.Header className='accordion-header-styling accordion-styling' >
                                 <Col className='col-5'>
@@ -44,7 +44,7 @@ function HomePage() {
                                 </Col>
                                 <Col className='col-2'/>
                                 <Col className='col-4'>
-                                    <PuzzleGeneratorAccordionRouting />
+                                    <XsPuzzleGeneratorAccordionRouting />
                                 </Col>
                             </Accordion.Header>
                             <Accordion.Body className='d-flex'>
@@ -96,7 +96,7 @@ function HomePage() {
                                 </Col>
                                 <Col className='col-2'/>
                                 <Col className='col-4'>
-                                    <ViewTopicsAccordionRouting />
+                                    <XsViewTopicsAccordionRouting />
                                 </Col>
                             </Accordion.Header>
                             <Accordion.Body>
@@ -202,7 +202,7 @@ function HomePage() {
                     </Row>
                 </Col>
             </Row>
-        </StyledContainer>
+        </XsHomeContainer>
     );
 }
-export default HomePage;
+export default XsHomePage;
