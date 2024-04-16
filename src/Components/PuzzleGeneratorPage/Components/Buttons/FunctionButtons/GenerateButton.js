@@ -21,7 +21,7 @@ import { PuzzleGeneratorPageButton } from './FunctionButtonStyling';
 //Callback is passed down from /PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
 //and is used to set the final puzzle object in \PuzzleGeneratorPage\Components\DisplayContainers\PreviewDisplay.
 
-const GenerateButton = ({ topic, callBack, difficulty }) => {
+const GenerateButton = ({ topic, callback, difficulty }) => {
 
     // Set State Hooks
     const[wordData, setWordData] = useState([]); //Used to gather data from database.
@@ -33,6 +33,8 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const[emptyPuzzle, setEmptyPuzzle] = useState([]);
     const[puzzleCoords, setPuzzleCoords] = useState([]);
     const[emptyCoordDirections, setEmptyCoordDirections] = useState([]);
+    const[runAgain, setRunAgain] = useState(false);
+
 
     const wordsArray = []; //Stored as a stand-in-array for usableWords.
     const lettersArray = new Set([]);
@@ -51,6 +53,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
     const sizeOfDiffExp = 23;
 
     const directions = ['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'];
+    let returnValue;
 
     //When the topic is updated, gather the words associated with the topic in the database
     useEffect(() => {
@@ -197,7 +200,7 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
             setPuzzleWords(chosenWords);
         };
         chooseWords();
-    }, [usableWords])
+    }, [usableWords, runAgain])
 
     console.log(puzzleWords);
 
@@ -648,10 +651,20 @@ const GenerateButton = ({ topic, callBack, difficulty }) => {
 
 
     useEffect(() => {
-    }, [puzzleWords, difficulty])
+        if(!puzzleWords || !difficulty){
+            return;
+        }
+
+         returnValue = puzzleWords;
+
+    }, [puzzleWords, difficulty]);
 
     return(
-        <PuzzleGeneratorPageButton size='lg'>Generate Puzzle</PuzzleGeneratorPageButton>
+        
+        <PuzzleGeneratorPageButton onClick={() => {
+            setRunAgain(!runAgain);
+            callback(returnValue);
+        }} size='lg'>Generate Puzzle</PuzzleGeneratorPageButton>
     );
 };
 export default GenerateButton;

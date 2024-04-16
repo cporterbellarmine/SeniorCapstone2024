@@ -14,8 +14,13 @@ export const InteractiveRow = styled(Row)`
     background-color: #ebebeb;
 `;
 
-export const InstructionsColMd = styled(Col)`
-    background-color: #fec3ea;
+export const InstructionsRowTitleMd = styled(Row)`
+    background-color: #a4036f;
+`;
+
+export const InstructionsRowNumbersMd = styled(Row)`
+    border-bottom: solid 1px #000000;
+    background-color: #ffebf8;
 `;
 
 export const InstructionsRowTitleXs = styled(Row)`

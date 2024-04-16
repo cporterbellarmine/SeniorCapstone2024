@@ -2,26 +2,22 @@
 
 .pg-gradient-image{
     background-image: url(../../../Images/WiderGeneratorBackgroundRow1.png);
-    height: 500px;
     background-repeat: no-repeat;
 }
 
 .vt-gradient-image{
     background-image: url(../../../Images/TopicsRow4.png);
-    height: 500px;
     background-repeat: no-repeat;
 }
 
 .pg-button-image{
     background-image: url(../../../Images/ButtonImageSmaller2.png);
     background-repeat: no-repeat;
-    height: 400px;
 }
 
 .vt-button-image{
     background-image: url(../../../Images/VTButtonBackground1.png);
     background-repeat: no-repeat;
-    height: 400px;
 }
 
 .h1-header{

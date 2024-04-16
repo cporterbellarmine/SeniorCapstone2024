@@ -38,7 +38,6 @@ function MdHomePage() {
             <Row>
                 <MdMainMenu />
             </Row>
-            
             <Row className='mt-5'>
                 <h3><u>About FreeSearch</u></h3>
             </Row>

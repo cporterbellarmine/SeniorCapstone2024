@@ -78,7 +78,7 @@ const XsGeneratorPage = () => {
                     <PreviewRow>
                         <Col>
                             <Row className='pt-4'>
-                                <ChooseOptions />
+                                <PreviewDisplay puzzle={puzzle} />
                             </Row>
                             {/* <Row className='p-3 align-items-center'>
                                 <Col>

@@ -8,14 +8,14 @@ import Stack from 'react-bootstrap/Stack';
 import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
 import DifficultyDropdown from '../Components/Dropdowns/DifficultyDropdown';
 import TopicDropdown from '../Components/Dropdowns/TopicDropdown';
-import { InstructionsColMd } from './ContainerStyling';
+import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton';
+import { InstructionsColMd, InstructionsRowTitleMd, InstructionsRowNumbersMd } from './ContainerStyling';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
-const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
-
-    console.log({topic});
+const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficulty }) => {
 
     const[selected, setSelected] = useState('');
+    const[puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
 
     return(
         <Container>
@@ -27,30 +27,10 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback }) => {
                             <DifficultyDropdown topic={topic} difficultyCallback={difficultyCallback} selectedCallback={setSelected} selected={selected}/>
                         </Stack>
                     </Row>
-                    <Row>
-                        <InstructionsColMd>
-                            <Row>
-                                <h2>Instructions</h2>
-                            </Row>
-                            <Row>
-                                <div>
-                                    <ol>
-                                        <li>
-                                            <p>Step 1</p>
-                                        </li>
-                                        <li>
-                                            <p>Step 2</p>
-                                        </li>
-                                        <li>
-                                            <p>Step 3</p>
-                                        </li>
-                                    </ol>
-                                </div>
-                                
-                            </Row>
-                        </InstructionsColMd>
-                    </Row>
                 </Col>
+            </Row>
+            <Row>
+                <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
             </Row>
         </Container>
     );

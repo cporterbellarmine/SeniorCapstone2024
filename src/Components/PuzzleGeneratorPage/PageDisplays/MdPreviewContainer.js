@@ -18,7 +18,7 @@ import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContaine
 
 const MdPreviewContainer = ({ topic, difficulty }) => {
 
-    const[puzzle, setPuzzle] = useState([]);
+    const[puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
 
     if(!topic || !difficulty){
         return(
@@ -28,17 +28,6 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
                         <Row className='p-2'>
                             <ChooseOptions />
                         </Row>
-                        <ButtonRow className='p-3 align-items-center'>
-                            <Col>
-                                <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
-                            </Col>
-                            {/* <Col>
-                                <Stack gap={1}>
-                                    <ReloadButton />
-                                    <CreatePDFButton />
-                                </Stack>
-                            </Col> */}
-                        </ButtonRow>
                     </Col>
                 </Row>
             </Container>
@@ -56,12 +45,12 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
                         <Col>
                             <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <Stack gap={1}>
                                 <ReloadButton />
                                 <CreatePDFButton />
                             </Stack>
-                        </Col>
+                        </Col> */}
                     </ButtonRow>
                 </Col>
             </Row>

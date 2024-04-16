@@ -14,8 +14,8 @@ import './mdhomepage.css';
 const MdMainMenu = () => {
     return (
         <div>
-            <Row className='pg-gradient-image'>
-                <Col className='col-4  align-content-center'>
+            <Row className='pg-gradient-image d-flex'>
+                <Col className='col-md-3  align-content-center'>
                     <Row>
                         <br />
                     </Row>
@@ -26,7 +26,7 @@ const MdMainMenu = () => {
                         <br />
                     </Row>
                 </Col>
-                <Col className='col-5 align-content-center'>
+                <Col className='col-md-6 align-content-center overflow-auto'>
                     <h3>Puzzle Generator Description and Features</h3>
                     <p>
                         The Puzzle Generator allows you to choose the specifications of your puzzle
@@ -36,26 +36,26 @@ const MdMainMenu = () => {
                         <b>Difficulty Requirements</b>
                         <ul>
                             <li>
-                                <p><u>Easy</u>: There are 10 words between 3-5 letters associated with the chosen topic. This generates a 8x8 grid.</p>
+                                <p><u>Easy</u>: There are 10 words between 3-5 letters associated with the chosen topic.</p>
                             </li>
                             <li>
-                                <p><u>Intermediate</u>: There are 20 words between 3-10 letters associated with the chosen topic. This generates a 15x15 grid.</p>
+                                <p><u>Intermediate</u>: There are 20 words between 3-10 letters associated with the chosen topic.</p>
                             </li>
                             <li>
-                                <p><u>Hard</u>: There are 30 words between 3-15 letters associated with the chosen topic. This generates a 23x23 grid.</p>
+                                <p><u>Hard</u>: There are 30 words between 3-15 letters associated with the chosen topic.</p>
                             </li>
                             <li>
-                                <p><u>Expert</u>: There are 40 words between 3-15 letters associated with the chosen topic. This generates a 23x23 grid.</p>
+                                <p><u>Expert</u>: There are 40 words between 3-15 letters associated with the chosen topic.</p>
                             </li>
                         </ul>
                     </p>
                 </Col>
-                <Col className='col-1'/>
-                <Col className='col-2 align-content-center'>
+                <Col className='col-xxl-1'/>
+                <Col className='col-md-3 col-xxl-2 align-content-center'>
                     <Row>
                         <br />
                     </Row>
-                    <PGButtonRow className='pg-button-image img-fluid h1-button'>
+                    <PGButtonRow className='pg-button-image h1-button'>
                         <MdPuzzleGeneratorButtonRouting />
                     </PGButtonRow>
                     <Row>
@@ -69,7 +69,7 @@ const MdMainMenu = () => {
                     <Row>
                         <br />
                     </Row>
-                    <VTButtonRow className='vt-button-image img-fluid h1-button'>
+                    <VTButtonRow className='vt-button-image h1-button'>
                         <MdViewTopicsRouting />
                     </VTButtonRow>
                     <Row>
