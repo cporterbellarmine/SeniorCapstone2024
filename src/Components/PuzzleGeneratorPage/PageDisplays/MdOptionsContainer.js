@@ -29,9 +29,9 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficu
                     </Row>
                 </Col>
             </Row>
-            <Row>
+            {/* <Row>
                 <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
-            </Row>
+            </Row> */}
         </Container>
     );
 };

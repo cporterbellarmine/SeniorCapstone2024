@@ -45,12 +45,12 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
                         <Col>
                             <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
                         </Col>
-                        {/* <Col>
+                         {/* <Col>
                             <Stack gap={1}>
                                 <ReloadButton />
                                 <CreatePDFButton />
                             </Stack>
-                        </Col> */}
+                        </Col>  */}
                     </ButtonRow>
                 </Col>
             </Row>

@@ -50,7 +50,7 @@ const MdMainMenu = () => {
                         </ul>
                     </p>
                 </Col>
-                <Col className='col-xxl-1'/>
+                <Col className='d-none col-xxl-1'/>
                 <Col className='col-md-3 col-xxl-2 align-content-center'>
                     <Row>
                         <br />
