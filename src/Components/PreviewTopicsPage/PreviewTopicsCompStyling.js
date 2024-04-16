@@ -39,3 +39,12 @@ export const ButtonCol = styled(Col)`
     background-color: #ffffff;
     border-bottom: solid 1px #7a1f15;
 `;
+
+export const XsButtonCol = styled(Col)`
+    background-color: #ffffff;
+`;
+
+export const XsBottomCol = styled(Col)`
+    background-color: #ffffff;
+    border-bottom: solid 1px #7a1f15;
+`;

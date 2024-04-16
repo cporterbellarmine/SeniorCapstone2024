@@ -12,8 +12,8 @@ const XsNavButtonRouting = () => {
         <Routes>
             <Route path='/*' element={<XsNavButtonsLayout />}>
                 <Route pathName='puzzle-generator' displayPage={<PuzzleGenerator />} />
-                <Route pathName='create-topic' displayPage={<CreateTopic />} />
-                <Route pathName='edit-topic' displayPage={<EditTopic />} />
+                {/* <Route pathName='create-topic' displayPage={<CreateTopic />} />
+                <Route pathName='edit-topic' displayPage={<EditTopic />} /> */}
             </Route>
         </Routes>
     );

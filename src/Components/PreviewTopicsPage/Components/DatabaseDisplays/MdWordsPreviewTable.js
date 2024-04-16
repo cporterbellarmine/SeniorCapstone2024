@@ -8,7 +8,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { WordsParentContainer } from '../../PreviewTopicsCompStyling';
 import './list_group.css';
 
-function WordsPreviewTable({ topic }){
+function MdWordsPreviewTable({ topic }){
 
     const[words, setWords] = useState([]);
 
@@ -31,16 +31,14 @@ function WordsPreviewTable({ topic }){
                     <ListGroup.Item key={word._id}>{word.word}</ListGroup.Item>
                 ))}
             </ListGroup>
-            
         )
     }else{
         return(
             <ListGroup variant='flush' className='p-0 overflow-y-scroll list_group-height'>
                 <ListGroup.Item key='default'>Please choose a topic to the left.</ListGroup.Item>
             </ListGroup>
-            
         )
     }
     ;
 };
-export default WordsPreviewTable;
+export default MdWordsPreviewTable;

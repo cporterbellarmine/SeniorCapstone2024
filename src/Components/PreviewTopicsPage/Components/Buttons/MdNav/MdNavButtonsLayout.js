@@ -12,8 +12,8 @@ function MdNavButtonsLayout(){
             <Nav>
                 <Stack direction="horizontal" gap={5} className='mx-auto'>
                     <PreviewTopicsButtonLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
-                    <PreviewTopicsButtonLinkTemplate pathway="/create-topic" textDisplayed="Create a Topic"/>
-                    <PreviewTopicsButtonLinkTemplate pathway="/edit-topic" textDisplayed="Edit Topics"/>
+                    {/* <PreviewTopicsButtonLinkTemplate pathway="/create-topic" textDisplayed="Create a Topic"/>
+                    <PreviewTopicsButtonLinkTemplate pathway="/edit-topic" textDisplayed="Edit Topics"/> */}
                 </Stack>
             </Nav>
             <Outlet />

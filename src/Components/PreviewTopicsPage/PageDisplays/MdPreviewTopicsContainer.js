@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import MdNavButtonRouting from '../Components/Buttons/MdNav/MdNavButtonRouting';
 import TopicsListChoose from '../Components/DatabaseDisplays/TopicsListChoose';
-import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable';
+import WordsPreviewTable from '../Components/DatabaseDisplays/MdWordsPreviewTable';
 import TopicsBackgroundHalf from '../../Images/TopicsBackgroundHalf.png';
 import { MdMainContainerBackground, SubCol, ButtonCol, DividerDiv } from '../PreviewTopicsCompStyling';
 import './display.css';

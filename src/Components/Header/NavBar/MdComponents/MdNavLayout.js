@@ -16,7 +16,7 @@ const MdNavLayout = () => {
                     <MdNavLinkTemplate pathway="/" end textDisplayed="Home" />
                     <MdNavLinkTemplate pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
                     <MdNavLinkTemplate pathway="/view-topics" textDisplayed="View Topics"/>
-                    <MdNavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/>
+                    {/* <MdNavLinkTemplate pathway="/create-topic" textDisplayed="Create Topic"/> */}
                 </Stack>
             </StyledTopNavBar>
             <Outlet />

@@ -1,29 +1,56 @@
 // Used in /src/Pages/ViewTopics
 
-import React from 'react';
+import React, { useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import XsNavButtonRouting from '../Components/Buttons/XsNav/XsNavButtonRouting';
 import TopicsListChoose from '../Components/DatabaseDisplays/TopicsListChoose';
-import WordsPreviewTable from '../Components/DatabaseDisplays/WordsPreviewTable';
-import { XsMainContainerBackground } from '../PreviewTopicsCompStyling';
+import XsWordsPreviewTable from '../Components/DatabaseDisplays/XsWordsPreviewTable';
+import TopicsBackgroundHalf from '../../Images/TopicsBackgroundHalf.png';
+import { XsMainContainerBackground,XsBottomCol, ButtonCol, DividerDiv, XsButtonCol } from '../PreviewTopicsCompStyling';
+import './display.css';
 
 const XsPreviewTopicsContainer = () => {
+
+    const [topic, setTopic] = useState('');
+
     return(
         <XsMainContainerBackground>
             <Row>
                 <Col>
-                    <Row className='px-2 pt-2'>
-                        <h1>Preview Topics</h1>
+                    <Row>
+                        <img src={TopicsBackgroundHalf} className='p-0 m-0' alt='Preview Topics Cover Photo'/>
                     </Row>
                     <Row>
-                        <XsNavButtonRouting />
+                        <DividerDiv className='border-bottom'>
+                        </DividerDiv>
                     </Row>
-                    <Row className='flex-grow-1'>
-                        <TopicsListChoose />
+                    <Row>
+                        <XsButtonCol>
+                            <XsNavButtonRouting />
+                        </XsButtonCol>
                     </Row>
-                    <Row className='flex-grow-1'>
-                        <WordsPreviewTable />
+                    <Row>
+                        <XsBottomCol className='p-3'>
+                            <Row>
+                                <h3>Choose a Topic</h3>
+                            </Row>
+                            <Row className='px-3'>
+                                <TopicsListChoose callback={setTopic} />
+                            </Row>
+                            <Row>
+                                <br />
+                            </Row>
+                            <Row>
+                                <h3>Associated Words</h3>
+                            </Row>
+                            <Row className='px-3 flex-grow-1'>
+                                <XsWordsPreviewTable topic={topic}/>
+                            </Row>
+                        </XsBottomCol>
+                    </Row>
+                    <Row>
+                        <></>
                     </Row>
                 </Col>
             </Row>

@@ -19,7 +19,7 @@ function XsNavBarRouting(){
                     <Route index element={<HomePage />} />
                     <Route path='puzzle-generator' element={<PuzzleGenerator />} />
                     <Route path='view-topics' element={<ViewTopics />} />
-                    <Route path='create-topic' element={<CreateTopic />} />
+                    {/* <Route path='create-topic' element={<CreateTopic />} /> */}
                     <Route path='*' element={<ErrorPage />} />
                 </Route>
             </Routes>

@@ -31,8 +31,8 @@ const XsNavLayout = () => {
                                 <XsDropdownNavLinkItem pathway="/puzzle-generator" textDisplayed="Puzzle Generator"/>
                                 <Dropdown.Divider className='m-0'/>
                                 <XsDropdownNavLinkItem pathway="/view-topics" textDisplayed="View Topics"/>
-                                <Dropdown.Divider className='m-0'/>
-                                <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/>
+                                {/* <Dropdown.Divider className='m-0'/>
+                                <XsDropdownNavLinkItem pathway="/create-topic" textDisplayed="Create Topic"/> */}
                             </XsDropdownNavMenu>
                         </Dropdown>
                     </Col>

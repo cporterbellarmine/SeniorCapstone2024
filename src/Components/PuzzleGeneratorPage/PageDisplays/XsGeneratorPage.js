@@ -44,9 +44,9 @@ const XsGeneratorPage = () => {
                     <Row>
                         <Col>
                             <InstructionsRowTitleXs>
-                                <WhiteHeader className='p-3'>Instructions</WhiteHeader>
+                                <WhiteHeader className='p-2'>Instructions</WhiteHeader>
                             </InstructionsRowTitleXs>
-                            <InstructionsRowNumbersXs className='p-4'>
+                            <InstructionsRowNumbersXs className='p-3'>
                                 <div>
                                     <ol>
                                         <li>
@@ -80,14 +80,14 @@ const XsGeneratorPage = () => {
                             <Row className='pt-4'>
                                 <ChooseOptions />
                             </Row>
-                            <Row className='p-3 align-items-center'>
+                            {/* <Row className='p-3 align-items-center'>
                                 <Col>
                                     <Stack gap={1}>
                                         <ReloadButton />
                                         <CreatePDFButton />
                                     </Stack>
                                 </Col>
-                            </Row>
+                            </Row> */}
                         </Col>
                     </PreviewRow>
                 </Col>
