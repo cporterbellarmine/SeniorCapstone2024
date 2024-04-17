@@ -66,7 +66,7 @@ function DifficultyDropdown({ topic, difficultyCallback, selected, selectedCallb
 
     }
     return (
-        <Form.Select value={selected} onClick={(e) => difficultyCallback(e.target.value)} onChange={(e) => selectedCallback(e.target.value)}>
+        <Form.Select value={selected} onClick={(e) => {difficultyCallback(e.target.value); selectedCallback(e.target.value);}} onChange={(e) => selectedCallback(e.target.value)}>
             <option value='defaultChoose'>Click to choose a difficulty.</option>
 
             {/* Maps through the difficulty value arrays and upon a true value, generates a clickable value. If false, it generates a non-clickable value. */}
