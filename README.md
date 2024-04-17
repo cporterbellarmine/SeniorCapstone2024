@@ -1,7 +1,7 @@
 # Word Search Generator
 ## Senior Capstone 2024
 #### Author: Christina Porter, Computer Science, Class of 2024
-*version 0.3*
+*version 0.3.1*
 
 ## Introduction
 ---
