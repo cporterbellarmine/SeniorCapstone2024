@@ -16,6 +16,7 @@ export const InteractiveRow = styled(Row)`
 
 export const InstructionsRowTitleMd = styled(Row)`
     background-color: #a4036f;
+    color: #ffffff;
 `;
 
 export const InstructionsRowNumbersMd = styled(Row)`

@@ -143,15 +143,17 @@ function XsHomePage() {
                     </Row>
                     <Row className='py-2'>
                         <Col className='col-8'>
-                            <p>
-                                FreeSearch was created in Spring 2024 by Christina Porter, a graduating Senior from Bellarmine University as a final capstone project.
-                                Word searches are a powerful and underutilized tool that can be used to enhance vocabulary and
-                                assess impact in cognitive function with persistent usage. FreeSearch is a free word-search generator that uses provided topics and associated words
-                                to generate a unique puzzle every render.
-                            </p>
-                        </Col>
-                        <Col className='col-4'>
-                            <img src={Headshot} alt='Headshot of Christina' />
+                            <Row>
+                                <p>
+                                    FreeSearch was created in Spring 2024 by Christina Porter, a graduating Senior from Bellarmine University as a final capstone project.
+                                    Word searches are a powerful and underutilized tool that can be used to enhance vocabulary and
+                                    assess impact in cognitive function with persistent usage. FreeSearch is a free word-search generator that uses provided topics and associated words
+                                    to generate a unique puzzle every render.
+                                </p>
+                            </Row>
+                            <Row>
+                                <img src={Headshot} alt='Headshot of Christina' />
+                            </Row>
                         </Col>
                     </Row>
                     <Row>
@@ -166,15 +168,17 @@ function XsHomePage() {
                     </Row>
                     <Row className='py-2'>
                         <Col className='col-6'>
-                            <img src={Database} alt='Database Infrastructure' />
-                        </Col>
-                        <Col className='col-6'>
-                            <p>
-                                There was 10 week period to design, create, and implement a full-stack application. 
-                                Before FreeSearch, Christina had no experience with JavaScript, React, or MongoDB. Using
-                                previous experience with Java and C#, there were no issues with picking up the skills
-                                needed to implement FreeSearch. 
-                            </p>
+                            <Row>
+                                <img src={Database} alt='Database Infrastructure' />
+                            </Row>
+                            <Row>
+                                <p>
+                                    There was 10 week period to design, create, and implement a full-stack application. 
+                                    Before FreeSearch, Christina had no experience with JavaScript, React, or MongoDB. Using
+                                    previous experience with Java and C#, there were no issues with picking up the skills
+                                    needed to implement FreeSearch. 
+                                </p>
+                            </Row>
                         </Col>
                     </Row>
                     <Row>
@@ -189,15 +193,17 @@ function XsHomePage() {
                     </Row>                
                     <Row className='py-2'>
                         <Col className='col-7'>
-                            <p>
-                                Upon further development, FreeSearch can be expanded to include functionality to edit, add, and remove topics and associated words. Eventually,
-                                Artificial Intelligence would become an asset to allow automatically generated word searches based off vocabulary central around the main topic
-                                of an article or other provided resource. Should FreeSearch opt to include interactive puzzle-solving solutions, results could be collected and
-                                analyzed to monitor cognitive capabilities over time.
-                            </p>
-                        </Col>
-                        <Col className='col-5'>
-                            <img src={TechGrid} alt='techy-looking blue grid with dots connecting lines' />
+                            <Row>
+                                 <p>
+                                    Upon further development, FreeSearch can be expanded to include functionality to edit, add, and remove topics and associated words. Eventually,
+                                    Artificial Intelligence would become an asset to allow automatically generated word searches based off vocabulary central around the main topic
+                                    of an article or other provided resource. Should FreeSearch opt to include interactive puzzle-solving solutions, results could be collected and
+                                    analyzed to monitor cognitive capabilities over time.
+                                </p>
+                            </Row>
+                            <Row>
+                                <img src={TechGrid} alt='techy-looking blue grid with dots connecting lines' />
+                            </Row>
                         </Col>
                     </Row>
                 </Col>
