@@ -31,7 +31,7 @@ function TopicDropdown({ topicCallback, selectedCallback }){
     return(
         //Iterates through the available topics and creates a dropdown select.
         //When clicked, the topic value is changed and the difficulty level is reset.
-        <Form.Select onClick={(e) => {
+        <Form.Select onChange={(e) => {
             topicCallback(e.target.value);
             selectedCallback('defaultChoose');
             }}>
