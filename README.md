@@ -38,7 +38,7 @@ This project is designed for a Senior Capstone at Bellarmine University in Louis
 
 **Future Releases**
 *Version 0.4*
-- Complete UI
+- Puzzle Generation Completed
 
 ## Dependencies
 Includes links to installation instructions
@@ -56,8 +56,8 @@ Includes links to installation instructions
 
 ## Contents
 - Design Documents - Contains planning, proposal, and diagrams
-- old_word_search_site - Refers to initial attempt
-- **working-version-capstone** - Current working version
+- Components - Individual components and logic
+- Pages - Displays used in Nav
 
 #### To view:
 - Download .zip of repository using Github.
