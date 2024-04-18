@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Stack from 'react-bootstrap/Stack';
-import MainMenuButtonLinkTemplate from './MainMenuButtonLinkTemplate';
+import MainMenuButtonLinkTemplate from '../../MainMenuButtonLinkTemplate';
 
 const XsMainMenuNav = () => {
     return(

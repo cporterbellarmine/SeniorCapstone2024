@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledMDPGButtonLink } from '../MainMenu/MdButtonStyling';
+import { StyledMDPGButtonLink } from '../../../MdButtonStyling';
 
 function MdPGButtonLinkTemplate(props){
     return(

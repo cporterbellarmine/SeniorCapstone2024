@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
-import XsPGButtonLinkTemplate from './XsPGButtonLinkTemplate';
+import XsPGButtonLinkTemplate from '../Template/XsPGButtonLinkTemplate';
 
 function MdPuzzleGeneratorButtonLayout(props){
     return(

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MdViewTopicsLayout from './MdVTButtonLayout';
-import ViewTopics from '../../../../../Pages/ViewTopics';
+import MdViewTopicsLayout from '../Layout/MdVTButtonLayout';
+import ViewTopics from '../../../../../../../Pages/ViewTopics';
 
 function MdPuzzleGeneratorButtonRouting(){
     return(

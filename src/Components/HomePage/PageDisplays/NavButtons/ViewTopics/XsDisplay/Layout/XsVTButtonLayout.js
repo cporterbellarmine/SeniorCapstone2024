@@ -1,13 +1,13 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
-import MdVTButtonLinkTemplate from './MdVTButtonLinkTemplate';
+import XsVTButtonLinkTemplate from '../Template/XsVTButtonLinkTemplate';
 
 function MdViewTopicsNav(props){
     return(
         <>
             <Nav className='p-0'>
-                <MdVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h1>Go To View Topics</h1>}/>
+                <XsVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h1>Go To View Topics</h1>}/>
             </Nav>
             <Outlet />
         </>

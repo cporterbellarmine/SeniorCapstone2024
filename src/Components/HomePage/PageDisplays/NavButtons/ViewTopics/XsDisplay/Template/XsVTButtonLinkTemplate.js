@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledXSVTButtonLink } from '../PuzzleGenerator/XsButtonStyling';
+import { StyledXSVTButtonLink } from '../../../XsButtonStyling';
 
 function MdVTButtonLinkTemplate(props){
     return(

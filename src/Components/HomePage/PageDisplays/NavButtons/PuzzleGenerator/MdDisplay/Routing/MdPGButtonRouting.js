@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MdPuzzleGeneratorButtonLayout from './MdPGButtonLayout';
-import PuzzleGenerator from '../../../../../Pages/PuzzleGeneratorPage';
+import MdPuzzleGeneratorButtonLayout from '../Layout/MdPGButtonLayout';
+import PuzzleGenerator from '../../../../../../../Pages/PuzzleGeneratorPage';
 
 function MdPuzzleGeneratorButtonRouting(){
     return(

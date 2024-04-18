@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledMDVTButtonLink } from '../MainMenu/MdButtonStyling';
+import { StyledMDVTButtonLink } from '../../../MdButtonStyling';
 
 function MdVTButtonLinkTemplate(props){
     return(

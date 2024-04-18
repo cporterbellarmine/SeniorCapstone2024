@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
-import PuzzleGenerator from '../../../../../Pages/PuzzleGeneratorPage';
-import ViewTopics from '../../../../../Pages/ViewTopics';
-import CreateTopic from '../../../../../Pages/CreateTopic';
-import EditTopic from '../../../../../Pages/EditTopic';
+import PuzzleGenerator from '../../../../../../../Pages/PuzzleGeneratorPage';
+import ViewTopics from '../../../../../../../Pages/ViewTopics';
+import CreateTopic from '../../../../../../../Pages/CreateTopic';
+import EditTopic from '../../../../../../../Pages/EditTopic';
 import XsMainMenuNav from './XsMainMenuNav';
 
 

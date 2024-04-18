@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';
-import PuzzleGenerator from '../../../../../Pages/PuzzleGeneratorPage';
-import ViewTopics from '../../../../../Pages/ViewTopics';
-import MdMainMenuNav from './MdMainMenuNav';
+import PuzzleGenerator from '../../../../../../../Pages/PuzzleGeneratorPage';
+import ViewTopics from '../../../../../../../Pages/ViewTopics';
+import MdMainMenuNav from '../Layout/MdMainMenuNav';
 
 
 function MdMainMenuRouting(){

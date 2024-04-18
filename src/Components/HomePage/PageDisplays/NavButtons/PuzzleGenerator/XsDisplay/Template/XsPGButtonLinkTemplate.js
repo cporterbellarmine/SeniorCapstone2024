@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledXSPGButtonLink } from '../PuzzleGenerator/XsButtonStyling';
+import { StyledXSPGButtonLink } from '../../../XsButtonStyling';
 
 function MdPGButtonLinkTemplate(props){
     return(
