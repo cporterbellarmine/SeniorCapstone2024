@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MdViewTopicsLayout from './MdViewTopicsNav';
+import XsViewTopicsLayout from './XsVTButtonLayout';
 import ViewTopics from '../../../../../Pages/ViewTopics';
 
 function MdPuzzleGeneratorButtonRouting(){
     return(
         <Routes>
-            <Route path='/*' element={<MdViewTopicsLayout />}>
+            <Route path='/*' element={<XsViewTopicsLayout />}>
                 <Route pathName='view-topics' displayPage={<ViewTopics />} />
             </Route>
         </Routes>

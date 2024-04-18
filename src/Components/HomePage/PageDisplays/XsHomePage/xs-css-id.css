@@ -40,3 +40,13 @@ h4{
     text-shadow: 2px 2px #000000;
     color: #ffffff;
 }
+
+.pg-gradient-image-xs{
+    background-image: url(../../../Images/WiderGeneratorBackgroundRowXs.png);
+    background-repeat: no-repeat;
+}
+
+.vt-gradient-image-xs{
+    background-image: url(../../../Images/TopicsRowXs.png);
+    background-repeat: no-repeat;
+}

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import PuzzleGeneratorButtonLayout from './PuzzleGeneratorButtonLayout';
+import XsPGButtonLayout from './XsPGButtonLayout';
 import PuzzleGenerator from '../../../../../Pages/PuzzleGeneratorPage';
 
-function PuzzleGeneratorButtonRouting(){
+function MdPuzzleGeneratorButtonRouting(){
     return(
         <Routes>
-            <Route path='/*' element={<PuzzleGeneratorButtonLayout />}>
+            <Route path='/*' element={<XsPGButtonLayout />}>
                 <Route pathName='puzzle-generator' displayPage={<PuzzleGenerator />} />
             </Route>
         </Routes>
     );
 };
-export default PuzzleGeneratorButtonRouting;
+export default MdPuzzleGeneratorButtonRouting;

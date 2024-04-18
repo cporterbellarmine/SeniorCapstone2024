@@ -3,22 +3,11 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Accordion from 'react-bootstrap/Accordion';
-import MenuContainer from '../../MenuContainer';
 import MdMainMenu from './MdMainMenu';
-import CreateTopicButtonRouting from '../NavButtons/CreateTopic/CreateTopicButtonRouting';
-import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorButtonRouting';
-import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
-import CreateTopicAccordionRouting from '../NavButtons/CreateTopic/CreateTopicAccordionRouting';
-import PuzzleGeneratorAccordionRouting from '../NavButtons/PuzzleGenerator/XsPuzzleGeneratorAccordionRouting';
-import ViewTopicsAccordionRouting from '../NavButtons/ViewTopics/XsViewTopicsAccordionRouting';
-import MainMenuRouting from '../NavButtons/MainMenu/XsMainMenuRouting';
 import FreeSearchLogo from '../../../Images/FreeSearchLogo.png';
 import Headshot from '../../../Images/headshot.png';
 import Database from '../../../Images/DatabaseSmaller.png';
 import TechGrid from '../../../Images/TechGrid.png';
-import PreviewTopicsPage from '../../../Images/ViewTopicsPageHalfish.png';
-import { StyledContainer, StyledMenuCol } from '../HomePageComponentStyle';
 import { MdHomeContainer, CreationColTitle, ExperienceColTitle, FutureColTitle, CreationColGradient, ExperienceColGradient, FutureColGradient, TitleText, MenuHeader } from './MdStyledComponents';
 //import './xs-css-id.css';
 

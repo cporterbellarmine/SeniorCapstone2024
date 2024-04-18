@@ -8,6 +8,7 @@
 .vt-gradient-image{
     background-image: url(../../../Images/TopicsRow4.png);
     background-repeat: no-repeat;
+    background-position: right top;
 }
 
 .pg-button-image{

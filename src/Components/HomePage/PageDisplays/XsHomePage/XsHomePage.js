@@ -6,8 +6,10 @@ import Col from 'react-bootstrap/Col';
 import Accordion from 'react-bootstrap/Accordion';
 import MenuContainer from '../../MenuContainer';
 import CreateTopicButtonRouting from '../NavButtons/CreateTopic/CreateTopicButtonRouting';
-import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/PuzzleGeneratorButtonRouting';
+import PuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/XsPGButtonRouting';
 import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
+import XsPGButtonRouting from '../NavButtons/PuzzleGenerator/XsPGButtonRouting';
+import XsVTButtonRouting from '../NavButtons/ViewTopics/XsVTButtonRouting';
 import CreateTopicAccordionRouting from '../NavButtons/CreateTopic/CreateTopicAccordionRouting';
 import XsPuzzleGeneratorAccordionRouting from '../NavButtons/PuzzleGenerator/XsPuzzleGeneratorAccordionRouting';
 import XsViewTopicsAccordionRouting from '../NavButtons/ViewTopics/XsViewTopicsAccordionRouting';
@@ -34,6 +36,50 @@ function XsHomePage() {
             <Row>
                 <h2 className='display-3'><u>Welcome to FreeSearch!</u></h2>
             </Row>
+            <Row className='pg-gradient-image-xs'>
+                <Col>
+                    <Row>
+                        <br />
+                    </Row>
+                    <Row>
+                        <h4>Puzzle Generator Page</h4>
+                    </Row>
+                    <Row>
+                        <br />
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <Col className='col-1'/>
+                <Col className='col-8'>
+                    <XsPGButtonRouting />
+                </Col>
+                <Col className='col-1'/>
+            </Row>
+            <Row className='vt-gradient-image-xs text-end'>
+                <Col>
+                    <Row>
+                        <br />
+                    </Row>
+                    <Row>
+                        <h4>View Topics Page</h4>
+                    </Row>
+                    <Row>
+                        <br />
+                    </Row>
+                </Col>
+            </Row>
+            <Row>
+                <Col className='col-1'/>
+                <Col className='col-8'>
+                    <XsVTButtonRouting />
+                </Col>
+                <Col className='col-1'/>
+            </Row>
+
+
+
+
             <Row className=''>
                 <Col className='p-0'>
                     <Accordion flush className='accordion'>
@@ -134,7 +180,7 @@ function XsHomePage() {
                     <Row>
                         <CreationColTitle className='py-3 px-2 col-8'>
                             <TitleText>
-                                <b>Creation of FreeSearch</b>
+                                <h5><b>Creation of FreeSearch</b></h5>
                             </TitleText>
                         </CreationColTitle>
                         <CreationColGradient className='col-4'>
@@ -142,7 +188,7 @@ function XsHomePage() {
                         </CreationColGradient>
                     </Row>
                     <Row className='py-2'>
-                        <Col className='col-8'>
+                        <Col>
                             <Row>
                                 <p>
                                     FreeSearch was created in Spring 2024 by Christina Porter, a graduating Senior from Bellarmine University as a final capstone project.
@@ -152,7 +198,11 @@ function XsHomePage() {
                                 </p>
                             </Row>
                             <Row>
-                                <img src={Headshot} alt='Headshot of Christina' />
+                                <Col className='col-2'/>
+                                <Col className='col-8 text-center'>
+                                   <img src={Headshot} alt='Headshot of Christina' />
+                                </Col>
+                                <Col className='col-2'/>
                             </Row>
                         </Col>
                     </Row>
@@ -162,14 +212,19 @@ function XsHomePage() {
                         </ExperienceColGradient>
                         <ExperienceColTitle className='py-3 px-2 col-8 text-end'>
                             <TitleText>
-                                <b>FreeSearch Learning Process</b>
+                                <h5><b>FreeSearch Learning Process</b></h5>
                             </TitleText>
                         </ExperienceColTitle>
                     </Row>
                     <Row className='py-2'>
-                        <Col className='col-6'>
+                        <Col>
                             <Row>
-                                <img src={Database} alt='Database Infrastructure' />
+                                <Col className='col-2'/>
+                                <Col className='col-8 text-center'>
+                                    <img src={Database} alt='Database Infrastructure' />
+                                </Col>
+                                <Col className='col-2'/>
+                                
                             </Row>
                             <Row>
                                 <p>
@@ -192,7 +247,7 @@ function XsHomePage() {
                         </FutureColGradient>
                     </Row>                
                     <Row className='py-2'>
-                        <Col className='col-7'>
+                        <Col>
                             <Row>
                                  <p>
                                     Upon further development, FreeSearch can be expanded to include functionality to edit, add, and remove topics and associated words. Eventually,
@@ -202,7 +257,11 @@ function XsHomePage() {
                                 </p>
                             </Row>
                             <Row>
-                                <img src={TechGrid} alt='techy-looking blue grid with dots connecting lines' />
+                                <Col className='col-2'/>
+                                <Col className='col-8 text-center'>
+                                    <img src={TechGrid} alt='techy-looking blue grid with dots connecting lines'/>
+                                </Col>
+                                <Col className='col-2'/>
                             </Row>
                         </Col>
                     </Row>

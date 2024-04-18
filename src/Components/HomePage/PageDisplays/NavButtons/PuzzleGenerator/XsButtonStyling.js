@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const StyledMDPGButtonLink = styled(NavLink)`
+export const StyledXSPGButtonLink = styled(NavLink)`
     display: inline-grid;
     border: thin solid #000000;
     place-content: center;
@@ -16,7 +16,7 @@ export const StyledMDPGButtonLink = styled(NavLink)`
     }
 `;
 
-export const StyledMDVTButtonLink = styled(NavLink)`
+export const StyledXSVTButtonLink = styled(NavLink)`
     display: inline-grid;
     border: thin solid #000000;
     place-content: center;
