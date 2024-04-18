@@ -1,7 +1,7 @@
 # Word Search Generator
 ## Senior Capstone 2024
 #### Author: Christina Porter, Computer Science, Class of 2024
-*version 0.3*
+*version 0.3.1*
 
 ## Introduction
 ---
@@ -17,7 +17,7 @@ This project is designed for a Senior Capstone at Bellarmine University in Louis
 - [x] Create cloud connection for front-end and back-end.
 
 #### Release Notes
-*Current Version Release:* 0.3
+*Current Version Release:* 0.3.1
 - Styled xs (mobile) and md (desktop) breakpoints for site.
 - Connected DB to MongoDB
 - Utilized Express and Axios to complete database communication
@@ -31,10 +31,7 @@ This project is designed for a Senior Capstone at Bellarmine University in Louis
   - Easy: Generates a [8x8] array.
   - Intermediate: Generates a [15x15] array.
   - Hard & Expert: Generates a [23x23] array.
- 
-
-#### **Current Bugs**
-- If Puzzle Generator is opened on mobile, dropdowns have to be used twice to trigger changes.
+- Fixed mobile Puzzle Generator bug where dropdowns had to be used twice to trigger changes.
 
 **Future Releases**
 *Version 0.4*
