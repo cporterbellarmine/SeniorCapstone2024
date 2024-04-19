@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
 import MdVTButtonLinkTemplate from '../Template/MdVTButtonLinkTemplate';
 
-function MdViewTopicsNav(props){
+function MdVTButtonLayout(props){
     return(
         <>
             <Nav className='p-0'>
@@ -14,4 +14,4 @@ function MdViewTopicsNav(props){
     );
 };
 
-export default MdViewTopicsNav;
+export default MdVTButtonLayout;

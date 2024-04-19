@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import MdPuzzleGeneratorButtonLayout from '../Layout/MdPGButtonLayout';
 import PuzzleGenerator from '../../../../../../../Pages/PuzzleGeneratorPage';
 
-function MdPuzzleGeneratorButtonRouting(){
+function MdPGButtonRouting(){
     return(
         <Routes>
             <Route path='/*' element={<MdPuzzleGeneratorButtonLayout />}>
@@ -12,4 +12,4 @@ function MdPuzzleGeneratorButtonRouting(){
         </Routes>
     );
 };
-export default MdPuzzleGeneratorButtonRouting;
+export default MdPGButtonRouting;

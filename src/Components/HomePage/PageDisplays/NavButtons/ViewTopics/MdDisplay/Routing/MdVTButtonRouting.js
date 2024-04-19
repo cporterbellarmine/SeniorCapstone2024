@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import MdViewTopicsLayout from '../Layout/MdVTButtonLayout';
 import ViewTopics from '../../../../../../../Pages/ViewTopics';
 
-function MdPuzzleGeneratorButtonRouting(){
+function MdVTButtonRouting(){
     return(
         <Routes>
             <Route path='/*' element={<MdViewTopicsLayout />}>
@@ -12,4 +12,4 @@ function MdPuzzleGeneratorButtonRouting(){
         </Routes>
     );
 };
-export default MdPuzzleGeneratorButtonRouting;
+export default MdVTButtonRouting;

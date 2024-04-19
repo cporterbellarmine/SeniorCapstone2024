@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Outlet } from 'react-router-dom';
 import XsPGButtonLinkTemplate from '../Template/XsPGButtonLinkTemplate';
 
-function MdPuzzleGeneratorButtonLayout(props){
+function XsPGButtonLayout(props){
     return(
         <>
             <Nav className='p-0'>
@@ -14,4 +14,4 @@ function MdPuzzleGeneratorButtonLayout(props){
     );
 };
 
-export default MdPuzzleGeneratorButtonLayout;
+export default XsPGButtonLayout;
