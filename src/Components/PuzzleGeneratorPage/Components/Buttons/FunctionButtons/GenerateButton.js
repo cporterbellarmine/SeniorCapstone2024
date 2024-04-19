@@ -287,301 +287,303 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         const randomIndex = randomIntGenerator(coords.length);
         return(coords[randomIndex]);
     };
+
+    console.log(chooseStartingPoint(puzzleCoords));
     
-    const chosenDirection = () => {
-        console.log(emptyPuzzle);
-        console.log(puzzleCoords);
-        const dir = chooseDirection(directions);
-        const randomInd = chooseStartingPoint(puzzleCoords);
-        console.log(dir);
-        console.log(randomInd);
-    }
+    // const chosenDirection = () => {
+    //     console.log(emptyPuzzle);
+    //     console.log(puzzleCoords);
+    //     const dir = chooseDirection(directions);
+    //     const randomInd = chooseStartingPoint(puzzleCoords);
+    //     console.log(dir);
+    //     console.log(randomInd);
+    // }
 
-    chosenDirection();
+    // chosenDirection();
 
-    function testForContains(coordsList, newCoord){
-        let contained = false;
-        let index = -1;
+    // function testForContains(coordsList, newCoord){
+    //     let contained = false;
+    //     let index = -1;
 
-        for(let i = 0; i < coordsList.length; i++){
-            if(coordsList[i][0] === newCoord[0] && coordsList[i][1] === newCoord[1]){
-                contained = true;
-                index = i;
-            }
-        }
-        return [contained, index];
-    };
+    //     for(let i = 0; i < coordsList.length; i++){
+    //         if(coordsList[i][0] === newCoord[0] && coordsList[i][1] === newCoord[1]){
+    //             contained = true;
+    //             index = i;
+    //         }
+    //     }
+    //     return [contained, index];
+    // };
 
-    // //Beginning: Create puzzle & coords. Choose starting location. Choose direction.
-    // //Check to make sure constraints fit. If they do, add word. If they don't, regenerate direction.
-    // //If word is placed in that location, get indicies for letters and add the directions to the index
-    // //specified for the index the direction is placed.
+    // // //Beginning: Create puzzle & coords. Choose starting location. Choose direction.
+    // // //Check to make sure constraints fit. If they do, add word. If they don't, regenerate direction.
+    // // //If word is placed in that location, get indicies for letters and add the directions to the index
+    // // //specified for the index the direction is placed.
 
-    // //After: Choose starting location & direction. Check to make sure constraints fit.
-    // //Check to make sure for each letter for the word, ensure the letter isn't placed with
-    // //a direction going the same way or opposite way.
-    // //Re-generate direction, then location if needed.
+    // // //After: Choose starting location & direction. Check to make sure constraints fit.
+    // // //Check to make sure for each letter for the word, ensure the letter isn't placed with
+    // // //a direction going the same way or opposite way.
+    // // //Re-generate direction, then location if needed.
 
-    function checkConstraints(wordLength, direction, startingPoint, coordinateArray, directionsArray, coordDirections){
-        if(direction === '' || !startingPoint || !coordinateArray || !directionsArray || !coordDirections){
-            return;
-        }
+    // function checkConstraints(wordLength, direction, startingPoint, coordinateArray, directionsArray, coordDirections){
+    //     if(direction === '' || !startingPoint || !coordinateArray || !directionsArray || !coordDirections){
+    //         return;
+    //     }
 
-        const firstCoordinate = startingPoint[0];
-        const secondCoordinate = startingPoint[1];
-        let opposite;
-        let works = 'false';
+    //     const firstCoordinate = startingPoint[0];
+    //     const secondCoordinate = startingPoint[1];
+    //     let opposite;
+    //     let works = 'false';
 
 
-        const constraintsArray = [];
+    //     const constraintsArray = [];
 
-        switch(direction){
-            case 'north':
-                opposite = 'south';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate-i, secondCoordinate];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('north' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-                //check available array, if false is contained, then regenerate direction
-            case 'northeast':
-                opposite = 'southwest';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('northeast' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'east':
-                opposite = 'west';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('east' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'southeast':
-                opposite = 'northwest';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate+i, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('southeast' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'south':
-                opposite = 'north';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate+i, secondCoordinate];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('south' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'southwest':
-                opposite = 'northeast';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate+i, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('southwest' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'west':
-                opposite = 'east';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('west' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            case 'northwest':
-                opposite = 'southeast';
-                for(let i = 0; i < wordLength; i++){
-                    let available = false;
-                    const newCoordinate = [firstCoordinate-i, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
-                    console.log(newCoordinate);
-                    console.log(newCoordinateContained);
-                    console.log(coordinateArray);
-                    if(newCoordinateIndex !== -1){
-                        console.log(coordDirections);
-                        const directionsOfCoordinate = coordDirections[newCoordinateIndex];
-                        if(!directionsOfCoordinate.includes('northwest' || opposite)){
-                            available = true;
-                        }
-                    }
-                    constraintsArray.push(available);
-                };
-                break;
-            default:
-                console.log('No direction found.');
-                break;
-        }
-        if(!constraintsArray.includes(false)){
-            works = true;
-        }
-        return(works);
-    };
+    //     switch(direction){
+    //         case 'north':
+    //             opposite = 'south';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate-i, secondCoordinate];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('north' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //             //check available array, if false is contained, then regenerate direction
+    //         case 'northeast':
+    //             opposite = 'southwest';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('northeast' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'east':
+    //             opposite = 'west';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate, secondCoordinate+i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('east' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'southeast':
+    //             opposite = 'northwest';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate+i, secondCoordinate+i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('southeast' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'south':
+    //             opposite = 'north';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate+i, secondCoordinate];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('south' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'southwest':
+    //             opposite = 'northeast';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate+i, secondCoordinate-i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('southwest' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'west':
+    //             opposite = 'east';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate, secondCoordinate-i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('west' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         case 'northwest':
+    //             opposite = 'southeast';
+    //             for(let i = 0; i < wordLength; i++){
+    //                 let available = false;
+    //                 const newCoordinate = [firstCoordinate-i, secondCoordinate-i];
+    //                 const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+    //                 console.log(newCoordinate);
+    //                 console.log(newCoordinateContained);
+    //                 console.log(coordinateArray);
+    //                 if(newCoordinateIndex !== -1){
+    //                     console.log(coordDirections);
+    //                     const directionsOfCoordinate = coordDirections[newCoordinateIndex];
+    //                     if(!directionsOfCoordinate.includes('northwest' || opposite)){
+    //                         available = true;
+    //                     }
+    //                 }
+    //                 constraintsArray.push(available);
+    //             };
+    //             break;
+    //         default:
+    //             console.log('No direction found.');
+    //             break;
+    //     }
+    //     if(!constraintsArray.includes(false)){
+    //         works = true;
+    //     }
+    //     return(works);
+    // };
 
-    function generatePotentialIndex(word, chosenDifficulty, chosenIndex, chosenDirection, coordinatesArray, directionArray, coordDirections){
-        if(!word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
-            return;
-        }
+    // function generatePotentialIndex(word, chosenDifficulty, chosenIndex, chosenDirection, coordinatesArray, directionArray, coordDirections){
+    //     if(!word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
+    //         return;
+    //     }
 
-        let chosenStart;
-        let chosenDir;
+    //     let chosenStart;
+    //     let chosenDir;
 
-        if(!chosenIndex || chosenIndex.length === 0){
-            chosenStart = chooseStartingPoint(coordinatesArray);
-        }else{
-            chosenStart = chosenIndex;
-        }
+    //     if(!chosenIndex || chosenIndex.length === 0){
+    //         chosenStart = chooseStartingPoint(coordinatesArray);
+    //     }else{
+    //         chosenStart = chosenIndex;
+    //     }
 
-        if(!chosenDirection){
-            chosenDir = chooseStartingPoint(directionArray);
-        }else{
-            chosenDir = chosenDirection;
-        }
+    //     if(!chosenDirection){
+    //         chosenDir = chooseStartingPoint(directionArray);
+    //     }else{
+    //         chosenDir = chosenDirection;
+    //     }
         
-        const wordLength = word.length;
+    //     const wordLength = word.length;
 
-        console.log('chosenStart = ' + chosenStart);
-        console.log('chosenDirection = ' + chosenDir);
-        console.log('wordLength = ' + wordLength);
+    //     console.log('chosenStart = ' + chosenStart);
+    //     console.log('chosenDirection = ' + chosenDir);
+    //     console.log('wordLength = ' + wordLength);
 
-        const potentialIndexWorks = checkConstraints(wordLength, chosenDir, chosenStart, coordinatesArray, directionArray, coordDirections);
+    //     const potentialIndexWorks = checkConstraints(wordLength, chosenDir, chosenStart, coordinatesArray, directionArray, coordDirections);
 
-        return [chosenStart, chosenDir, potentialIndexWorks];
-    }
+    //     return [chosenStart, chosenDir, potentialIndexWorks];
+    // }
 
-    function removeIndex(array, value){
-        const newArray = array.filter(indexValue => indexValue !== value);
-        return(newArray);
-    };
+    // function removeIndex(array, value){
+    //     const newArray = array.filter(indexValue => indexValue !== value);
+    //     return(newArray);
+    // };
 
-    function resetDirections(){
-        const fullDirections = directions;
-        return(fullDirections)
-    }
+    // function resetDirections(){
+    //     const fullDirections = directions;
+    //     return(fullDirections)
+    // }
 
-    function generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks){
-        if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
-            return;
-        };
+    // function generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks){
+    //     if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
+    //         return;
+    //     };
 
-        console.log(word);
-        console.log(chosenDifficulty);
+    //     console.log(word);
+    //     console.log(chosenDifficulty);
 
-        let availableCoordArray = coordinatesArray;
-        let availableDirectionArray = directionArray;
+    //     let availableCoordArray = coordinatesArray;
+    //     let availableDirectionArray = directionArray;
 
-        let validIndex = [];
+    //     let validIndex = [];
 
-        if(!indexWorks){
-            if(availableDirectionArray.length !== 0){
-                console.log(`Chosen direction does not work. Removing ${pickedDirection}`);
-                availableDirectionArray = availableDirectionArray.filter(direction => direction !== pickedDirection);
-            }
-            else if(availableDirectionArray.length === 0 && availableCoordArray!== 0){
-                console.log(`Chosen starting point does not work. Removing ${chosenCoord}`);
-                availableDirectionArray = resetDirections();
-                pickedDirection = null;
-                availableCoordArray = availableCoordArray.filter(coord => coord !== chosenCoord);
-                chosenCoord = null;
-            }
-            else{
-                console.log('Error');
-            }
+    //     if(!indexWorks){
+    //         if(availableDirectionArray.length !== 0){
+    //             console.log(`Chosen direction does not work. Removing ${pickedDirection}`);
+    //             availableDirectionArray = availableDirectionArray.filter(direction => direction !== pickedDirection);
+    //         }
+    //         else if(availableDirectionArray.length === 0 && availableCoordArray!== 0){
+    //             console.log(`Chosen starting point does not work. Removing ${chosenCoord}`);
+    //             availableDirectionArray = resetDirections();
+    //             pickedDirection = null;
+    //             availableCoordArray = availableCoordArray.filter(coord => coord !== chosenCoord);
+    //             chosenCoord = null;
+    //         }
+    //         else{
+    //             console.log('Error');
+    //         }
 
 
-            [chosenCoord, pickedDirection, indexWorks] = generatePotentialIndex(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections);
-            [chosenCoord, chosenDifficulty, pickedDirection] = generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks);
+    //         [chosenCoord, pickedDirection, indexWorks] = generatePotentialIndex(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections);
+    //         [chosenCoord, chosenDifficulty, pickedDirection] = generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks);
 
-        }else if(indexWorks){
+    //     }else if(indexWorks){
 
-            console.log(`Success! Chosen index is ${chosenCoord} and chosen direction is ${pickedDirection}`);
+    //         console.log(`Success! Chosen index is ${chosenCoord} and chosen direction is ${pickedDirection}`);
 
-        }else{
-            console.log('error');
-        }
+    //     }else{
+    //         console.log('error');
+    //     }
 
-        return[chosenCoord, chosenDifficulty, pickedDirection];
+    //     return[chosenCoord, chosenDifficulty, pickedDirection];
 
 
         // console.log('working index ln 528' + workingIndex);
@@ -612,10 +614,10 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         //         }
         //     }
             
-        // // }
-    };
+    //     // // }
+    // };
 
-    generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, emptyCoordDirections, null);
+    //generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, emptyCoordDirections, null);
 
     // if(topic && difficulty){
     //     console.log(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
