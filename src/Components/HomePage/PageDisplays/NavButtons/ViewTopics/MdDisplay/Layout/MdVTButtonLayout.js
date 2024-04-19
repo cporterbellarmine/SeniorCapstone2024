@@ -7,7 +7,7 @@ function MdVTButtonLayout(props){
     return(
         <>
             <Nav className='p-0'>
-                <MdVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h1>Go To View Topics</h1>}/>
+                <MdVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h3>Go To View Topics</h3>}/>
             </Nav>
             <Outlet />
         </>

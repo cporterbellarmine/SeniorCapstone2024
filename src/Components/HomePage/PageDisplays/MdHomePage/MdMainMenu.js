@@ -7,15 +7,15 @@ import MdMainMenuRouting from '../NavButtons/MainMenu/MdDisplay/Routing/MdMainMe
 import MdPuzzleGeneratorButtonRouting from '../NavButtons/PuzzleGenerator/MdDisplay/Routing/MdPGButtonRouting';
 import MdViewTopicsRouting from '../NavButtons/ViewTopics/MdDisplay/Routing/MdVTButtonRouting';
 import ViewTopicsButtonRouting from '../NavButtons/ViewTopics/ViewTopicsButtonRouting';
-import { PGButtonRow, VTButtonRow } from './MdStyledComponents';
+import { PGButtonRow, VTButtonRow, TextBackground} from './MdStyledComponents';
 import './mdhomepage.css';
 
 
 const MdMainMenu = () => {
     return (
         <div>
-            <Row className='pg-gradient-image d-flex'>
-                <Col className='col-md-3  align-content-center'>
+            <Row className='pg-gradient-image d-flex p-1'>
+                <Col className='col-3 align-content-center'>
                     <Row>
                         <br />
                     </Row>
@@ -26,36 +26,36 @@ const MdMainMenu = () => {
                         <br />
                     </Row>
                 </Col>
-                <Col className='col-md-6 align-content-center overflow-auto'>
+                <TextBackground className='col-md-6 align-content-center '>
                     <h3>Puzzle Generator Description and Features</h3>
-                    <p>
+                    <p className='p-size'>
                         The Puzzle Generator allows you to choose the specifications of your puzzle
                         before generation. There are two dropdowns: Topic and Difficulty.
                     </p>
-                    <p>
+                    <p className='p-size'>
                         <b>Difficulty Requirements</b>
                         <ul>
                             <li>
-                                <p><u>Easy</u>: There are 10 words between 3-5 letters associated with the chosen topic.</p>
+                                <u>Easy</u>: There are 10 words between 3-5 letters associated with the chosen topic.
                             </li>
                             <li>
-                                <p><u>Intermediate</u>: There are 20 words between 3-10 letters associated with the chosen topic.</p>
+                                <u>Intermediate</u>: There are 20 words between 3-10 letters associated with the chosen topic.
                             </li>
                             <li>
-                                <p><u>Hard</u>: There are 30 words between 3-15 letters associated with the chosen topic.</p>
+                                <u>Hard</u>: There are 30 words between 3-15 letters associated with the chosen topic.
                             </li>
                             <li>
-                                <p><u>Expert</u>: There are 40 words between 3-15 letters associated with the chosen topic.</p>
+                                <u>Expert</u>: There are 40 words between 3-15 letters associated with the chosen topic.
                             </li>
                         </ul>
                     </p>
-                </Col>
+                </TextBackground>
                 <Col className='d-none col-xxl-1'/>
                 <Col className='col-md-3 col-xxl-2 align-content-center'>
                     <Row>
                         <br />
                     </Row>
-                    <PGButtonRow className='pg-button-image h1-button'>
+                    <PGButtonRow className='pg-button-image h1-button ms-1'>
                         <MdPuzzleGeneratorButtonRouting />
                     </PGButtonRow>
                     <Row>
@@ -63,7 +63,7 @@ const MdMainMenu = () => {
                     </Row>
                 </Col>
             </Row>
-            <Row className='vt-gradient-image'>
+            <Row className='vt-gradient-image p-2'>
                 <Col className='col-1'/>
                 <Col className='col-2 align-content-center'>
                     <Row>
@@ -77,13 +77,13 @@ const MdMainMenu = () => {
                     </Row>
                 </Col>
                 <Col className='col-1'/>
-                <Col className='col-3 align-content-center'>
+                <TextBackground className='col-3 align-content-center'>
                     <h3>View Topics Description and Features</h3>
-                    <p>
+                    <p className='p-size'>
                         The View Topics page allows you to view what topics and words are available in the database.
                         Click on a specific topic to view the associated words.
                     </p>
-                </Col>
+                </TextBackground>
                 <Col className='col-1'/>
                 <Col className='col-4 align-content-center'>
                     <Row>

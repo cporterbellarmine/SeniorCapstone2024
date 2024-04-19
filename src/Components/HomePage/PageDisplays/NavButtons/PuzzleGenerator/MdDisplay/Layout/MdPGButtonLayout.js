@@ -7,7 +7,7 @@ function MdPGButtonLayout(props){
     return(
         <>
             <Nav className='p-0'>
-                <MdButtonLinkTemplate pathway="/puzzle-generator" textDisplayed={<h1>Go To Puzzle Generator</h1>}/>
+                <MdButtonLinkTemplate pathway="/puzzle-generator" textDisplayed={<h3>Go To Puzzle Generator</h3>}/>
             </Nav>
             <Outlet />
         </>

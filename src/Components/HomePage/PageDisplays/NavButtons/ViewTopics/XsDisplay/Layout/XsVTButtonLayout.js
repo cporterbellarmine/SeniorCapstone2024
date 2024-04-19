@@ -7,7 +7,7 @@ function XsVTButtonLayout(props){
     return(
         <>
             <Nav className='p-0'>
-                <XsVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h1>Go To View Topics</h1>}/>
+                <XsVTButtonLinkTemplate pathway="/view-topics" textDisplayed={<h6>Go To View Topics</h6>}/>
             </Nav>
             <Outlet />
         </>

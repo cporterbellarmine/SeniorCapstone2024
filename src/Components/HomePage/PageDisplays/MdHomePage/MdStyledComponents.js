@@ -73,3 +73,7 @@ export const VTButtonRow = styled(Row)`
         cursor: pointer;
     }
 `;
+
+export const TextBackground = styled(Col)`
+    background-color: rgba(217, 217, 217, 0.55);
+`;

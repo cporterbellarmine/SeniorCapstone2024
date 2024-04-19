@@ -36,7 +36,7 @@
     border-right: solid 1px #fdafe3;
 }
 
-h4{
+.title-h4{
     text-shadow: 2px 2px #000000;
     color: #ffffff;
 }
@@ -49,4 +49,8 @@ h4{
 .vt-gradient-image-xs{
     background-image: url(../../../Images/TopicsRowXs.png);
     background-repeat: no-repeat;
+}
+
+.pg-text{
+    color: #ffffff;
 }
