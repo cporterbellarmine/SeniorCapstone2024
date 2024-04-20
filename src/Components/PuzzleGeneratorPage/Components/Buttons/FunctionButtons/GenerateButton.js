@@ -32,7 +32,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
     const[puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
     const[emptyPuzzle, setEmptyPuzzle] = useState([]);
     const[puzzleCoords, setPuzzleCoords] = useState([]);
-    const[emptyCoordDirections, setEmptyCoordDirections] = useState([]);
+    const[coordDirections, setCoordDirections] = useState([]);
     const[runAgain, setRunAgain] = useState(false);
 
 
@@ -265,10 +265,11 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
     
             console.log(puzzle);
             console.log(coords);
+            console.log(coordinateDirections);
 
             setEmptyPuzzle(puzzle);
             setPuzzleCoords(coords);
-            setEmptyCoordDirections(coordinateDirections);
+            setCoordDirections(coordinateDirections);
         };
 
         generateEmptyPuzzle();
@@ -289,43 +290,41 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         }
         const randomIndex = randomIntGenerator(coords.length);
         
-        return (randomIndex);
+        return(coords[randomIndex]);
     };
 
-    function setNewCoord(){
-        if(!puzzleCoords || puzzleCoords.length === 0){
-            return;
-        }
-        console.log(puzzleCoords);
-        let tempPuzzleCoords = puzzleCoords;
-        const tempIndex = chooseStartingPoint(puzzleCoords);
-        tempPuzzleCoords[tempIndex] = 5555;
-        console.log(tempPuzzleCoords);
-    };
+    // function setNewCoord(){
+    //     if(!puzzleCoords || puzzleCoords.length === 0){
+    //         return;
+    //     }
+    //     console.log(puzzleCoords);
+    //     let tempPuzzleCoords = puzzleCoords;
+    //     const tempIndex = chooseStartingPoint(puzzleCoords);
+    //     tempPuzzleCoords[tempIndex] = 5555;
+    //     console.log(tempPuzzleCoords);
+    // };
     
 
-    const chosenDirection = () => {
-        console.log(emptyPuzzle);
-        console.log(puzzleCoords);
-        const dir = chooseDirection(directions);
-        const randomInd = chooseStartingPoint(puzzleCoords);
-        console.log(dir);
-        console.log(randomInd);
-    }
+    // const chosenDirection = () => {
+    //     console.log(emptyPuzzle);
+    //     console.log(puzzleCoords);
+    //     const dir = chooseDirection(directions);
+    //     const randomInd = chooseStartingPoint(puzzleCoords);
+    //     console.log(dir);
+    //     console.log(randomInd);
+    // }
 
     // chosenDirection();
 
-    function testForContains(coordsList, newCoord){
-        let contained = false;
+    function getIndexValue(coordsList, newCoord){
         let index = -1;
 
         for(let i = 0; i < coordsList.length; i++){
             if(coordsList[i][0] === newCoord[0] && coordsList[i][1] === newCoord[1]){
-                contained = true;
                 index = i;
             }
         }
-        return [contained, index];
+        return [index];
     };
 
     // // //Beginning: Create puzzle & coords. Choose starting location. Choose direction.
@@ -357,9 +356,8 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate-i, secondCoordinate];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const newCoordinateIndex = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
-                    console.log(newCoordinateContained);
                     console.log(coordinateArray);
                     if(newCoordinateIndex !== -1){
                         console.log(coordDirections);
@@ -377,7 +375,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -396,7 +394,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -415,7 +413,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate+i, secondCoordinate+i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -434,7 +432,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate+i, secondCoordinate];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -453,9 +451,8 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate+i, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
-                    console.log(newCoordinateContained);
                     console.log(coordinateArray);
                     if(newCoordinateIndex !== -1){
                         console.log(coordDirections);
@@ -472,7 +469,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -491,7 +488,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 for(let i = 0; i < wordLength; i++){
                     let available = false;
                     const newCoordinate = [firstCoordinate-i, secondCoordinate-i];
-                    const [newCoordinateContained, newCoordinateIndex] = testForContains(coordinateArray, newCoordinate);
+                    const [newCoordinateContained, newCoordinateIndex] = getIndexValue(coordinateArray, newCoordinate);
                     console.log(newCoordinate);
                     console.log(newCoordinateContained);
                     console.log(coordinateArray);
@@ -509,56 +506,12 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 console.log('No direction found.');
                 break;
         }
-        if(!constraintsArray.includes(false)){
-            works = true;
-            switch(direction){
-                case 'north':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate-i, secondCoordinate];
-                    };
-                    break;
-                    //check available array, if false is contained, then regenerate direction
-                case 'northeast':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate-i, secondCoordinate+i];
-                    };
-                    break;
-                case 'east':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate, secondCoordinate+i];
-                    };
-                    break;
-                case 'southeast':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate+i, secondCoordinate+i];
-                    };
-                    break;
-                case 'south':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate+i, secondCoordinate];
-                    };
-                    break;
-                case 'southwest':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate+i, secondCoordinate-i];
-                    };
-                    break;
-                case 'west':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate, secondCoordinate-i];
-                    };
-                    break;
-                case 'northwest':
-                    for(let i = 0; i < wordLength; i++){
-                        const newCoordinate = [firstCoordinate-i, secondCoordinate-i];
-                    };
-                    break;
-                default:
-                    console.log('No direction found.');
-                    break;
-            }
-        }
         return(works);
+    };
+
+    function addDirection(direction, storedPuzzleDirections, indexToChange){
+        storedPuzzleDirections[indexToChange].push(direction);
+        setCoordDirections(storedPuzzleDirections);
     };
 
     function placeWord(word, direction, startingCoord, puzzleArray){
@@ -571,6 +524,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
 
         let tempArray = puzzleArray;
 
+
         const wordLength = word.length;
 
         const startingRow = startingCoord[0];
@@ -580,9 +534,10 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
             case 'north':
                 for(let i = 0; i < wordLength; i++){
                     tempArray[startingRow-i][startingColumn] = word[i];
+                    //SPREAD THIS DOWN TO PUT IN DIRECTIONS
+                    getIndexValue(coordinateArray, [startingRow-i, startingColumn])
                 };
                 break;
-                //check available array, if false is contained, then regenerate direction
             case 'northeast':
                 for(let i = 0; i < wordLength; i++){
                     tempArray[startingRow-i][startingColumn+i] = word[i];
@@ -626,6 +581,35 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         for(let i = 0; i < tempArray.length; i++){
             console.log(tempArray[i]);
         }
+    }
+
+    function checkWord(){
+
+        if(!puzzleWords || puzzleWords.length === 0 || !puzzleCoords || puzzleCoords.length === 0){
+            return;
+        }
+
+        const chosenDirection = chooseDirection(directions);
+        console.log("chosenDirection " + chosenDirection);
+
+        console.log(puzzleCoords);
+
+        const chosenStartingPoint = chooseStartingPoint(puzzleCoords);
+        console.log("chosenStartingPoint " + chosenStartingPoint);
+
+        const word = puzzleWords[0];
+
+        console.log("word " + word);
+
+        let tempPuzzle = emptyPuzzle;
+
+        if(checkConstraints(word.length, chosenDirection, chosenStartingPoint, puzzleCoords, directions, coordDirections)){
+            placeWord(word, chosenDirection, chosenStartingPoint, tempPuzzle);
+        };
+
+        // for(let i = 0; i < coordDirections.length; i++){
+        //     console.log(i + coordDirections[i]);
+        // }
     }
 
     // function generatePotentialIndex(word, chosenDifficulty, chosenIndex, chosenDirection, coordinatesArray, directionArray, coordDirections){
@@ -744,10 +728,10 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
     //     // // }
     // };
 
-    //generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, emptyCoordDirections, null);
+    //generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, coordDirections, null);
 
     // if(topic && difficulty){
-    //     console.log(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
+    //     console.log(generateStartandDirection(3, puzzleCoords, directions, coordDirections));
     // }
     
 
@@ -758,10 +742,10 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
     //     // const randomInd = chooseStartingPoint(puzzleCoords);
     //     // console.log(dir);
     //     // console.log(randomInd);
-    //     // const final = checkConstraints(1, dir, randomInd, puzzleCoords, directions, emptyCoordDirections);
+    //     // const final = checkConstraints(1, dir, randomInd, puzzleCoords, directions, coordDirections);
     //     // console.log(final);
-    //     return(generateStartandDirection(3, puzzleCoords, directions, emptyCoordDirections));
-    //     // const [startResult, startDirection] = generateStartandDirection(5, puzzleCoords, directions, emptyCoordDirections);
+    //     return(generateStartandDirection(3, puzzleCoords, directions, coordDirections));
+    //     // const [startResult, startDirection] = generateStartandDirection(5, puzzleCoords, directions, coordDirections);
     //     // console.log(startResult);
     //     // console.log(startDirection);
     // }
@@ -793,7 +777,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
             return;
         }
 
-        placeWord(puzzleWords[0], "south", [1,1], emptyPuzzle)
+        checkWord();
     }, [runAgain]);
 
     return(
