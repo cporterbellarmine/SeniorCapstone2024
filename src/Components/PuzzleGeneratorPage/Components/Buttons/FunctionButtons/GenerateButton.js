@@ -22,14 +22,14 @@ import { toBePartiallyChecked } from '@testing-library/jest-dom/matchers';
 //Callback is passed down from /PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
 //and is used to set the final puzzle object in \PuzzleGeneratorPage\Components\DisplayContainers\PreviewDisplay.
 
-const GenerateButton = ({ topic, callback, difficulty }) => {
+const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsCallback }) => {
 
     // Set State Hooks
     const [wordData, setWordData] = useState([]); //Used to gather data from database.
     const [allWords, setAllWords] = useState([]);
     const [usableWords, setUsableWords] = useState([]); //Used to store words that comply with the chosen difficulty
     const [usableWordsArrayLength, setUsableWordsArrayLength] = useState(0); //Used to store the number of words that comply with the chosen difficulty
-    const [puzzleWords, setPuzzleWords] = useState([]); //Used to store the random words that will be used in the puzzle.
+    const [chosenWords, setChosenWords] = useState([]); //Used to store the random words that will be used in the puzzle.
     const [puzzle, setPuzzle] = useState([]); //Used to store the final puzzle.
     const [workingPuzzle, setWorkingPuzzle] = useState([]);
     const [puzzleCoords, setPuzzleCoords] = useState([]);
@@ -203,18 +203,18 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
                 wordsToChooseFrom = wordsToChooseFrom.filter(word => word !== wordToBeAdded);
                 numberOfWordsLeftToChoose--;
             };
-            setPuzzleWords(chosenWords);
+            setChosenWords(chosenWords);
         };
         chooseWords();
     }, [usableWords, runAgain])
 
-    console.log(puzzleWords);
+    console.log(chosenWords);
 
     useEffect(() => {
-        if (puzzleWords.length === 0) {
+        if (chosenWords.length === 0) {
             return;
         }
-        puzzleWords.forEach(word => {
+        chosenWords.forEach(word => {
             for (let i = 0; i < word.length; i++) {
                 lettersArray.add(word[i]);
             };
@@ -234,7 +234,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
 
         setUsableLetters(createLettersArray());
 
-    }, [puzzleWords, runAgain]);
+    }, [chosenWords, runAgain]);
 
     function createPuzzleTemplate(size) {
         const puzzleStorage = [];
@@ -745,6 +745,7 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
             return;
         }
 
+        console.log(chosenPuzzleWords);
         
         const copyWords = () => {
 
@@ -892,20 +893,22 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         if(!topic || !difficulty){
             return;
         }
-        createPuzzle(puzzleWords, puzzleCoords, workingPuzzle);
+        console.log(chosenWords);
+        createPuzzle(chosenWords, puzzleCoords, workingPuzzle);
         const finalAnswers = createAnswerKey(workingPuzzle);
         const finalPuzzle = createFinalPuzzle(workingPuzzle);
+        const finalChosenWords = chosenWords;
+        console.log(finalChosenWords);
 
-        return[finalAnswers, finalPuzzle];
+        return[finalAnswers, finalPuzzle, finalChosenWords];
     }
-
-    console.log(puzzle);
 
     return (
         <PuzzleGeneratorPageButton onClick={() => {
             setRunAgain(!runAgain);
-            const[answerKey, finalPuzzle] = createFinalProduct();
+            const[answerKey, finalPuzzle, finalChosenWords] = createFinalProduct();
             callback(finalPuzzle);
+            puzzleWordsCallback(finalChosenWords);
         }} size='lg'>Generate Puzzle</PuzzleGeneratorPageButton>
     );
 };

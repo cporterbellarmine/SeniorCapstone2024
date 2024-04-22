@@ -8,9 +8,36 @@ import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
 import { PreviewContainerRow, WordSearchDisplay, WordSearchDisplayCon } from './PreviewStyledComponents';
 
-const PreviewDisplay = ({ puzzle }) => {
+const PreviewDisplay = ({ puzzle, topic, puzzleWords }) => {
 
-    console.log(puzzle);
+    console.log(puzzleWords);
+
+    //const [topicTitle, setTopicTitle] = useState('');
+
+    // useEffect(() => {
+
+    //     const topicReturn = () => {
+    //         if(!topic){
+    //             return;
+    //         }
+
+    //         for(let i = 0; i < topic.length; i++){
+    //             const letter = topic[i];
+    //             if(i = 0){
+    //                 letter = topic[i].toUpperCase();
+    //             }
+    //             setTopicTitle([...topicTitle, letter]);
+    //         }
+    //     }
+
+    //     topicReturn();
+
+    // }, [topic]);
+
+    //console.log(topicTitle);
+        
+
+
     if(puzzle.length > 1){
         return(
             <Container>
@@ -18,7 +45,7 @@ const PreviewDisplay = ({ puzzle }) => {
                     <Row>
                         <h2>Generated Puzzle</h2>
                     </Row>
-                    <PreviewContainerRow size='sm' className='m-2 p-2'>
+                    <PreviewContainerRow className='m-2 p-2 overflow-scroll'>
                         {/* <WordSearchDisplayCon>
                             {puzzle.map(row => {
                                 return(<Row className='justify-content-center'>
@@ -30,13 +57,27 @@ const PreviewDisplay = ({ puzzle }) => {
                         </WordSearchDisplayCon> */}
 
                         <WordSearchDisplay className='table-borderless'>
-                            {puzzle.map(row => {
+                            <Row className='text-center'>
+                                <h1>{topic}</h1>
+                            </Row>
+                            <Table>
+                                {puzzle.map(row => {
                                 return(<tr className='p-0'>
                                     {row.map(letter => {
-                                        return(<td className='text-center p-3'>{letter.toUpperCase()}</td>)
+                                        return(<td className='text-center p-2'>{letter.toUpperCase()}</td>)
                                     })}
                                 </tr>)
-                            })}
+                                })}
+                            </Table>
+                            <Row className='text-center'>
+                                <h3 className='mb-3'>Word List</h3>
+                            </Row>
+                            <Row>
+                                {puzzleWords.map(word => {
+                                    return(<Col className='col-3'>{word.toUpperCase()}</Col>)
+                                })}
+                            </Row>
+                            
                         </WordSearchDisplay>
                        
                     </PreviewContainerRow>

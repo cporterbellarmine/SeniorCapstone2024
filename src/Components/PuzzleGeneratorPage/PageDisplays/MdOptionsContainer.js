@@ -12,10 +12,11 @@ import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton
 import { InstructionsColMd, InstructionsRowTitleMd, InstructionsRowNumbersMd } from './ContainerStyling';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
-const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficulty }) => {
+const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficulty, puzzle, puzzleCallback, puzzleWords, puzzleWordsCallback }) => {
 
     const[selected, setSelected] = useState('');
-    const[puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
+
+    console.log(puzzleWords);
 
     return(
         <Container>
@@ -28,10 +29,10 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficu
                         </Stack>
                     </Row>
                 </Col>
+                <Col className='align-content-center'>
+                    <GenerateButton topic={topic} callback={puzzleCallback} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords} puzzleWordsCallback={puzzleWordsCallback}/>
+                </Col>
             </Row>
-            {/* <Row>
-                <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
-            </Row> */}
         </Container>
     );
 };

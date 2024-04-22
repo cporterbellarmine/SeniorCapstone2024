@@ -22,6 +22,7 @@ const XsGeneratorPage = () => {
     const[topic, setTopic] = useState(''); //Used to store the chosen topic in the OptionsContainer.
     const[difficulty, setDifficulty] = useState(''); //Used to store the chosen topic in the OptionsContainer.
     const[puzzle, setPuzzle] = useState([]);
+    const [puzzleWords, setPuzzleWords] = useState([]);
 
     return(
         <HideXsContainer>
@@ -70,7 +71,7 @@ const XsGeneratorPage = () => {
                             </Row>
                             <Row className='pb-3 px-3 align-items-center'>
                                 <Col>
-                                    <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
+                                    <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty} puzzleWords={puzzleWords} puzzleWordsCallback={setPuzzleWords} />
                                 </Col>
                             </Row>
                         </Col>
@@ -78,7 +79,7 @@ const XsGeneratorPage = () => {
                     <PreviewRow>
                         <Col>
                             <Row className='pt-4'>
-                                <PreviewDisplay puzzle={puzzle} />
+                                <PreviewDisplay puzzle={puzzle} puzzleWords={puzzleWords} topic={topic}/>
                             </Row>
                             {/* <Row className='p-3 align-items-center'>
                                 <Col>
