@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { PuzzleGeneratorPageButton } from './FunctionButtonStyling';
+import { toBePartiallyChecked } from '@testing-library/jest-dom/matchers';
 
 //Topic is passed down from /PuzzleGeneratorPage/PageDisplays/MdGeneratorPage
 //and set in /PuzzleGeneratorPage/Components/Dropdowns/TopicDropdown. This is
@@ -34,7 +35,9 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
     const [puzzleCoords, setPuzzleCoords] = useState([]);
     const [coordDirections, setCoordDirections] = useState([]);
     const [runAgain, setRunAgain] = useState(false);
-
+    const [workingDirections, setWorkingDirections] = useState(['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest']);
+    const [answerKey, setAnswerKey] = useState([]);
+    const [usableLetters, setUsableLetters] = useState([]);
 
     const wordsArray = []; //Stored as a stand-in-array for usableWords.
     const lettersArray = new Set([]);
@@ -217,7 +220,21 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
             };
         });
         console.log(lettersArray);
-    }, [puzzleWords]);
+
+        const createLettersArray = () => {
+            const eligibleLetters = [];
+
+            lettersArray.forEach(letter => eligibleLetters.push(letter));
+
+            console.log(eligibleLetters);
+
+            return(eligibleLetters);
+
+        }
+
+        setUsableLetters(createLettersArray());
+
+    }, [puzzleWords, runAgain]);
 
     function createPuzzleTemplate(size) {
         const puzzleStorage = [];
@@ -293,28 +310,6 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         return (coords[randomIndex]);
     };
 
-    // function setNewCoord(){
-    //     if(!puzzleCoords || puzzleCoords.length === 0){
-    //         return;
-    //     }
-    //     console.log(puzzleCoords);
-    //     let tempPuzzleCoords = puzzleCoords;
-    //     const tempIndex = chooseStartingPoint(puzzleCoords);
-    //     tempPuzzleCoords[tempIndex] = 5555;
-    //     console.log(tempPuzzleCoords);
-    // };
-
-
-    // const chosenDirection = () => {
-    //     console.log(workingPuzzle);
-    //     console.log(puzzleCoords);
-    //     const dir = chooseDirection(directions);
-    //     const randomInd = chooseStartingPoint(puzzleCoords);
-    //     console.log(dir);
-    //     console.log(randomInd);
-    // }
-
-    // chosenDirection();
 
     function getIndexValue(coordsList, newCoord) {
         let index = -1;
@@ -734,239 +729,183 @@ const GenerateButton = ({ topic, callback, difficulty }) => {
         return[works, chosenStartingPoint, chosenDirection];
     }
 
-    function checkWord() {
+    function removeIndex(array, value){
+        const newArray = array.filter(indexValue => indexValue !== value);
+        return(newArray);
+    };
 
-        if (!puzzleWords || puzzleWords.length === 0 || !puzzleCoords || puzzleCoords.length === 0) {
-            return;
-        }
-
-        // console.log(puzzleCoords.length);
-
-        // const chosenDirection = chooseDirection(directions);
-        // console.log("chosenDirection " + chosenDirection);
-
-        // const chosenStartingPoint = chooseStartingPoint(puzzleCoords);
-        // console.log("chosenStartingPoint " + chosenStartingPoint);
-
-        // const word = puzzleWords[0];
-
-        // console.log("word " + word);
-
-        // for(let i = 0; i < workingPuzzle.length; i++){
-        //     console.log(workingPuzzle[i]);
-        // }
-
-        // let tempPuzzle = workingPuzzle;
-        // let tempCoordDirections = coordDirections;
-
-        // console.log(checkConstraints(word.length, chosenDirection, chosenStartingPoint, puzzleCoords, directions, tempCoordDirections));
-        // console.log(checkLetterPlacement(tempPuzzle, chosenDirection, chosenStartingPoint, word));
-
-        // if(checkConstraints(word.length, chosenDirection, chosenStartingPoint, puzzleCoords, directions, tempCoordDirections) && checkLetterPlacement(tempPuzzle, chosenDirection, chosenStartingPoint, word)){
-        //     console.log("Both work");
-        //     placeWord(word, chosenDirection, chosenStartingPoint, puzzleCoords, tempPuzzle);
-        // };
-
-        const chosenDirection1 = "north";
-        const chosenDirection2 = "south";
-
-        const chosenStartingPoint1 = [4, 4];
-        const chosenStartingPoint2 = [4, 4];
-
-        const word1 = "word";
-        const word2 = "work";
-
-        const [coordinatesWork1, workingStart1, workingDirection1] = generateWorkingCoordinates(word1, puzzleCoords, directions, coordDirections, workingPuzzle);
-        const [coordinatesWork2, workingStart2, workingDirection2] = generateWorkingCoordinates(word2, puzzleCoords, directions, coordDirections, workingPuzzle);
-
-        if (coordinatesWork1) {
-            placeWord(word1, workingDirection1, workingStart1, puzzleCoords, workingPuzzle);
-        };
-
-        if (coordinatesWork2) {
-            placeWord(word2, workingDirection2, workingStart2, puzzleCoords, workingPuzzle);
-        };
-
-        //REGENERATE IF DOESN'T WORK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-        // for(let i = 0; i < coordDirections.length; i++){
-        //     console.log(i + coordDirections[i]);
-        // }
+    function resetDirections(){
+        const fullDirections = directions;
+        return(fullDirections)
     }
 
-    // function generatePotentialIndex(word, chosenDifficulty, chosenIndex, chosenDirection, coordinatesArray, directionArray, coordDirections){
-    //     if(!word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
-    //         return;
-    //     }
+    function createPuzzle(chosenPuzzleWords, initialPuzzleCoords, initialWorkingPuzzle) {
 
-    //     let chosenStart;
-    //     let chosenDir;
-
-    //     if(!chosenIndex || chosenIndex.length === 0){
-    //         chosenStart = chooseStartingPoint(coordinatesArray);
-    //     }else{
-    //         chosenStart = chosenIndex;
-    //     }
-
-    //     if(!chosenDirection){
-    //         chosenDir = chooseStartingPoint(directionArray);
-    //     }else{
-    //         chosenDir = chosenDirection;
-    //     }
-
-    //     const wordLength = word.length;
-
-    //     console.log('chosenStart = ' + chosenStart);
-    //     console.log('chosenDirection = ' + chosenDir);
-    //     console.log('wordLength = ' + wordLength);
-
-    //     const potentialIndexWorks = checkConstraints(wordLength, chosenDir, chosenStart, coordinatesArray, directionArray, coordDirections);
-
-    //     return [chosenStart, chosenDir, potentialIndexWorks];
-    // }
-
-    // function removeIndex(array, value){
-    //     const newArray = array.filter(indexValue => indexValue !== value);
-    //     return(newArray);
-    // };
-
-    // function resetDirections(){
-    //     const fullDirections = directions;
-    //     return(fullDirections)
-    // }
-
-    // function generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks){
-    //     if(!difficulty || !word || !chosenDifficulty || !coordinatesArray || coordinatesArray.length === 0 || !directionArray || directionArray.length === 0 || !coordDirections || coordDirections === 0){
-    //         return;
-    //     };
-
-    //     console.log(word);
-    //     console.log(chosenDifficulty);
-
-    //     let availableCoordArray = coordinatesArray;
-    //     let availableDirectionArray = directionArray;
-
-    //     let validIndex = [];
-
-    //     if(!indexWorks){
-    //         if(availableDirectionArray.length !== 0){
-    //             console.log(`Chosen direction does not work. Removing ${pickedDirection}`);
-    //             availableDirectionArray = availableDirectionArray.filter(direction => direction !== pickedDirection);
-    //         }
-    //         else if(availableDirectionArray.length === 0 && availableCoordArray!== 0){
-    //             console.log(`Chosen starting point does not work. Removing ${chosenCoord}`);
-    //             availableDirectionArray = resetDirections();
-    //             pickedDirection = null;
-    //             availableCoordArray = availableCoordArray.filter(coord => coord !== chosenCoord);
-    //             chosenCoord = null;
-    //         }
-    //         else{
-    //             console.log('Error');
-    //         }
-
-
-    //         [chosenCoord, pickedDirection, indexWorks] = generatePotentialIndex(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections);
-    //         [chosenCoord, chosenDifficulty, pickedDirection] = generateWorkingCoordinates(word, chosenDifficulty, chosenCoord, pickedDirection, coordinatesArray, directionArray, coordDirections, indexWorks);
-
-    //     }else if(indexWorks){
-
-    //         console.log(`Success! Chosen index is ${chosenCoord} and chosen direction is ${pickedDirection}`);
-
-    //     }else{
-    //         console.log('error');
-    //     }
-
-    //     return[chosenCoord, chosenDifficulty, pickedDirection];
-
-
-    // console.log('working index ln 528' + workingIndex);
-
-    // // while(!workingIndex){
-    //     chosenStart = chooseStartingPoint(workingCoordArray);
-    //     console.log('chosenStart is: ' + chosenStart);
-    //     chosenDirection = chooseDirection(workingDirectionArray);
-    //     console.log('chosenDirection is: ' + chosenDirection);
-
-    //     const potentialIndex  = checkConstraints(wordLength, chosenDirection, chosenStart, workingCoordArray, workingDirectionArray, workingCoordDirections);
-    //     console.log('potentialIndex is: ' + potentialIndex);
-
-    //     if(potentialIndex){
-    //         console.log('index found. returning!');
-    //         workingIndex = true;
-    //         return [chosenStart, chosenDirection];
-    //     }else{
-    //         if(workingDirectionArray.length !== 0){
-    //             //removes current direction
-    //             console.log(`{chosenDirection} does not work! Removing from direction array.`);
-    //             workingDirectionArray = workingDirectionArray.filter(direction => direction !== chosenDirection);
-    //             console.log(workingDirectionArray);
-    //         }else if(workingDirectionArray.length === 0){
-    //             workingCoordArray = workingCoordArray.filter(coord => coord !== chosenStart);
-    //             workingDirectionArray = directionArray;
-    //             console.log(`Working direction changed. {chosenStart} removed. {workingDirectionArray}`);
-    //         }
-    //     }
-
-    //     // // }
-    // };
-
-    //generateWorkingCoordinates('supercalifragilisticexpialidocious', 'easy', [], '', puzzleCoords, directions, coordDirections, null);
-
-    // if(topic && difficulty){
-    //     console.log(generateStartandDirection(3, puzzleCoords, directions, coordDirections));
-    // }
-
-
-    // const loopWorks = () => {
-    //     // console.log(workingPuzzle);
-    //     // console.log(puzzleCoords);
-    //     // const dir = chooseDirection(directions);
-    //     // const randomInd = chooseStartingPoint(puzzleCoords);
-    //     // console.log(dir);
-    //     // console.log(randomInd);
-    //     // const final = checkConstraints(1, dir, randomInd, puzzleCoords, directions, coordDirections);
-    //     // console.log(final);
-    //     return(generateStartandDirection(3, puzzleCoords, directions, coordDirections));
-    //     // const [startResult, startDirection] = generateStartandDirection(5, puzzleCoords, directions, coordDirections);
-    //     // console.log(startResult);
-    //     // console.log(startDirection);
-    // }
-
-    // const test = loopWorks();
-
-    // function findWordCoordinates(word, givenDifficulty, directionArray){
-    //     const [newPuzzle, newCoordinates] = generateEmptyPuzzle(givenDifficulty);
-    //     const [workingStart, workingDirection] = generateStartandDirection(word.length, newCoordinates, directionArray);
-
-    //     return [workingStart, workingDirection];
-    // }
-
-    // console.log(findWordCoordinates('test', difficulty, directions));
-
-
-
-    useEffect(() => {
-        if (!puzzleWords || !difficulty) {
+        if (!chosenPuzzleWords || chosenPuzzleWords.length === 0 || !initialPuzzleCoords || initialPuzzleCoords.length === 0 || !initialWorkingPuzzle || initialWorkingPuzzle.length === 0) {
             return;
         }
 
-        returnValue = puzzleWords;
+        
+        const copyWords = () => {
 
-    }, [puzzleWords, difficulty]);
+            const tempArray = [];
+            for(let i = 0; i < chosenPuzzleWords.length; i++){
+                tempArray.push([...chosenPuzzleWords[i]]);
+            }
 
-    useEffect(() => {
-        if (!topic || !difficulty) {
+            return(tempArray);
+        }
+
+        const wordsToUse = copyWords();
+
+        const copyDirections = () => {
+
+            const tempArray = [...directions];
+
+            return(tempArray);
+        }
+
+        const copyCoords = () => {
+
+            const tempArray = [];
+            for(let i = 0; i < initialPuzzleCoords.length; i++){
+                tempArray.push([...initialPuzzleCoords[i]]);
+            }
+
+            return(tempArray);
+        }
+
+        let usableDirections = copyDirections();
+        let usablePuzzleCoords = copyCoords();
+
+        for(let i = 0; i < wordsToUse.length; i++){
+
+            let word = wordsToUse[i];
+
+            let workingCoord;
+            let chosenStart;
+            let chosenDirection;
+
+            do{
+                [workingCoord, chosenStart, chosenDirection] = generateWorkingCoordinates(word, usablePuzzleCoords, usableDirections, coordDirections, initialWorkingPuzzle);
+                if(workingCoord){
+                    placeWord(word, chosenDirection, chosenStart, usablePuzzleCoords, initialWorkingPuzzle);
+                    continue;
+                }else if(usableDirections.length !== 0 && usablePuzzleCoords.length !== 0){
+                    usableDirections = removeIndex(usableDirections, chosenDirection);
+                }else if(usableDirections.length === 0 && usablePuzzleCoords.length !== 0){
+                    usableDirections = resetDirections();
+                    usablePuzzleCoords = removeIndex(usablePuzzleCoords, chosenStart);
+                }else if(usableDirections.length === 0 && usablePuzzleCoords.length === 0){
+                    console.log(word + " could not be placed! Continuing without the word.");
+                    continue;
+                }
+
+            } while(!workingCoord)
+        }
+
+        for (let i = 0; i < initialWorkingPuzzle.length; i++) {
+            console.log(initialWorkingPuzzle[i]);
+        }
+    }
+
+    function createAnswerKey(generatedPuzzle){
+        if(!generatedPuzzle || generatedPuzzle.length === 0){
             return;
         }
 
-        checkWord();
-    }, [runAgain]);
+        const copyPuzzle = () => {
+
+            const tempArray = [];
+            for(let i = 0; i < generatedPuzzle.length; i++){
+                tempArray.push([...generatedPuzzle[i]]);
+            }
+
+            return(tempArray);
+        }
+
+        let inProgAnswerKey = copyPuzzle();
+
+        for(let i = 0; i < inProgAnswerKey[0].length; i++){
+            for(let j = 0; j < inProgAnswerKey[1].length; j++){
+                if(inProgAnswerKey[i][j] === 0){
+                    inProgAnswerKey[i][j] = " ";
+                }
+            }
+        }
+
+        for (let i = 0; i < inProgAnswerKey.length; i++) {
+            console.log(inProgAnswerKey[i]);
+        }
+
+        // setAnswerKey(inProgAnswerKey);
+
+        for (let i = 0; i < answerKey.length; i++) {
+            console.log(answerKey[i]);
+        }
+
+        return(inProgAnswerKey);
+    }
+
+    function createFinalPuzzle(generatedPuzzle){
+        if(!generatedPuzzle || generatedPuzzle.length === 0){
+            return;
+        }
+
+        const copyPuzzle = () => {
+
+            const tempArray = [];
+            for(let i = 0; i < generatedPuzzle.length; i++){
+                tempArray.push([...generatedPuzzle[i]]);
+            }
+
+            return(tempArray);
+        }
+
+        const inProgFinalPuzzle = copyPuzzle();
+
+
+        console.log(usableLetters);
+
+        for(let i = 0; i < inProgFinalPuzzle[0].length; i++){
+            for(let j = 0; j < inProgFinalPuzzle[1].length; j++){
+                if(inProgFinalPuzzle[i][j] === 0){
+                    const randomLetterIndex = randomIntGenerator(usableLetters.length);
+                    console.log(randomLetterIndex)
+                    inProgFinalPuzzle[i][j] = usableLetters[randomLetterIndex];
+                }
+            }
+        }
+
+        for (let i = 0; i < inProgFinalPuzzle.length; i++) {
+            console.log(inProgFinalPuzzle[i]);
+        }
+
+        for (let i = 0; i < puzzle.length; i++) {
+            console.log(puzzle[i]);
+        }
+
+        return(inProgFinalPuzzle);
+    }
+
+    function createFinalProduct(){
+        if(!topic || !difficulty){
+            return;
+        }
+        createPuzzle(puzzleWords, puzzleCoords, workingPuzzle);
+        const finalAnswers = createAnswerKey(workingPuzzle);
+        const finalPuzzle = createFinalPuzzle(workingPuzzle);
+
+        return[finalAnswers, finalPuzzle];
+    }
+
+    console.log(puzzle);
 
     return (
-
         <PuzzleGeneratorPageButton onClick={() => {
             setRunAgain(!runAgain);
-            callback(returnValue);
+            const[answerKey, finalPuzzle] = createFinalProduct();
+            callback(finalPuzzle);
         }} size='lg'>Generate Puzzle</PuzzleGeneratorPageButton>
     );
 };

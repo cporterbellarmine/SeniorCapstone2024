@@ -5,10 +5,12 @@ import React, {useEffect, useState} from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Table from 'react-bootstrap/Table';
 import { PreviewContainerRow } from './PreviewStyledComponents';
 
 const PreviewDisplay = ({ puzzle }) => {
 
+    console.log(puzzle);
     if(puzzle.length > 1){
         return(
             <Container>
@@ -16,11 +18,17 @@ const PreviewDisplay = ({ puzzle }) => {
                     <Row>
                         <h2>Generated Puzzle</h2>
                     </Row>
-                    <PreviewContainerRow className='m-2 p-2'>
-                        <h3>{puzzle.length} words to place:</h3>
-                       {puzzle.map(word => {
-                            return(<p>{word}</p>)
-                        })}
+                    <PreviewContainerRow size='sm' className='m-2 p-2'>
+                        <Table className='table-borderless'>
+                            {puzzle.map(row => {
+                                return(<tr className='p-0'>
+                                    {row.map(letter => {
+                                        return(<td className='text-center p-0'>{letter.toUpperCase()}</td>)
+                                    })}
+                                </tr>)
+                            })}
+                        </Table>
+                       
                     </PreviewContainerRow>
                 </Col>
             </Container>
