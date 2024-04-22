@@ -16,9 +16,9 @@ import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContaine
 //\PuzzleGeneratorPage\Components\Buttons\FunctionButtons\GenerateButton.
 //Generating the puzzle does not influence the values.
 
-const MdPreviewContainer = ({ topic, difficulty }) => {
+const MdPreviewContainer = ({ topic, difficulty, puzzle, puzzleWords }) => {
 
-    const[puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
+    console.log(puzzleWords);
 
     if(!topic || !difficulty){
         return(
@@ -39,12 +39,12 @@ const MdPreviewContainer = ({ topic, difficulty }) => {
             <Row className='d-flex'>
                 <Col>
                     <Row className='p-2'>
-                        <PreviewDisplay puzzle={puzzle}/>
+                        <PreviewDisplay puzzle={puzzle} topic={topic} puzzleWords={puzzleWords}/>
                     </Row>
                     <ButtonRow className='p-3 align-items-center'>
-                        <Col>
+                        {/* <Col>
                             <GenerateButton topic={topic} callback={setPuzzle} difficulty={difficulty}/>
-                        </Col>
+                        </Col> */}
                          {/* <Col>
                             <Stack gap={1}>
                                 <ReloadButton />

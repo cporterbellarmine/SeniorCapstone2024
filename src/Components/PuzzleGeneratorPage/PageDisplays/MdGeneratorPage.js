@@ -14,6 +14,10 @@ const MdGeneratorPage = () => {
 
     const [topic, setTopic] = useState(''); //Used to store the chosen topic in the OptionsContainer.
     const [difficulty, setDifficulty] = useState(''); //Used to store the chosen topic in the OptionsContainer.
+    const [puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
+    const [puzzleWords, setPuzzleWords] = useState([]);
+
+    console.log(puzzleWords);
 
     return (
         <HideMdContainer>
@@ -51,10 +55,12 @@ const MdGeneratorPage = () => {
                     </Row>
                     <InteractiveRow className='p-4 d-flex'>
                         <Col>
-                            <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty} />
+                            <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty} puzzle={puzzle} puzzleCallback={setPuzzle} puzzleWords={puzzleWords} puzzleWordsCallback={setPuzzleWords}/>
                         </Col>
+                    </InteractiveRow>
+                    <InteractiveRow>
                         <Col>
-                            <MdPreviewContainer topic={topic} difficulty={difficulty} />
+                            <MdPreviewContainer topic={topic} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords}/>
                         </Col>
                     </InteractiveRow>
                 </Col>
