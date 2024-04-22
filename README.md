@@ -1,7 +1,7 @@
 # Word Search Generator
 ## Senior Capstone 2024
 #### Author: Christina Porter, Computer Science, Class of 2024
-*version 0.4.0*
+*version 0.4.1*
 
 ## Introduction
 ---
@@ -14,9 +14,10 @@ This project is designed for a Senior Capstone at Bellarmine University in Louis
 - [ ] Add logic to allow users to create their own topics to write to the database.
 
 #### Release Notes
-*Previous Version Release:* 0.4.0
+*Current Version Release:* 0.4.1
 - Completed logic for puzzle generation.
 - Puzzle, puzzle title, and words in puzzle can be viewed on the Puzzle Generator Page.
+- *4.1* - Edited font size for displayed words at bottom to prevent overlap with longer words.
 
 *Previous Version Release:* 0.3.1
 - Styled xs (mobile) and md (desktop) breakpoints for site.
