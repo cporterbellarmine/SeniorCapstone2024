@@ -50,3 +50,7 @@ export const WordSearchDisplay = styled(Table)`
     font-family: "Lucida Console", monospace;
     font-size: 1.25rem;
 `;
+
+export const WordsSize = styled.p`
+    font-size: 1rem;
+`

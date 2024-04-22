@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Table from 'react-bootstrap/Table';
-import { PreviewContainerRow, WordSearchDisplay, WordSearchDisplayCon } from './PreviewStyledComponents';
+import { PreviewContainerRow, WordSearchDisplay, WordSearchDisplayCon, WordsSize } from './PreviewStyledComponents';
 
 const PreviewDisplay = ({ puzzle, topic, puzzleWords }) => {
 
@@ -74,7 +74,7 @@ const PreviewDisplay = ({ puzzle, topic, puzzleWords }) => {
                             </Row>
                             <Row>
                                 {puzzleWords.map(word => {
-                                    return(<Col className='col-3'>{word.toUpperCase()}</Col>)
+                                    return(<Col className='col-3'><WordsSize>{word.toUpperCase()}</WordsSize></Col>)
                                 })}
                             </Row>
                             
