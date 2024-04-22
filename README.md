@@ -1,23 +1,24 @@
 # Word Search Generator
 ## Senior Capstone 2024
 #### Author: Christina Porter, Computer Science, Class of 2024
-*version 0.3.1*
+*version 0.4.0*
 
 ## Introduction
 ---
-This project is designed for a Senior Capstone at Bellarmine University in Louisville, KY. The intention is to create a progressive word search generator using a Javascript and React front-end. After main components are added, the project will be hosted on a cloud-based service such as AWS or Azure. The steps for implementing are below.
+This project is designed for a Senior Capstone at Bellarmine University in Louisville, KY. The intention is to create a progressive word search generator using a Javascript and React front-end. After main components are added, the project will be hosted on Vercel, a cloud-based service. The steps for implementing are below.
 
-- [x] Create and Style UI. Styling will continue as the project progresses.
-- [x] Establish database and create initial entries.
-- [x] Connect database to front-end.
-- [x] Add default entries to database.
-- [x] Add logic to preview puzzle topics and associated words from database.
+- [ ] Display answer key on Puzzle Generator page upon generation of a puzzle.
+- [ ] Create PDF generator that allows users to display and print puzzle and answer key via PDF.
+- [ ] Add additional topics to database.
+- [ ] Implement authentication.
 - [ ] Add logic to allow users to create their own topics to write to the database.
-- [ ] Add logic to actually generate the puzzle.
-- [x] Create cloud connection for front-end and back-end.
 
 #### Release Notes
-*Current Version Release:* 0.3.1
+*Previous Version Release:* 0.4.0
+- Completed logic for puzzle generation.
+- Puzzle, puzzle title, and words in puzzle can be viewed on the Puzzle Generator Page.
+
+*Previous Version Release:* 0.3.1
 - Styled xs (mobile) and md (desktop) breakpoints for site.
 - Connected DB to MongoDB
 - Utilized Express and Axios to complete database communication
@@ -34,8 +35,12 @@ This project is designed for a Senior Capstone at Bellarmine University in Louis
 - Fixed mobile Puzzle Generator bug where dropdowns had to be used twice to trigger changes.
 
 **Future Releases**
-*Version 0.4*
-- Puzzle Generation Completed
+*Version 0.4.1*
+- Add Answer Key to Puzzle Generation Page upon generation of a puzzle.
+  
+*Version 0.4.2*
+- Add About and References page.
+- Create PDF generator to print puzzles and answer keys.
 
 ## Dependencies
 Includes links to installation instructions
