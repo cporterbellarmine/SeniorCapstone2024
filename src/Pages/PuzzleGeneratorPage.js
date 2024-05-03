@@ -3,15 +3,14 @@
 // Used in /Components/PreviewTopicsPage/Components/Buttons/MdNav/MdNavButtonRouting
 // Used in /Components/PreviewTopicsPage/Components/Buttons/XsNav/XsNavButtonRouting
 
-import React from 'react';
-import MdGeneratorPage from '../Components/PuzzleGeneratorPage/PageDisplays/MdGeneratorPage';
-import XsGeneratorPage from '../Components/PuzzleGeneratorPage/PageDisplays/XsGeneratorPage';
+import React, {useState, useEffect} from 'react';
+import GeneratorPage from '../Components/PuzzleGeneratorPage/PageDisplays/GeneratorPage';
 
 const PuzzleGenerator = () => {
+
     return(
         <>
-            <XsGeneratorPage />
-            <MdGeneratorPage />
+            <GeneratorPage />
         </>
     );
 }

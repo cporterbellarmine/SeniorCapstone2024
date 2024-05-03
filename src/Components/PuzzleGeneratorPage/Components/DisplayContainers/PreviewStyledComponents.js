@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import Tabs from 'react-bootstrap/Tabs';
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
@@ -53,4 +54,10 @@ export const WordSearchDisplay = styled(Table)`
 
 export const WordsSize = styled.p`
     font-size: 1rem;
+`
+
+export const ColoredTabs = styled(Tabs)`
+    --bs-nav-tabs-border-color: #000000;
+    background-color: #ADADAD;
+
 `

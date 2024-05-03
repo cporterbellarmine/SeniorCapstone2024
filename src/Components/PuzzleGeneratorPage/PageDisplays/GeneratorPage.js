@@ -3,19 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import MdOptionsContainer from './MdOptionsContainer';
-import MdPreviewContainer from './MdPreviewContainer';
+import OptionsContainer from './OptionsContainer';
+import PreviewContainer from './PreviewContainer';
 import PreviewButtonRouting from '../Components/Buttons/NavButtons/PreviewButtonRouting';
 import GeneratorBackgroundHalf from '../../Images/GeneratorBackgroundHalf.png';
 import { HideMdContainer } from './ViewContainer';
 import { PhotoRow, WhiteTitle, InteractiveRow, InstructionsRowTitleMd, InstructionsRowNumbersMd } from './ContainerStyling';
 
-const MdGeneratorPage = () => {
+const GeneratorPage = () => {
 
-    const [topic, setTopic] = useState(''); //Used to store the chosen topic in the OptionsContainer.
-    const [difficulty, setDifficulty] = useState(''); //Used to store the chosen topic in the OptionsContainer.
+    const [topic, setTopic] = useState('default');
     const [puzzle, setPuzzle] = useState(["To display the chosen puzzle words, click Generate."]);
     const [puzzleWords, setPuzzleWords] = useState([]);
+    const [answerKey, setAnswerKey] = useState([]);
+    const [difficulty, setDifficulty] = useState('defaultChoose');
 
     console.log(puzzleWords);
 
@@ -55,12 +56,12 @@ const MdGeneratorPage = () => {
                     </Row>
                     <InteractiveRow className='p-4 d-flex'>
                         <Col>
-                            <MdOptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty} puzzle={puzzle} puzzleCallback={setPuzzle} puzzleWords={puzzleWords} puzzleWordsCallback={setPuzzleWords}/>
+                            <OptionsContainer topicCallback={setTopic} topic={topic} difficultyCallback={setDifficulty} difficulty={difficulty} puzzle={puzzle} puzzleCallback={setPuzzle} puzzleWords={puzzleWords} puzzleWordsCallback={setPuzzleWords} answerKeyCallback={setAnswerKey}/>
                         </Col>
                     </InteractiveRow>
                     <InteractiveRow>
                         <Col>
-                            <MdPreviewContainer topic={topic} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords}/>
+                            <PreviewContainer topic={topic} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords} answerKey={answerKey}/>
                         </Col>
                     </InteractiveRow>
                 </Col>
@@ -68,4 +69,4 @@ const MdGeneratorPage = () => {
         </HideMdContainer>
     );
 };
-export default MdGeneratorPage
+export default GeneratorPage
