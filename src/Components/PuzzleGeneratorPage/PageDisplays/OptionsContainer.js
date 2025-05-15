@@ -12,7 +12,7 @@ import GenerateButton from '../Components/Buttons/FunctionButtons/GenerateButton
 import { InstructionsColMd, InstructionsRowTitleMd, InstructionsRowNumbersMd } from './ContainerStyling';
 import { InstructionsRowStyled, SubCol } from '../Components/DisplayContainers/PreviewStyledComponents';
 
-const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficulty, puzzle, puzzleCallback, puzzleWords, puzzleWordsCallback }) => {
+const OptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficulty, puzzle, puzzleCallback, puzzleWords, puzzleWordsCallback, answerKeyCallback }) => {
 
     const[selected, setSelected] = useState('');
 
@@ -30,10 +30,10 @@ const MdOptionsContainer = ({ topicCallback, topic, difficultyCallback,  difficu
                     </Row>
                 </Col>
                 <Col className='align-content-center'>
-                    <GenerateButton topic={topic} callback={puzzleCallback} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords} puzzleWordsCallback={puzzleWordsCallback}/>
+                    <GenerateButton topic={topic} callback={puzzleCallback} difficulty={difficulty} puzzle={puzzle} puzzleWords={puzzleWords} puzzleWordsCallback={puzzleWordsCallback} answerKeyCallback={answerKeyCallback}/>
                 </Col>
             </Row>
         </Container>
     );
 };
-export default MdOptionsContainer;
+export default OptionsContainer;

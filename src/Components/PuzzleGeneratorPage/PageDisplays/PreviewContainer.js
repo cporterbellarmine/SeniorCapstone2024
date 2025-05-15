@@ -16,7 +16,7 @@ import { SubCol, ButtonRow, StyledTitleRow } from '../Components/DisplayContaine
 //\PuzzleGeneratorPage\Components\Buttons\FunctionButtons\GenerateButton.
 //Generating the puzzle does not influence the values.
 
-const MdPreviewContainer = ({ topic, difficulty, puzzle, puzzleWords }) => {
+const PreviewContainer = ({ topic, difficulty, puzzle, puzzleWords, answerKey }) => {
 
     console.log(puzzleWords);
 
@@ -39,7 +39,7 @@ const MdPreviewContainer = ({ topic, difficulty, puzzle, puzzleWords }) => {
             <Row className='d-flex'>
                 <Col>
                     <Row className='p-2'>
-                        <PreviewDisplay puzzle={puzzle} topic={topic} puzzleWords={puzzleWords}/>
+                        <PreviewDisplay puzzle={puzzle} topic={topic} puzzleWords={puzzleWords} answerKey={answerKey}/>
                     </Row>
                     <ButtonRow className='p-3 align-items-center'>
                         {/* <Col>
@@ -57,4 +57,4 @@ const MdPreviewContainer = ({ topic, difficulty, puzzle, puzzleWords }) => {
         </Container>
     );
 };
-export default MdPreviewContainer;
+export default PreviewContainer;

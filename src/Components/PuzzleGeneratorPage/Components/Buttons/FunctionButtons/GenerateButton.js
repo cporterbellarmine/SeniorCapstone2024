@@ -22,7 +22,7 @@ import { toBePartiallyChecked } from '@testing-library/jest-dom/matchers';
 //Callback is passed down from /PuzzleGeneratorPage/PageDisplays/MdPreviewContainer
 //and is used to set the final puzzle object in \PuzzleGeneratorPage\Components\DisplayContainers\PreviewDisplay.
 
-const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsCallback }) => {
+const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsCallback, answerKeyCallback }) => {
 
     // Set State Hooks
     const [wordData, setWordData] = useState([]); //Used to gather data from database.
@@ -343,6 +343,8 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
         const secondCoordinate = startingPoint[1];
         let opposite;
 
+        console.log(wordLength);
+
 
         const constraintsArray = [];
 
@@ -512,7 +514,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
     };
 
     function checkLetterCrossingWorks(letter, workingPuzzleArray, row, column) {
-        if (!letter || !workingPuzzleArray || workingPuzzleArray.length === 0 || !row || !column) {
+        if (!letter || !workingPuzzleArray || workingPuzzleArray.length === 0 || row == undefined || column == undefined) {
             return;
         }
 
@@ -526,6 +528,8 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
             isPlaceable = true;
         }
 
+        console.log(isPlaceable);
+
         return (isPlaceable);
     }
 
@@ -535,6 +539,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
         }
 
         const wordLength = word.length;
+        console.log("word length = " + wordLength + " 540");
 
         const startingRow = startingPoint[0];
         const startingColumn = startingPoint[1];
@@ -546,6 +551,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn));
                 };
                 console.log(workingArray);
@@ -554,6 +560,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn + i));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn + i));
                 };
                 console.log(workingArray);
@@ -563,6 +570,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                     const newLetter = word[i];
                     console.log(newLetter);
                     const newColumn = startingColumn + i;
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow, newColumn))
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow, newColumn));
                 };
                 console.log(workingArray);
@@ -571,6 +579,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn + i));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn + i));
                 };
                 console.log(workingArray);
@@ -579,6 +588,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn));
                 };
                 console.log(workingArray);
@@ -587,6 +597,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn - i));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow + i, startingColumn - i));
                 };
                 console.log(workingArray);
@@ -595,6 +606,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow, startingColumn - i));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow, startingColumn - i));
                 };
                 console.log(workingArray);
@@ -603,6 +615,7 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
                 for (let i = 0; i < wordLength; i++) {
                     const newLetter = word[i];
                     console.log(newLetter);
+                    console.log(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn - i));
                     workingArray.push(checkLetterCrossingWorks(newLetter, currentPuzzle, startingRow - i, startingColumn - i));
                 };
                 console.log(workingArray);
@@ -702,6 +715,9 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
         for (let i = 0; i < coordDirections.length; i++) {
             console.log(coordDirections[i]);
         }
+
+        console.log(word);
+        console.log(coordDirections);
 
         setWorkingPuzzle(tempArray);
         setCoordDirections(coordDirections);
@@ -906,9 +922,10 @@ const GenerateButton = ({ topic, callback, difficulty, puzzleWords, puzzleWordsC
     return (
         <PuzzleGeneratorPageButton onClick={() => {
             setRunAgain(!runAgain);
-            const[answerKey, finalPuzzle, finalChosenWords] = createFinalProduct();
+            const[finalAnswerKey, finalPuzzle, finalChosenWords] = createFinalProduct();
             callback(finalPuzzle);
             puzzleWordsCallback(finalChosenWords);
+            answerKeyCallback(finalAnswerKey);
         }} size='lg'>Generate Puzzle</PuzzleGeneratorPageButton>
     );
 };

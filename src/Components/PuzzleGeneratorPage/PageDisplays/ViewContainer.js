@@ -14,7 +14,4 @@ export const HideXsContainer = styled(Container)`
 export const HideMdContainer = styled(Container)`
     background-color: #000000;
 
-    @media screen and (max-width: 767px){
-        display: none;
-    };
 `;
